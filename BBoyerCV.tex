@@ -8,6 +8,7 @@
 \usepackage[scale=0.85]{geometry}
 \usepackage{fontawesome}
 \usepackage{wrapfig}
+\usepackage{ifthen}
 
 %% ModernCV document style.
 \moderncvstyle{classic}                         %% Styles: classic, casual, oldstyle, banking, fancy.
@@ -48,21 +49,31 @@
 \makecvtitle
 
 %% Education section.
-\input{./CV-Education.tex}
+\newcommand{\displayEducation}{yes}
+\ifthenelse{\equal{\displayEducation}{yes}}{\input{./CV-Education.tex}}
 
 %% Experiences section.
-\input{CV-Experiences.tex}
+\newcommand{\displayExperiences}{yes}
+\newcommand{\displayVisianMissions}{yes}
+\newcommand{\displaySIIMissions}{yes}
+\newcommand{\displayThalesMissions}{yes}
+\newcommand{\displayNovacomMissions}{yes}
+\ifthenelse{\equal{\displayExperiences}{yes}}{\input{CV-Experiences.tex}}
 
 %% Skills section.
-\input{CV-Skills.tex}
+\newcommand{\displaySkills}{yes}
+\ifthenelse{\equal{\displaySkills}{yes}}{\input{CV-Skills.tex}}
 
 %% Section Projets.
-\input{CV-Projects.tex}
+\newcommand{\displayProject}{no}
+\ifthenelse{\equal{\displayProject}{yes}}{\input{CV-Projects.tex}}{}
 
 %% Languages section.
-\input{CV-Languages.tex}
+\newcommand{\displayLanguages}{yes}
+\ifthenelse{\equal{\displayLanguages}{yes}}{\input{CV-Languages.tex}}
 
 %% Hobbies section.
-\input{CV-Hobbies.tex}
+\newcommand{\displayHobbies}{yes}
+\ifthenelse{\equal{\displayHobbies}{yes}}{\input{CV-Hobbies.tex}}
 
 \end{document}
