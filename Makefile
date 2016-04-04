@@ -3,6 +3,7 @@
 
 CVNAME	= BBoyerCV
 CVSRC	= $(CVNAME).tex
+SRC	= CV-Education.tex CV-Experiences.tex CV-Hobbies.tex CV-Languages.tex CV-Projects.tex CV-Skills.tex
 CVPDF	= $(CVSRC:.tex=.pdf)
 
 # Compile with lualatex.
@@ -10,7 +11,7 @@ all:	cv
 
 cv:	$(CVPDF)
 
-$(CVPDF):	$(CVSRC)
+$(CVPDF):	$(CVSRC) $(SRC)
 	@echo "Compilation $(CVSRC) into $(CVPDF).";
 	@lualatex $(CVSRC);
 
