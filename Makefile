@@ -3,7 +3,8 @@
 
 CVNAME	= BertrandBoyer
 CVSRC	= $(CVNAME).tex
-SRC	= Education.tex Experiences.tex Hobbies.tex Languages.tex Projects.tex Skills.tex
+SRC_DIR	= ./tex/
+SRC	= $(SRC_DIR)/Education.tex $(SRC_DIR)/Experiences.tex $(SRC_DIR)/Hobbies.tex $(SRC_DIR)/Languages.tex $(SRC_DIR)/Projects.tex $(SRC_DIR)/Skills.tex
 IMG_DIR	= ./img/
 IMG	= $(IMG_DIR)/novacom.eps $(IMG_DIR)/thales.eps $(IMG_DIR)/sii.eps $(IMG_DIR)/visian.eps
 CVPDF	= $(CVSRC:.tex=.pdf)
