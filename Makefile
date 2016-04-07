@@ -1,9 +1,9 @@
 # Makefile for ModernCV.
 # Bertrand B.
 
-CVNAME	= BBoyerCV
+CVNAME	= BertrandBoyer
 CVSRC	= $(CVNAME).tex
-SRC	= CV-Education.tex CV-Experiences.tex CV-Hobbies.tex CV-Languages.tex CV-Projects.tex CV-Skills.tex
+SRC	= Education.tex Experiences.tex Hobbies.tex Languages.tex Projects.tex Skills.tex
 CVPDF	= $(CVSRC:.tex=.pdf)
 
 # Compile with lualatex.
