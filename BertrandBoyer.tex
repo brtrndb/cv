@@ -49,33 +49,33 @@
 \makecvtitle
 
 %% Education section.
-\newcommand{\displayEducation}{yes}
-\newcommand{\displayEducationImages}{yes}
-\ifthenelse{\equal{\displayEducation}{yes}}{\input{./tex/Education.tex}}
+\newcommand{\displaySectionEducation}{yes}
+\newcommand{\displayImagesEducation}{yes}
+\ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}
 
 %% Experiences section.
-\newcommand{\displayExperiences}{yes}
-\newcommand{\displayExperiencesImages}{yes}
-\newcommand{\displayVisianMissions}{yes}
-\newcommand{\displaySIIMissions}{yes}
-\newcommand{\displayThalesMissions}{yes}
-\newcommand{\displayNovacomMissions}{yes}
-\ifthenelse{\equal{\displayExperiences}{yes}}{\input{./tex/Experiences.tex}}
+\newcommand{\displaySectionExperiences}{yes}
+\newcommand{\displayImagesExperiences}{yes}
+\newcommand{\displayMissionsVisian}{yes}
+\newcommand{\displayMissionsSII}{yes}
+\newcommand{\displayMissionsThales}{yes}
+\newcommand{\displayMissionsNovacom}{yes}
+\ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}}
 
 %% Skills section.
-\newcommand{\displaySkills}{yes}
-\ifthenelse{\equal{\displaySkills}{yes}}{\input{./tex/Skills.tex}}
+\newcommand{\displaySectionSkills}{yes}
+\ifthenelse{\equal{\displaySectionSkills}{yes}}{\input{./tex/Skills.tex}}
 
 %% Section Projets.
-\newcommand{\displayProject}{yes}
-\ifthenelse{\equal{\displayProject}{yes}}{\input{./tex/Projects.tex}}{}
+\newcommand{\displaySectionProject}{yes}
+\ifthenelse{\equal{\displaySectionProject}{yes}}{\input{./tex/Projects.tex}}{}
 
 %% Languages section.
-\newcommand{\displayLanguages}{yes}
-\ifthenelse{\equal{\displayLanguages}{yes}}{\input{./tex/Languages.tex}}
+\newcommand{\displaySectionLanguages}{yes}
+\ifthenelse{\equal{\displaySectionLanguages}{yes}}{\input{./tex/Languages.tex}}
 
 %% Hobbies section.
-\newcommand{\displayHobbies}{yes}
-\ifthenelse{\equal{\displayHobbies}{yes}}{\input{./tex/Hobbies.tex}}
+\newcommand{\displaySectionHobbies}{yes}
+\ifthenelse{\equal{\displaySectionHobbies}{yes}}{\input{./tex/Hobbies.tex}}
 
 \end{document}
