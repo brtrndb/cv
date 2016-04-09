@@ -1,7 +1,23 @@
 %% Languages section.
+\ifthenelse{\equal{\cvFrenchVersion}{yes}}{
+  \newcommand{\languageFrench}{Français}
+  \newcommand{\languageFrenchDesc}{(Langue maternelle)}
+  \newcommand{\languageEnglish}{Anglais}
+  \newcommand{\languageEnglishDesc}{(TOEFL, Décembre 2012)}
+  \newcommand{\languageSpanish}{Espagnol}
+  \newcommand{\languageSpanishDesc}{(Niveau scolaire)}
+}{
+  \newcommand{\languageFrench}{French}
+  \newcommand{\languageFrenchDesc}{(Mother tongue)}
+  \newcommand{\languageEnglish}{ENglish}
+  \newcommand{\languageEnglishDesc}{(TOEFL, December 2012)}
+  \newcommand{\languageSpanish}{Spanish}
+  \newcommand{\languageSpanishDesc}{(School level)}
+}
+
 \section{\faLanguage$\;$\textbf{Langues}}
 \begin{cvcolumns}
-  \cvcolumn{\textcolor{black}{Français:}$\;$\textcolor{modernBlue}{\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircle}}{\textcolor{modernGrey3}{(Langue maternelle)}}
-  \cvcolumn{\textcolor{black}{Anglais:}$\;$\textcolor{modernBlue}{\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircleO}}{\textcolor{modernGrey3}{(TOEFL, Décembre 2012)}} %% E-TOEIC Epitech 810 points.
-  \cvcolumn{\textcolor{black}{Espagnol:}$\;$\textcolor{modernBlue}{\faCircle$\;$\faCircle$\;$\faCircleO$\;$\faCircleO$\;$\faCircleO}}{\textcolor{modernGrey3}{(Niveau scolaire)}}
+\cvcolumn{\textcolor{black}{\languageFrench:}$\;$\textcolor{modernBlue}{\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircle}}{\textcolor{modernGrey3}{\languageFrenchDesc}}
+  \cvcolumn{\textcolor{black}{\languageEnglish:}$\;$\textcolor{modernBlue}{\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircleO}}{\textcolor{modernGrey3}{\languageEnglishDesc}} %% E-TOEIC Epitech 810 points.
+  \cvcolumn{\textcolor{black}{\languageSpanish:}$\;$\textcolor{modernBlue}{\faCircle$\;$\faCircle$\;$\faCircleO$\;$\faCircleO$\;$\faCircleO}}{\textcolor{modernGrey3}{\languageSpanishDesc}}
 \end{cvcolumns}
