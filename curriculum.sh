@@ -9,6 +9,8 @@ CVFOLDER=./cv
 NULL=/dev/null
 
 # CV Options.
+CV_LANGUAGE=cvLanguageVersion
+
 IMG_EDUCATION=displayImagesEducation
 IMG_EXPERIENCE=displayImagesExperiences
 
@@ -33,6 +35,10 @@ set_attribute(){
     sed -i 's/'"$1"'}{\(yes\|no\)/'"$1"'}{'"$2"'/g' $CVTEX;
 }
 
+set_language(){
+    set_attribute $LANGUAGE_FRENCH $1;
+}
+
 set_pictures(){
     for img in $IMG_ALL;
     do
@@ -48,12 +54,12 @@ set_missions(){
 }
 
 reset_options(){
+    set_language french;
     for opt in $OPTIONS_ALL;
     do
 	set_attribute $opt "yes"
     done
 }
-
 
 cv_dir(){
     if [ ! -d "$CVFOLDER" ];
@@ -68,28 +74,39 @@ make_cv(){
     mv $CVPDF "$CVFOLDER/$1";
 }
 
+# CV generating functions.
+cv_pictures(){
+    echo -n " > Create moderncv with pictures.";
+    set_pictures "yes";
+    make_cv "$CVPDF-Pics.pdf";
+    echo " Done.";
+}
+
+cv_no_picture(){
+    echo -n " > Create moderncv without pictures.";
+    set_pictures "no";
+    make_cv "$CVPDF-NoPics.pdf";
+    echo " Done.";
+}
+
+cv_full(){
+    echo -n " > Create moderncv with full informations.";
+    set_pictures "yes";
+    set_missions "yes";
+    make_cv "$CVPDF-Full.pdf";
+    echo " Done.";
+}
+
+cv_reset(){
+    echo -n " > Reset $CVTEX to default.";
+    reset_options;
+    echo "Done."
+}
+
 # Script.
 
 echo "Starting script.";
-
-echo -n " > Create moderncv with pictures.";
-set_pictures "yes";
-make_cv "$CVPDF-Pics.pdf";
-echo " Done.";
-
-echo -n " > Create moderncv without pictures.";
-set_pictures "no";
-make_cv "$CVPDF-NoPics.pdf";
-echo " Done.";
-
-echo -n " > Create moderncv with full informations.";
-set_pictures "yes";
-set_missions "yes";
-make_cv "$CVPDF-Full.pdf";
-echo " Done.";
-
-echo -n " > Reset $CVTEX to default.";
-reset_options;
-echo "Done."
-
+set_language french;
+cv_full;
+cv_reset;
 echo "Finished.";
