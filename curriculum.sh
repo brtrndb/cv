@@ -36,7 +36,7 @@ set_attribute(){
 }
 
 set_language(){
-    set_attribute $LANGUAGE_FRENCH $1;
+    set_attribute $CV_LANGUAGE $1;
 }
 
 set_pictures(){
@@ -100,7 +100,7 @@ cv_full(){
 cv_reset(){
     echo -n " > Reset $CVTEX to default.";
     reset_options;
-    echo "Done."
+    echo " Done."
 }
 
 # Script.
