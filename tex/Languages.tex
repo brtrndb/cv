@@ -1,5 +1,6 @@
 %% Languages section.
 \ifthenelse{\equal{\cvLanguageVersion}{french}}{
+  \newcommand{\sectionLanguageTitle}{Langues}
   \newcommand{\sectionLanguageFrench}{Français}
   \newcommand{\sectionLanguageFrenchDesc}{(Langue maternelle)}
   \newcommand{\sectionLanguageEnglish}{Anglais}
@@ -8,6 +9,7 @@
   \newcommand{\sectionLanguageSpanishDesc}{(Niveau scolaire)}
 }{}
 \ifthenelse{\equal{\cvLanguageVersion}{english}}{
+  \newcommand{\sectionLanguageTitle}{Languages}
   \newcommand{\sectionLanguageFrench}{French}
   \newcommand{\sectionLanguageFrenchDesc}{(Mother tongue)}
   \newcommand{\sectionLanguageEnglish}{English}
@@ -16,7 +18,7 @@
   \newcommand{\sectionLanguageSpanishDesc}{(School level)}
 }{}
 
-\section{\faLanguage$\;$\textbf{Langues}}
+\section{\faLanguage$\;$\textbf{\sectionLanguageTitle}}
 \begin{cvcolumns}
 \cvcolumn{\textcolor{black}{\sectionLanguageFrench:}$\;$\textcolor{modernBlue}{\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircle}}{\textcolor{modernGrey3}{\sectionLanguageFrenchDesc}}
   \cvcolumn{\textcolor{black}{\sectionLanguageEnglish:}$\;$\textcolor{modernBlue}{\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircle$\;$\faCircleO}}{\textcolor{modernGrey3}{\sectionLanguageEnglishDesc}} %% E-TOEIC Epitech 810 points.
