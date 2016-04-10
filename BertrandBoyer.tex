@@ -47,26 +47,11 @@
 \input{./tex/Personal.tex}
 
 \begin{document}
-
-%% Header.
-\ifthenelse{\equal{\displayPersonalInfos}{yes}}{\makecvtitle}
-
-%% Education section.
-\ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}
-
-%% Experiences section.
-\ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}}
-
-%% Skills section.
-\ifthenelse{\equal{\displaySectionSkills}{yes}}{\input{./tex/Skills.tex}}
-
-%% Section Projets.
-\ifthenelse{\equal{\displaySectionProject}{yes}}{\input{./tex/Projects.tex}}{}
-
-%% Languages section.
-\ifthenelse{\equal{\displaySectionLanguages}{yes}}{\input{./tex/Languages.tex}}
-
-%% Hobbies section.
-\ifthenelse{\equal{\displaySectionHobbies}{yes}}{\input{./tex/Hobbies.tex}}
-
+\ifthenelse{\equal{\displayPersonalInfos}{yes}}{\makecvtitle}{}                         %% Header.
+\ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}{}       %% Education section.
+\ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}}{}   %% Experiences section.
+\ifthenelse{\equal{\displaySectionSkills}{yes}}{\input{./tex/Skills.tex}}{}             %% Skills section.
+\ifthenelse{\equal{\displaySectionProject}{yes}}{\input{./tex/Projects.tex}}{}          %% Section Projets.
+\ifthenelse{\equal{\displaySectionLanguages}{yes}}{\input{./tex/Languages.tex}}{}       %% Languages section.
+\ifthenelse{\equal{\displaySectionHobbies}{yes}}{\input{./tex/Hobbies.tex}}{}           %% Hobbies section.
 \end{document}
