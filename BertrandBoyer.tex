@@ -27,45 +27,46 @@
 \definecolor{modernPurple}{rgb}{0.50,0.33,0.80} % Purple.
 \definecolor{modernRed}{rgb}{0.95,0.20,0.20}    % Red.
 
-%% Personnal informations.
-\newcommand{\displayPersonalInfos}{yes}
-\ifthenelse{\equal{\displayPersonalInfos}{yes}}{\input{./tex/Personal.tex}}
-
-\begin{document}
-
+%% CV optios.
 \newcommand{\cvLanguageVersion}{french}
-
-%% Header.
-\makecvtitle
-
-%% Education section.
+\newcommand{\displayPersonalInfos}{yes}
 \newcommand{\displaySectionEducation}{yes}
 \newcommand{\displayImagesEducation}{yes}
-\ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}
-
-%% Experiences section.
 \newcommand{\displaySectionExperiences}{yes}
 \newcommand{\displayImagesExperiences}{yes}
 \newcommand{\displayMissionsVisian}{yes}
 \newcommand{\displayMissionsSII}{yes}
 \newcommand{\displayMissionsThales}{yes}
 \newcommand{\displayMissionsNovacom}{yes}
+\newcommand{\displaySectionSkills}{yes}
+\newcommand{\displaySectionProject}{yes}
+\newcommand{\displaySectionLanguages}{yes}
+\newcommand{\displaySectionHobbies}{yes}
+
+%% Personnal informations.
+\ifthenelse{\equal{\displayPersonalInfos}{yes}}{\input{./tex/Personal.tex}}
+
+\begin{document}
+
+%% Header.
+\makecvtitle
+
+%% Education section.
+\ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}
+
+%% Experiences section.
 \ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}}
 
 %% Skills section.
-\newcommand{\displaySectionSkills}{yes}
 \ifthenelse{\equal{\displaySectionSkills}{yes}}{\input{./tex/Skills.tex}}
 
 %% Section Projets.
-\newcommand{\displaySectionProject}{yes}
 \ifthenelse{\equal{\displaySectionProject}{yes}}{\input{./tex/Projects.tex}}{}
 
 %% Languages section.
-\newcommand{\displaySectionLanguages}{yes}
 \ifthenelse{\equal{\displaySectionLanguages}{yes}}{\input{./tex/Languages.tex}}
 
 %% Hobbies section.
-\newcommand{\displaySectionHobbies}{yes}
 \ifthenelse{\equal{\displaySectionHobbies}{yes}}{\input{./tex/Hobbies.tex}}
 
 \end{document}
