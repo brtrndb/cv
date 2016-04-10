@@ -44,12 +44,12 @@
 \newcommand{\displaySectionHobbies}{yes}
 
 %% Personnal informations.
-\ifthenelse{\equal{\displayPersonalInfos}{yes}}{\input{./tex/Personal.tex}}
+\input{./tex/Personal.tex}
 
 \begin{document}
 
 %% Header.
-\makecvtitle
+\ifthenelse{\equal{\displayPersonalInfos}{yes}}{\makecvtitle}
 
 %% Education section.
 \ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}
