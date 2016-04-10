@@ -4,7 +4,7 @@
 CVNAME	= BertrandBoyer
 CVSRC	= $(CVNAME).tex
 SRC_DIR	= ./tex/
-SRC	= $(SRC_DIR)/Education.tex $(SRC_DIR)/Experiences.tex $(SRC_DIR)/Hobbies.tex $(SRC_DIR)/Languages.tex $(SRC_DIR)/Projects.tex $(SRC_DIR)/Skills.tex
+SRC	= $(SRC_DIR)/Personal.tex $(SRC_DIR)/Education.tex $(SRC_DIR)/Experiences.tex $(SRC_DIR)/Hobbies.tex $(SRC_DIR)/Languages.tex $(SRC_DIR)/Projects.tex $(SRC_DIR)/Skills.tex
 IMG_DIR	= ./img/
 IMG	= $(IMG_DIR)/novacom.eps $(IMG_DIR)/thales.eps $(IMG_DIR)/sii.eps $(IMG_DIR)/visian.eps $(IMG_DIR)/epitech.eps $(IMG_DIR)/griffith.eps $(IMG_DIR)/eisti.eps
 CVPDF	= $(CVSRC:.tex=.pdf)
