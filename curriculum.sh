@@ -11,13 +11,8 @@ NULL=/dev/null
 # CV Options.
 CV_LANGUAGE=cvLanguageVersion
 
-IMG_EDUCATION=displayImagesEducation
-IMG_EXPERIENCE=displayImagesExperiences
-
-MISSION_VISIAN=displayMissionsVisian
-MISSION_SII=displayMissionsSII
-MISSION_THALES=displayMissionsThales
-MISSION_NOVACOM=displayMissionsNovacom
+IMAGE_EDUCATION=displayImagesEducation
+IMAGE_EXPERIENCE=displayImagesExperiences
 
 SECTION_EDUCATION=displaySectionEducation
 SECTION_EXPERIENCES=displaySectionExperiences
@@ -25,10 +20,19 @@ SECTION_SKILLS=displaySectionSkills
 SECTION_PROJECTS=displaySectionProjects
 SECTION_HOBBIES=displaySectionHobbies
 
-IMG_ALL="$IMG_EDUCATION $IMG_EXPERIENCE"
+MISSION_VISIAN=displayMissionsVisian
+MISSION_SII=displayMissionsSII
+MISSION_THALES=displayMissionsThales
+MISSION_NOVACOM=displayMissionsNovacom
+
+SPACE_CVENTRY=cvEntrySpace
+SPACE_CVCOLUM=cvColumnSpace
+SPACE_CVCOLUM_END=cvColumnSpaceEnd
+
+IMAGE_ALL="$IMAGE_EDUCATION $IMAGE_EXPERIENCE"
 MISSION_ALL="$MISSION_VISIAN $MISSION_SII $MISSION_THALES $MISSION_NOVACOM"
 SECTION_ALL="$SECTION_EDUCATION $SECTION_EXPERIENCES $SECTION_SKILLS $SECTION_PROJECTS $SECTION_HOBBIES"
-OPTIONS_ALL="$IMG_ALL $MISSION_ALL $SECTION_ALL"
+OPTIONS_ALL="$IMAGE_ALL $MISSION_ALL $SECTION_ALL"
 
 # Script command line options.
 CMD_LANGUAGE="french"
@@ -38,6 +42,9 @@ CMD_PROJECTS="no"
 CMD_NAME="$CVPDF"
 CMD_FULL="no"
 CMD_RESET="no"
+CMD_SPACE_ENTRY="+0"
+CMD_SPACE_COLUMN="-0.4"
+CMD_SPACE_COLUMN_END="-0.5"
 
 # Functions.
 set_language(){
@@ -45,11 +52,15 @@ set_language(){
 }
 
 set_attribute(){
-        sed -i '0,/'"$1"'}{\(yes\|no\)/s//'"$1"'}{'"$2"'/g' $CVTEX;
+    sed -i '0,/'"$1"'}{\(yes\|no\)/s//'"$1"'}{'"$2"'/g' $CVTEX;
+}
+
+set_space(){
+    sed -i 's/'"$1"'}{[+-][0-9]*\.*[0-9]*cm}/'"$1"'}{'"$2"'cm}/g' $CVTEX;
 }
 
 set_images(){
-    for img in $IMG_ALL;
+    for img in $IMAGE_ALL;
     do
 	set_attribute $img $1;
     done
@@ -64,6 +75,7 @@ set_missions(){
 
 reset_options(){
     set_language "french";
+    set_space $SPACE_CVENTRY "+0";
     for opt in $OPTIONS_ALL;
     do
 	set_attribute $opt "yes";
@@ -103,6 +115,7 @@ do
 	    ;;
 	-m | --missions)
 	    CMD_MISSIONS="yes";
+	    CMD_SPACE_ENTRY="+0.2";
 	    shift 1;
 	    ;;
 	-p | --projects)
@@ -122,6 +135,10 @@ echo " Done."
 
 echo -n " > Setting images: $CMD_IMAGES.";
 set_images $CMD_IMAGES;
+echo " Done.";
+
+echo -n " > Setting entries spaces: $CMD_SPACE_ENTRY.";
+set_space $SPACE_CVENTRY $CMD_SPACE_ENTRY;
 echo " Done.";
 
 echo -n " > Setting experiences missions: $CMD_MISSIONS.";
