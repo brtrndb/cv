@@ -20,33 +20,32 @@ MISSION_THALES=displayMissionsThales
 MISSION_NOVACOM=displayMissionsNovacom
 
 SECTION_EDUCATION=displaySectionEducation
-SECTION_EXPERIENCE=displaySectionExperiences
+SECTION_EXPERIENCES=displaySectionExperiences
 SECTION_SKILLS=displaySectionSkills
-SECTION_PROJECT=displaySectionProjects
+SECTION_PROJECTS=displaySectionProjects
 SECTION_HOBBIES=displaySectionHobbies
 
 IMG_ALL="$IMG_EDUCATION $IMG_EXPERIENCE"
 MISSION_ALL="$MISSION_VISIAN $MISSION_SII $MISSION_THALES $MISSION_NOVACOM"
-SECTION_ALL="$SECTION_EDUCATION $SECTION_EXPERIENCE $SECTION_SKILLS $SECTION_PROJECT $SECTION_HOBBIES"
+SECTION_ALL="$SECTION_EDUCATION $SECTION_EXPERIENCES $SECTION_SKILLS $SECTION_PROJECTS $SECTION_HOBBIES"
 OPTIONS_ALL="$IMG_ALL $MISSION_ALL $SECTION_ALL"
 
 # Script command line options.
-CMD_LANGUAGE=french
-CMD_IMAGES=no
-CMD_MISSIONS=no
+CMD_LANGUAGE="french"
+CMD_IMAGES="no"
+CMD_MISSIONS="no"
+CMD_PROJECTS="no"
 CMD_NAME="$CVPDF"
-CMD_FULL=no
-CMD_RESET=no
+CMD_FULL="no"
+CMD_RESET="no"
 
 # Functions.
-
-# CV configuration functions.
-set_attribute(){
-    sed -i 's/'"$1"'}{\(yes\|no\)/'"$1"'}{'"$2"'/g' $CVTEX;
-}
-
 set_language(){
     sed -i 's/'"$CV_LANGUAGE"'}{\(french\|english\)/'"$CV_LANGUAGE"'}{'"$1"'/g' $CVTEX;
+}
+
+set_attribute(){
+        sed -i '0,/'"$1"'}{\(yes\|no\)/s//'"$1"'}{'"$2"'/g' $CVTEX;
 }
 
 set_images(){
@@ -67,7 +66,7 @@ reset_options(){
     set_language "french";
     for opt in $OPTIONS_ALL;
     do
-	set_attribute $opt "yes"
+	set_attribute $opt "yes";
     done
 }
 
@@ -82,29 +81,6 @@ make_cv(){
     make > $NULL 2>&1;
     cv_dir;
     mv $CVPDF "$CVFOLDER/$1";
-}
-
-# CV generating functions.
-cv_pictures(){
-    echo -n " > Create moderncv with pictures.";
-    set_images "yes";
-    make_cv "$CVPDF-Pics.pdf";
-    echo " Done.";
-}
-
-cv_no_picture(){
-    echo -n " > Create moderncv without pictures.";
-    set_images "no";
-    make_cv "$CVPDF-NoPics.pdf";
-    echo " Done.";
-}
-
-cv_full(){
-    echo -n " > Create moderncv with full informations.";
-    set_images "yes";
-    set_missions "yes";
-    make_cv "$CVPDF-Full.pdf";
-    echo " Done.";
 }
 
 # Script.
@@ -122,19 +98,16 @@ do
 	    shift 2;
 	    ;;
 	-i | --images)
-	    CMD_IMAGES=yes;
+	    CMD_IMAGES="yes";
 	    shift 1;
 	    ;;
 	-m | --missions)
-	    CMD_MISSIONS=yes;
+	    CMD_MISSIONS="yes";
 	    shift 1;
 	    ;;
-	-f | --full)
-	    CMD_FULL=yes;
+	-p | --projects)
+	    CMD_PROJECTS="yes";
 	    shift 1;
-	    ;;
-	-r | --reset)
-	    CMD_RESET=yes;
 	    ;;
 	-* | --*)
 	    echo "Wrong option $1."
@@ -147,36 +120,22 @@ echo -n " > Setting language: $CMD_LANGUAGE."
 set_language "$CMD_LANGUAGE";
 echo " Done."
 
-if [[ "$CMD_FULL" = "yes" ]];
-then
-    cv_full;
-    echo "Finished.";
-    exit 0;
-fi
-
-if [[ "$CMD_IMAGES" = "yes" ]];
-then
-    echo -n " > Setting images.";
-    set_images "yes";
-    echo " Done.";
-fi
-
-if [[ "$CMD_MISSIONS" = "yes" ]];
-then
-    echo -n " > Setting experiences missions.";
-    set_missions "yes";
-    echo " Done.";
-fi
-
-echo -n " > Generating $CMD_NAME...";
-make_cv "$CMD_NAME.pdf";
+echo -n " > Setting images: $CMD_IMAGES.";
+set_images $CMD_IMAGES;
 echo " Done.";
 
-if [[ "$CMD_RESET" = "yes" ]];
-then
-    echo -n " > Reset $CVTEX to default.";
-    reset_options;
-    echo " Done."
-fi
+echo -n " > Setting experiences missions: $CMD_MISSIONS.";
+set_missions $CMD_MISSIONS;
+echo " Done.";
+
+echo -n " > Setting projects section: $CMD_PROJECTS.";
+set_attribute $SECTION_PROJECTS $CMD_PROJECTS;
+echo " Done.";
+
+echo -n " > Generating $CMD_NAME...";
+make_cv "$CMD_NAME";
+echo " Done.";
+
+reset_options;
 
 echo "Finished.";
