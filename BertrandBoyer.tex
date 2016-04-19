@@ -5,7 +5,7 @@
 \documentclass[10pt, a4paper]{moderncv}         %% Using moderncv class
 \usepackage{luatextra}                          %% Using lualatex instead of latex.
 \usepackage[french]{babel}                      %% French package.
-\usepackage[scale=0.85]{geometry}               %% Margin geometry.
+\usepackage[scale=0.90]{geometry}               %% Margin geometry.
 \usepackage{fontawesome}                        %% Using awesome font for icons.
 \usepackage{wrapfig}                            %% Using floating images.
 \usepackage{ifthen}                             %% Using conditions.
@@ -28,17 +28,20 @@
 \definecolor{modernRed}{rgb}{0.95,0.20,0.20}    % Red.
 
 %% Length.
-\newlength{\cvSectionSpace}
-\setlength{\cvSectionSpace}{-0cm}
-\newlength{\cvEntrySpace}
-\setlength{\cvEntrySpace}{+0cm}
-\newlength{\cvColumnSpace}
-\setlength{\cvColumnSpace}{-0.4cm}
-\newlength{\cvColumnSpaceEnd}
-\setlength{\cvColumnSpaceEnd}{-0.5cm}
+\newlength{\cvHeaderSpace}                      %%
+\setlength{\cvHeaderSpace}{-0.5cm}                %%
+\newlength{\cvSectionSpace}                     %%
+\setlength{\cvSectionSpace}{-0cm}               %%
+\newlength{\cvEntrySpace}                       %%
+\setlength{\cvEntrySpace}{+0cm}                 %%
+\newlength{\cvColumnSpace}                      %%
+\setlength{\cvColumnSpace}{-0.4cm}              %%
+\newlength{\cvColumnSpaceEnd}                   %%
+\setlength{\cvColumnSpaceEnd}{-0.5cm}           %%
 
 %% CV optios.
 \newcommand{\cvLanguageVersion}{french}         % Language: french, english.
+\newcommand{\displayImagesProfile}{yes}         % Display the prfile image.
 \newcommand{\displayPersonalInfos}{yes}         % Display the header with personal infos.
 \newcommand{\displaySectionEducation}{yes}      % Display the Education section.
 \newcommand{\displayImagesEducation}{yes}       % Display the images in Education section.
@@ -57,7 +60,7 @@
 \input{./tex/Personal.tex}
 
 \begin{document}
-\ifthenelse{\equal{\displayPersonalInfos}{yes}}{\makecvtitle}{}                         %% Header.
+\ifthenelse{\equal{\displayPersonalInfos}{yes}}{\makecvtitle\vspace{\cvHeaderSpace}}{}  %% Header.
 \ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}{}       %% Education section.
 \ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}}{}   %% Experiences section.
 \ifthenelse{\equal{\displaySectionSkills}{yes}}{\input{./tex/Skills.tex}}{}             %% Skills section.
