@@ -2,10 +2,10 @@
 % !TEX TS-program = LuaLaTeX
 
 %% ModernCV.
-\documentclass[10pt, a4paper]{moderncv}         %% Using moderncv class
+\documentclass[10pt,a4paper]{moderncv}          %% Using moderncv class
 \usepackage{luatextra}                          %% Using lualatex instead of latex.
 \usepackage[french]{babel}                      %% French package.
-\usepackage[scale=0.90]{geometry}               %% Margin geometry.
+\usepackage{geometry}                           %% Margin geometry.
 \usepackage{fontawesome}                        %% Using awesome font for icons.
 \usepackage{wrapfig}                            %% Using floating images.
 \usepackage{ifthen}                             %% Using conditions.
@@ -28,31 +28,37 @@
 \definecolor{modernRed}{rgb}{0.95,0.20,0.20}    % Red.
 
 %% Length.
-\newlength{\cvHeaderSpace}                      %%
-\setlength{\cvHeaderSpace}{-0.5cm}                %%
-\newlength{\cvSectionSpace}                     %%
-\setlength{\cvSectionSpace}{-0cm}               %%
-\newlength{\cvEntrySpace}                       %%
-\setlength{\cvEntrySpace}{+0cm}                 %%
-\newlength{\cvColumnSpace}                      %%
-\setlength{\cvColumnSpace}{-0.4cm}              %%
-\newlength{\cvColumnSpaceEnd}                   %%
-\setlength{\cvColumnSpaceEnd}{-0.5cm}           %%
+\newlength{\cvHeaderSpace}                      %% Space between cv title and first section.
+\setlength{\cvHeaderSpace}{-0cm}                %% Default: -0cm.
+\newlength{\cvSectionSpace}                     %% Space between sections.
+\setlength{\cvSectionSpace}{-0cm}               %% Default: -0cm.
+\newlength{\cvEntrySpace}                       %% Space between each cv entries.
+\setlength{\cvEntrySpace}{+0cm}                 %% Default: +0cm.
+\newlength{\cvColumnSpace}                      %% Space between cv columns.
+\setlength{\cvColumnSpace}{-0.4cm}              %% Default: -0.4cm.
+\newlength{\cvColumnSpaceEnd}                   %% Space at the end of columns.
+\setlength{\cvColumnSpaceEnd}{-0cm}             %% Default: -0cm.
 
-%% CV optios.
+% Margin options.
+\geometry{top=1.5cm}                            %% Margin top.
+\geometry{bottom=1.5cm}                         %% Margin bottom.
+\geometry{left=1.5cm}                           %% Margin left.
+\geometry{right=1.5cm}                          %% Margin right.
+
+%% CV options.
 \newcommand{\cvLanguageVersion}{french}         % Language: french, english.
-\newcommand{\displayImagesProfile}{yes}         % Display the prfile image.
+\newcommand{\displayImagesProfile}{no}          % Display the prfile image.
 \newcommand{\displayPersonalInfos}{yes}         % Display the header with personal infos.
 \newcommand{\displaySectionEducation}{yes}      % Display the Education section.
-\newcommand{\displayImagesEducation}{yes}       % Display the images in Education section.
+\newcommand{\displayImagesEducation}{no}        % Display the images in Education section.
 \newcommand{\displaySectionExperiences}{yes}    % Display the Experiences section.
-\newcommand{\displayImagesExperiences}{yes}     % Display images in Experiences section.
-\newcommand{\displayMissionsVisian}{yes}        % Display Visian's missions in Experiences.
-\newcommand{\displayMissionsSII}{yes}           % Display SII's missions in Experiences.
-\newcommand{\displayMissionsThales}{yes}        % Display Thales' missions in Experiences.
-\newcommand{\displayMissionsNovacom}{yes}       % Display Novacom's missions in Experiences.
+\newcommand{\displayImagesExperiences}{no}      % Display images in Experiences section.
+\newcommand{\displayMissionsVisian}{no}         % Display Visian's missions in Experiences.
+\newcommand{\displayMissionsSII}{no}            % Display SII's missions in Experiences.
+\newcommand{\displayMissionsThales}{no}         % Display Thales' missions in Experiences.
+\newcommand{\displayMissionsNovacom}{no}        % Display Novacom's missions in Experiences.
 \newcommand{\displaySectionSkills}{yes}         % Display the Skills section.
-\newcommand{\displaySectionProjects}{yes}       % Display the Project section.
+\newcommand{\displaySectionProjects}{no}        % Display the Project section.
 \newcommand{\displaySectionLanguages}{yes}      % Display the Language section.
 \newcommand{\displaySectionHobbies}{yes}        % Display the Hobbies section.
 
