@@ -1,5 +1,7 @@
 # moderncv
-My CV with LaTeX moderncv template
+
+My CV with LaTeX moderncv template.
+
 
 ## Getting started
 
@@ -20,6 +22,9 @@ make
 ## cv.sh
 
 This script allows to generates different versions of my CV.
+I admit it. It is not really useful to have a script.
+But now I don't have to alway modify all `.tex` files.
+And most important, it was fun ;)
 
 ### Options
 
