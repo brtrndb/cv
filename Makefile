@@ -25,9 +25,7 @@ IMG	= $(DIR_IMG)/novacom.eps \
 	  $(DIR_IMG)/eisti.eps
 
 # Compile with lualatex.
-all:	cv
-
-cv:	$(CV_PDF)
+all:	$(CV_PDF)
 
 $(CV_PDF):	$(CV_SRC) $(SUB_SRC) $(IMG)
 	@echo "Compilation $(CV_SRC) into $(CV_PDF).";
