@@ -1,89 +1,29 @@
 %% Skills section.
-\ifthenelse{\equal{\cvLanguageVersion}{french}}{
-  \newcommand{\skillsTitle}{Compétences techniques}
-  \newcommand{\skillsProg}{Programmation}
-  \newcommand{\skillsProgItemA}{Java SE, Java ME, Langage C/C++.}
-  \newcommand{\skillsProgItemB}{Android \& Android Wear, iOS (Swift).}
-  \newcommand{\skillsProgItemC}{Bases de Lisp/Scheme.}
-  \newcommand{\skillsSystem}{Systèmes}
-  \newcommand{\skillsSystemItemA}{Linux (Debian, RHEL) et shell scripts.}
-  \newcommand{\skillsSystemItemB}{Virtualisation: VirtualBox, VMWare, KVM.}
-  \newcommand{\skillsSystemItemC}{Cloud: Windows Azure, IBM Bluemix, AWS.}
-  \newcommand{\skillsIoT}{IoT}
-  \newcommand{\skillsIoTItemA}{Beacons (iBeacon \& Eddystone).}
-  \newcommand{\skillsIoTItemB}{Smartwatches sous Android Wear.}
-  \newcommand{\skillsIoTItemC}{Raspberry Pi et capteurs de prototypage.}
-  \newcommand{\skillsTools}{Outils \& méthodologies}
-  \newcommand{\skillsToolsItemA}{Eclipse, Emacs, Visual Studio, XCode.}
-  \newcommand{\skillsToolsItemB}{Git, Subversion, Maven, Makefile.}
-  \newcommand{\skillsToolsItemC}{Asana, Slack, méthode Scrum, TDD.}
-  \newcommand{\skillsWeb}{Développement Web}
-  \newcommand{\skillsWebIItemA}{Java: Spark, Freemarker, Hibernate.}
-  \newcommand{\skillsWebIItemB}{Bases de HTML5, CSS et Javascript.}
-  \newcommand{\skillsWebIItemC}{Notions de NodeJS.}
-  \newcommand{\skillsSoft}{Logiciels \& bureautique}
-  \newcommand{\skillsSoftItemA}{Gimp, Microsoft Visio, Microsoft Project.}
-  \newcommand{\skillsSoftItemB}{\LaTeX/Beamer, Microsoft Office, OpenOffice.}
-  \newcommand{\skillsSoftItemC}{Environnement Linux, Windows et Mac OS.}
-  \newcommand{\skillsDB}{Base de données}
-  \newcommand{\skillsDBItemA}{Connaissances en BDD SQL (MySQL).}
-  \newcommand{\skillsDBItemB}{Notions en BDD NoSQL (MongoDB).}
-}{}
-\ifthenelse{\equal{\cvLanguageVersion}{english}}{
-  \newcommand{\skillsTitle}{Technical skills}
-  \newcommand{\skillsProg}{Development}
-  \newcommand{\skillsProgItemA}{Java SE, Java ME, C/C++.}
-  \newcommand{\skillsProgItemB}{Android \& Android Wear, iOS (Swift).}
-  \newcommand{\skillsProgItemC}{Basics of Lisp/Scheme}
-  \newcommand{\skillsSystem}{System}
-  \newcommand{\skillsSystemItemA}{Linux (Debian, RHEL) and shell scripting.}
-  \newcommand{\skillsSystemItemB}{Virualisation: VirtualBox, VMWare, KVM.}
-  \newcommand{\skillsSystemItemC}{Cloud: Windows Azure, IBM Bluemix, AWS.}
-  \newcommand{\skillsIoT}{IoT}
-  \newcommand{\skillsIoTItemA}{Beacons (iBeacon \& Eddystone).}
-  \newcommand{\skillsIoTItemB}{Android Wear smartwatches.}
-  \newcommand{\skillsIoTItemC}{Raspberry Pi and prototyping sensors.}
-  \newcommand{\skillsTools}{Tools and methodology}
-  \newcommand{\skillsToolsItemA}{Eclipse, Emacs, Visual Studio, XCode.}
-  \newcommand{\skillsToolsItemB}{Git, Subversion, Maven, Makefile.}
-  \newcommand{\skillsToolsItemC}{Asana, Slack, Scrum, TDD.}
-  \newcommand{\skillsWeb}{Web development}
-  \newcommand{\skillsWebIItemA}{Java: Spark, Freemarker, Hibernate.}
-  \newcommand{\skillsWebIItemB}{Basics of HTML5, CSS and Javascript.}
-  \newcommand{\skillsWebIItemC}{Basics of NodeJS.}
-  \newcommand{\skillsSoft}{Software}
-  \newcommand{\skillsSoftItemA}{Gimp, Microsoft Visio, Microsoft Project.}
-  \newcommand{\skillsSoftItemB}{\LaTeX/Beamer, Microsoft Office, OpenOffice.}
-  \newcommand{\skillsSoftItemC}{Linux, Windows and Mac OS environment.}
-  \newcommand{\skillsDB}{Database}
-  \newcommand{\skillsDBItemA}{Knowledges in SQL (MySQL).}
-  \newcommand{\skillsDBItemB}{Basics of NoSQL databases (MongoDB).}
-}{}
 
-\section{\faCode$\;$\textbf{\skillsTitle}}
+\section{\faCode$\;$\textbf{Compétences techniques}}
 \begin{cvcolumns}
-  \cvcolumn{\faCogs$\;$\skillsProg}{\skillsProgItemA\\\skillsProgItemB\\\skillsProgItemC}
-  \cvcolumn{\faTerminal$\;$\skillsSystem}{\skillsSystemItemA\\\skillsSystemItemB\\\skillsSystemItemC}
+  \cvcolumn{\faCogs$\;$Programmation}{Java SE, Java ME, Langage C/C++.\\Android \& Android Wear, iOS (Swift).\\Bases de Lisp/Scheme.}
+  \cvcolumn{\faTerminal$\;$Systèmes}{Linux (Debian, RHEL) et shell scripts.\\Virtualisation: VirtualBox, VMWare, KVM.\\Cloud: Windows Azure, IBM Bluemix, AWS.}
 \end{cvcolumns}
 
 \vspace{\cvColumnSpace}
 
 \begin{cvcolumns}
-  \cvcolumn{\faConnectdevelop$\;$\skillsIoT}{\skillsIoTItemA\\\skillsIoTItemB\\\skillsIoTItemC}
-  \cvcolumn{\faWrench$\;$\skillsTools}{\skillsToolsItemA\\\skillsToolsItemB\\\skillsToolsItemC}
+  \cvcolumn{\faConnectdevelop$\;$IoT}{Beacons (iBeacon \& Eddystone).\\Smartwatches sous Android Wear.\\Raspberry Pi et capteurs de prototypage.}
+  \cvcolumn{\faWrench$\;$Outils \& méthodologies}{Eclipse, Emacs, Visual Studio, XCode.\\Git, Subversion, Maven, Makefile.\\Asana, Slack, méthode Scrum, TDD.}
 \end{cvcolumns}
 
 \vspace{\cvColumnSpace}
 
 \begin{cvcolumns}
-  \cvcolumn{\faGlobe$\;$\skillsWeb}{\skillsWebIItemA\\\skillsWebIItemB\\\skillsWebIItemC}
-  \cvcolumn{\faDesktop$\;$\skillsSoft}{\skillsSoftItemA\\\skillsSoftItemB\\\skillsSoftItemC}
+  \cvcolumn{\faGlobe$\;$Développement Web}{Java: Spark, Freemarker, Hibernate.\\Bases de HTML5, CSS et Javascript.\\Notions de NodeJS.}
+  \cvcolumn{\faDesktop$\;$Logiciels \& bureautique}{Gimp, Microsoft Visio, Microsoft Project.\\\LaTeX/Beamer, Microsoft Office, OpenOffice.\\Environnement Linux, Windows et Mac OS.}
 \end{cvcolumns}
 
 \vspace{\cvColumnSpace}
 
 \begin{cvcolumns}
-  \cvcolumn{\faDatabase$\;$\skillsDB}{\skillsDBItemA\\\skillsDBItemB}
+  \cvcolumn{\faDatabase$\;$Base de données}{Connaissances en BDD SQL (MySQL).\\Notions en BDD NoSQL (MongoDB).}
 \end{cvcolumns}
 
 \vspace{\cvColumnSpaceEnd}

@@ -1,43 +1,7 @@
 %% Education section.
-\ifthenelse{\equal{\cvLanguageVersion}{french}}{
-  \newcommand{\educationTitle}{Parcours scolaire \& diplômes}
-  \newcommand{\educationEpitechCycle}{Cycle Master}
-  \newcommand{\educationEpitechLocation}{Paris (94)}
-  \newcommand{\educationEpitechDesc}{Seconde année de Master. Diplôme d'Expert en Technologies de l'Information.}
-  \newcommand{\educationGriffithCycle}{Cycle Master}
-  \newcommand{\educationGriffithLocation}{Dublin (Irlande)}
-  \newcommand{\educationGriffithDesc}{Première année de Master en Computing option Business et Management.}
-  \newcommand{\educationEpitechCycleB}{Cycle Bachelor}
-  \newcommand{\educationEpitechLocationB}{Toulouse (31)}
-  \newcommand{\educationEpitechDescB}{Entrée directe en seconde année à Epitech (Tek2ED).}
-  \newcommand{\educationEISTICycle}{Classes préparatoires Maths Sup/Spé}
-  \newcommand{\educationEISTILocation}{Pau (64)}
-  \newcommand{\educationEISTIDesc}{Obtention par équivalence d'une L1 Maths/Info.}
-  \newcommand{\educationVauvenarguesCycle}{Baccalauréat Scientifique}
-  \newcommand{\educationVauvenarguesLocation}{Aix-en-Provence (13)}
-  \newcommand{\educationVauvenarguesDesc}{Obtention du Bac S options Mathématiques et Sciences de l'Ingénieur (SI).}
-}{}
-\ifthenelse{\equal{\cvLanguageVersion}{english}}{
-  \newcommand{\educationTitle}{Education \& diplomas}
-  \newcommand{\educationEpitechCycle}{Master cycle}
-  \newcommand{\educationEpitechLocation}{Paris (France)}
-  \newcommand{\educationEpitechDesc}{Second year of Master in Computing and Information Technologies.}
-  \newcommand{\educationGriffithCycle}{Master cycle}
-  \newcommand{\educationGriffithLocation}{Dublin (Ireland)}
-  \newcommand{\educationGriffithDesc}{First year of Master in Computing with Business \& Management options.}
-  \newcommand{\educationEpitechCycleB}{Bachelor}
-  \newcommand{\educationEpitechLocationB}{Toulouse (France)}
-  \newcommand{\educationEpitechDescB}{Direct entry in second year at Epitech.}
-  \newcommand{\educationEISTICycle}{Intensive foundation degree}
-  \newcommand{\educationEISTILocation}{Pau (France)}
-  \newcommand{\educationEISTIDesc}{First year of Bachelor's degree in Maths and Computing.}
-  \newcommand{\educationVauvenarguesCycle}{Baccalaureate S}
-  \newcommand{\educationVauvenarguesLocation}{Aix-en-Provence (France)}
-  \newcommand{\educationVauvenarguesDesc}{Baccalaureate S (Sciences) with Maths \& Engineering option.}
-}{}
 
-\section{\faGraduationCap$\;$\textbf{\educationTitle}}
-\cventry{2014 $\rightharpoonup$ 2015}{\href{http://www.epitech.eu/paris/ecole-informatique-paris.aspx}{Epitech Paris}}{\educationEpitechCycle}{\educationEpitechLocation}{}{%
+\section{\faGraduationCap$\;$\textbf{Parcours scolaire \& diplômes}}
+\cventry{2014 $\rightharpoonup$ 2015}{\href{http://www.epitech.eu/paris/ecole-informatique-paris.aspx}{Epitech Paris}}{Cycle Master}{Paris (94)}{}{%
   \ifthenelse{\equal{\displayImagesEducation}{yes}}{
     \vspace{-0.2cm}
     \begin{wrapfigure}{R}{0.2\textwidth}%
@@ -46,11 +10,11 @@
       \href{http://www.epitech.eu/paris/ecole-informatique-paris.aspx}{\includegraphics[width=0.18\textwidth]{./img/epitech}}%
     \end{wrapfigure}
   }{}%
-  \educationEpitechDesc}
+  Seconde année de Master. Diplôme d'Expert en Technologies de l'Information.}
 
 \vspace{\cvEntrySpace}
 
-\cventry{2013 $\rightharpoonup$ 2014}{\href{http://www.gcd.ie}{Griffith College Dublin}}{\educationGriffithCycle}{\educationGriffithCycle}{}{%
+\cventry{2013 $\rightharpoonup$ 2014}{\href{http://www.gcd.ie}{Griffith College Dublin}}{Cycle Master}{Dublin (Irlande)}{}{%
   \ifthenelse{\equal{\displayImagesEducation}{yes}}{
     \vspace{-0.2cm}
     \begin{wrapfigure}{R}{0.2\textwidth}%
@@ -59,15 +23,15 @@
       \href{http://www.gcd.ie}{\includegraphics[width=0.18\textwidth]{./img/griffith}}%
     \end{wrapfigure}%
   }{}
-  \educationGriffithDesc}
+  Première année de Master en Computing option Business et Management.}
 
 \vspace{\cvEntrySpace}
 
-\cventry{2011 $\rightharpoonup$ 2013}{\href{http://www.epitech.eu/toulouse/ecole-informatique-toulouse.aspx}{Epitech Toulouse}}{\educationEpitechCycleB}{\educationEpitechLocationB}{}{\educationEpitechDescB}
+\cventry{2011 $\rightharpoonup$ 2013}{\href{http://www.epitech.eu/toulouse/ecole-informatique-toulouse.aspx}{Epitech Toulouse}}{Cycle Bachelor}{Toulouse (31)}{}{Entrée directe en seconde année à Epitech (Tek2ED).}
 
 \vspace{\cvEntrySpace}
 
-\cventry{2008 $\rightharpoonup$ 2011}{\href{http://www.eisti.fr/}{EISTI}}{\educationEISTICycle}{\educationEISTILocation}{}{%
+\cventry{2008 $\rightharpoonup$ 2011}{\href{http://www.eisti.fr/}{EISTI}}{Classes préparatoires Maths Sup/Spé}{Pau (64)}{}{%
   \ifthenelse{\equal{\displayImagesEducation}{yes}}{
     \vspace{-0.2cm}
     \begin{wrapfigure}{R}{0.2\textwidth}%
@@ -76,10 +40,10 @@
       \href{http://www.eisti.fr/}{\includegraphics[width=0.1\textwidth]{./img/eisti}}%
     \end{wrapfigure}%
   }{}
-  \educationEISTIDesc}
+  Obtention par équivalence d'une L1 Maths/Info.}
 
 \vspace{\cvEntrySpace}
 
-\cventry{2008}{\href{http://www.lyc-vauvenargues.ac-aix-marseille.fr/spip-lyc-lp/}{Lycée Vauvenargues}}{\educationVauvenarguesCycle}{\educationVauvenarguesLocation}{}{\educationVauvenarguesDesc}
+\cventry{2008}{\href{http://www.lyc-vauvenargues.ac-aix-marseille.fr/spip-lyc-lp/}{Lycée Vauvenargues}}{Baccalauréat Scientifique}{Aix-en-Provence (13)}{}{Obtention du Bac S options Mathématiques et Sciences de l'Ingénieur (SI).}
 
 \vspace{\cvSectionSpace}
