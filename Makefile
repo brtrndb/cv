@@ -7,34 +7,20 @@ CV_SRC	= $(CV_NAME).tex
 CV_PDF	= $(CV_SRC:.tex=.pdf)
 
 DIR_SRC	= ./tex/
-SUB_SRC	= $(DIR_SRC)/Personal.tex \
-	  $(DIR_SRC)/Education.tex \
-	  $(DIR_SRC)/Experiences.tex \
-	  $(DIR_SRC)/Hobbies.tex \
-	  $(DIR_SRC)/Languages.tex \
-	  $(DIR_SRC)/Projects.tex \
-	  $(DIR_SRC)/Skills.tex
-
 DIR_IMG	= ./img/
-IMG	= $(DIR_IMG)/novacom.eps \
-	  $(DIR_IMG)/thales.eps \
-	  $(DIR_IMG)/sii.eps \
-	  $(DIR_IMG)/visian.eps \
-	  $(DIR_IMG)/epitech.eps \
-	  $(DIR_IMG)/griffith.eps \
-	  $(DIR_IMG)/eisti.eps
+SUB_SRC	= $(wildcard $(DIR_SRC)/*.tex)
+IMG	= $(wildcard $(DIR_IMG)/*.eps)
 
 # Compile with lualatex.
 all:	$(CV_PDF)
 
 $(CV_PDF):	$(CV_SRC) $(SUB_SRC) $(IMG)
-	@echo "Compilation $(CV_SRC) into $(CV_PDF).";
+	@echo "Compiling $(CV_SRC) into $(CV_PDF).";
 	@lualatex $(CV_SRC);
 
 clean:
 	@echo -n "Deleting temporary files.";
-	@rm -rf $(CV_NAME).aux $(CV_NAME).log $(CV_NAME).out *~;
-	@rm -rf $(DIR_IMG)/*-eps-converted-to.pdf;
+	@rm -rf $(CV_NAME).aux $(CV_NAME).log $(CV_NAME).out *~ $(DIR_IMG)/*-eps-converted-to.pdf;
 	@echo " Done.";
 
 fclean:	clean
@@ -43,3 +29,5 @@ fclean:	clean
 	@echo " Done.";
 
 re:	fclean all
+
+.PHONY:	all clean fclean re
