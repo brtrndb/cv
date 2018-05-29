@@ -2,10 +2,10 @@
 
 My CV with LaTeX moderncv template.
 
-
 ## Getting started
 
 ### Prerequisities
+
 To compile you'll need to install some packages.
 
 ```
@@ -13,6 +13,7 @@ sudo apt-get install texlive-luatex texlive-fonts-extra texlive-latex-extra
 ```
 
 ### Compile
+
 The easiest way is to simply run the Makefile.
 
 ```
