@@ -20,7 +20,7 @@ $(CV_PDF):	$(CV_SRC) $(SUB_SRC) $(IMG)
 
 clean:
 	@echo -n "Deleting temporary files.";
-	@rm -rf $(CV_NAME).aux $(CV_NAME).log $(CV_NAME).out *~ $(DIR_IMG)/*-eps-converted-to.pdf;
+	@rm -rf $(CV_NAME).aux $(CV_NAME).log $(CV_NAME).out $(CV_NAME).bbl $(CV_NAME).blg $(CV_NAME).fls $(CV_NAME).fdb_latexmk $(CV_NAME).synctex.gz *~ $(DIR_IMG)/*-eps-converted-to.pdf;
 	@echo " Done.";
 
 fclean:	clean
