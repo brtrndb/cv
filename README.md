@@ -2,22 +2,24 @@
 
 My CV with LaTeX moderncv template.
 
-## Getting started
+## Installation
 
-### Prerequisities
-
-To compile you'll need to install some packages.
+First, clone the repository.
 
 ```
-sudo apt-get install texlive-luatex texlive-fonts-extra texlive-latex-extra
+$ git clone https://github.com/brtrndb/moderncv.git
 ```
 
-### Compile
-
-The easiest way is to simply run the Makefile.
+Then install all LaTeX dependencies.
 
 ```
-make
+$ sudo apt-get install texlive-luatex texlive-font-utils texlive-fonts-extra texlive-latex-extra texlive-lang-french
+```
+
+Finally, make it.
+
+```
+$ make
 ```
 
 ## cv.sh
