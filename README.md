@@ -41,3 +41,9 @@ And most important, it was fun ;)
 ### Infos
 
 When the script runs, it modifies the file `BertrandBoyer.tex`. When the script ends, the `.tex` is restorated to its default state.
+
+## Notes
+
+## License
+
+See [LICENSE.md](./LICENSE.md)
