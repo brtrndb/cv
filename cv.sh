@@ -1,204 +1,221 @@
-#!/bin/bash
-# Generate different versions of moderncv CV.
+#!/bin/sh
+# Bertrand B.
 
-# Files and folders options.
-MODERNCV=BertrandBoyer
-CVTEX=$MODERNCV.tex
-CVPDF=$MODERNCV.pdf
-CVFOLDER=""
-NULL=/dev/null
+# Script parameters.
+PARAM_OUTPUT_NAME="BertrandBoyer.pdf";
+PARAM_WITH_IMAGES="sections";
+PARAM_SECTION_PERSONAL=true;
+PARAM_SECTION_EDUCATION=true;
+PARAM_SECTION_EXPERIENCES=true;
+PARAM_SECTION_SKILLS=true;
+PARAM_SECTION_LANGUAGES=true;
+PARAM_SECTION_HOBBIES=true;
+PARAM_NO_RESET=true;
 
-# CV Options.
-CV_LANGUAGE=cvLanguageVersion
+# Makefile constants.
+MAKE_NAME="BertrandBoyer";
+MAKE_NAME_TEX=$MAKE_NAME.tex;
+MAKE_NAME_PDF=$MAKE_NAME.pdf;
 
-IMAGE_PROFILE=displayImagesProfile
-IMAGE_EDUCATION=displayImagesEducation
-IMAGE_EXPERIENCE=displayImagesExperiences
+NULL="/dev/null";
 
-SECTION_EDUCATION=displaySectionEducation
-SECTION_EXPERIENCES=displaySectionExperiences
-SECTION_SKILLS=displaySectionSkills
-SECTION_PROJECTS=displaySectionProjects
-SECTION_HOBBIES=displaySectionHobbies
-
-MISSION_VISIAN=displayMissionsVisian
-MISSION_SII=displayMissionsSII
-MISSION_THALES=displayMissionsThales
-MISSION_NOVACOM=displayMissionsNovacom
-
-SPACE_CVHEADER=cvHeaderSpace
-SPACE_SECTION=cvSectionSpace
-SPACE_CVENTRY=cvEntrySpace
-SPACE_MISSION_END=cvMissionSpaceEnd
-SPACE_CVCOLUM=cvColumnSpace
-SPACE_CVCOLUM_END=cvColumnSpaceEnd
-
-IMAGE_ALL="$IMAGE_EDUCATION $IMAGE_EXPERIENCE"
-MISSION_ALL="$MISSION_VISIAN $MISSION_SII $MISSION_THALES $MISSION_NOVACOM"
-SECTION_ALL="$SECTION_EDUCATION $SECTION_EXPERIENCES $SECTION_SKILLS $SECTION_PROJECTS $SECTION_HOBBIES"
-OPTIONS_ALL="$IMAGE_ALL $MISSION_ALL $SECTION_ALL"
-
-# Script command line options.
-CMD_NAME="$CVPDF"
-CMD_LANGUAGE="french"
-CMD_PROFILE="no"
-CMD_IMAGES="no"
-CMD_MISSIONS="no"
-CMD_PROJECTS="no"
-CMD_SPACE_HEADER="-0"
-CMD_SPACE_SECTION="-0"
-CMD_SPACE_ENTRY="-0"
-CMD_SPACE_MISSION_END="-0"
-CMD_SPACE_COLUMN="-0.4"
-CMD_SPACE_COLUMN_END="-0"
-
-# Default values.
-DEF_LANGUAGE="french"
-DEF_PROFILE="no"
-DEF_IMAGES="no"
-DEF_MISSIONS="no"
-DEF_PROJECTS="no"
-DEF_SPACE_HEADER="-0"
-DEF_SPACE_SECTION="-0"
-DEF_SPACE_MISSION_END="+0"
-DEF_SPACE_ENTRY="+0"
-DEF_SPACE_COLUMN="-0.4"
-DEF_SPACE_COLUMN_END="-0"
-
-# Functions.
-set_language(){
-    sed -i 's/'"$CV_LANGUAGE"'}{\(french\|english\)/'"$CV_LANGUAGE"'}{'"$1"'/g' $CVTEX;
+usage() {
+    echo "Usage: ./$(basename $0)";
+    echo "-o, --output:  Output file name.";
+    echo "-i, --images:  Set images. Options: all, profile, education, experiences, sections.";
+    echo "--personal:    Use/Don't use the Personal Informations section. Default: $PARAM_SECTION_PERSONAL.";
+    echo "--education:   Use/Don't use the Education section. Default: $PARAM_SECTION_EDUCATION.";
+    echo "--experiences: Use/Don't use the Experiences section. Default: $PARAM_SECTION_EXPERIENCES.";
+    echo "--skills:      Use/Don't use the Skills section. Default: $PARAM_SECTION_SKILLS.";
+    echo "--languages:   Use/Don't use the Language section. Default: $PARAM_SECTION_LANGUAGES.";
+    echo "--hobbies:     Use/Don't use the Hobbies section. Default: $PARAM_SECTION_HOBBIES.";
+    echo "--no-reset:    Use/Don't reset '$MAKE_NAME_TEX' to its previous state after generating PDF.";
+    echo "-h, --help:    Display usage.";
 }
 
-set_attribute(){
-    sed -i '0,/'"$1"'}{\(yes\|no\)/s//'"$1"'}{'"$2"'/g' $CVTEX;
+configure_param_output() {
+    PARAM_OUTPUT_NAME=$2;
+    EXTENSION=${PARAM_OUTPUT_NAME##*.};
+    if [ "$EXTENSION" = "$PARAM_OUTPUT_NAME" ]; then
+	PARAM_OUTPUT_NAME=$PARAM_OUTPUT_NAME.pdf
+    fi
 }
 
-set_space(){
-    sed -i 's/'"$1"'}{[+-]*[0-9]*\.*[0-9]*cm}/'"$1"'}{'"$2"'cm}/g' $CVTEX;
+configure_param_images() {
+    if [ "$2" = "all" ] \
+	   || [ "$2" = "profile" ] \
+	   || [ "$2" = "education" ] \
+	   || [ "$2" = "experiences" ] \
+	   || [ "$2" = "sections" ] \
+	   || [ "$2" = "none" ]; then
+	PARAM_WITH_IMAGES=$2;
+    else
+	echo "Unknown option $2 for $1. Ignored.";
+    fi
 }
 
-set_images(){
-    for img in $IMAGE_ALL;
-    do
-	set_attribute $img $1;
-    done
-}
+configure_param_sections() {
+    if [ "$2" != "yes" ] && [ "$2" != "y" ] \
+	   && [ "$2" != "true" ] && [ "$2" != "t" ] \
+	   && [ "$2" != "no" ] && [ "$2" != "n" ] \
+	   && [ "$2" != "false" ] && [ "$2" != "f" ]; then
+	echo "Unknown option $2 for $1. Ignored.";
+	return 0;
+    fi
 
-set_missions(){
-    for mission in $MISSION_ALL;
-    do
-	set_attribute $mission $1;
-    done
-}
-
-reset_options(){
-    set_language "$DEF_LANGUAGE";
-    set_attribute $IMAGE_PROFILE "$DEF_PROFILE";
-    set_images "$DEF_IMAGES";
-    set_missions "$DEF_MISSIONS";
-    set_attribute $SECTION_PROJECTS "$DEF_PROJECTS";
-    set_space $SPACE_CVHEADER "$DEF_SPACE_HEADER";
-    set_space $SPACE_SECTION "$DEF_SPACE_SECTION";
-    set_space $SPACE_MISSION_END "$DEF_SPACE_MISSION_END";
-    set_space $SPACE_CVENTRY "$DEF_SPACE_ENTRY";
-    set_space $SPACE_CVCOLUM "$DEF_SPACE_COLUMN";
-    set_space $SPACE_CVCOLUM_END "$DEF_SPACE_COLUMN_END";
-}
-
-make_cv(){
-    make > $NULL 2>&1;
-    mv $CVPDF "$1" > $NULL 2>&1;
-}
-
-# Script.
-echo "Starting script.";
-
-while [ "$#" -gt "0" ];
-do
     case "$1" in
-	-n | --name)
-	    CMD_NAME="$2";
-	    shift 2;
+	--personal)
+	    PARAM_SECTION_PERSONAL=$2;
 	    ;;
-	-l | --language)
-	    CMD_LANGUAGE="$2";
-	    shift 2;
+	--education)
+	    PARAM_SECTION_EDUCATION=$2;
 	    ;;
-	-b | --bertrand)
-	    CMD_PROFILE="yes"
-	    CMD_SPACE_HEADER=$(echo $CMD_SPACE_HEADER - 0.5 | bc);
-	    shift 1;
+	--experiences)
+	    PARAM_SECTION_EXPERIENCES=$2;
 	    ;;
-	-i | --images)
-	    CMD_IMAGES="yes";
-	    CMD_SPACE_HEADER=$(echo $CMD_SPACE_HEADER - 0.3 | bc);
-	    CMD_SPACE_SECTION=$(echo $CMD_SPACE_SECTION - 0.2 | bc);
-	    shift 1;
+	--skills)
+	    PARAM_SECTION_SKILLS=$2;
 	    ;;
-	-m | --missions)
-	    CMD_MISSIONS="yes";
-	    CMD_SPACE_ENTRY=$(echo $CMD_SPACE_ENTRY + 0.1 | bc);
-	    CMD_SPACE_MISSION_END=$(echo $CMD_SPACE_MISSION_END + 0.1 | bc);
-	    shift 1;
+	--languages)
+	    PARAM_SECTION_LANGUAGES=$2;
 	    ;;
-	-p | --projects)
-	    CMD_PROJECTS="yes";
-	    shift 1;
+	--hobbies)
+	    PARAM_SECTION_HOBBIES=$2;
 	    ;;
-	-* | --*)
-	    echo "Wrong option: $1."
-	    exit 1;
+	* | -* | --*)
+	    echo "Unknown option: $1. Ignored.";
 	    ;;
     esac
-done
+}
 
-echo -n " > Language: $CMD_LANGUAGE."
-set_language "$CMD_LANGUAGE";
-echo " Done."
+configure() {
+    while [ "$#" -gt "0" ];
+    do
+	case "$1" in
+	    -o | --output)
+		configure_param_output $1 $2;
+		shift 2;
+		;;
+	    -i | --images)
+		configure_param_images $1 $2;
+		shift 2;
+		;;
+	    --personal | --education | --experiences | --skills | --languages | --hobbies)
+		configure_param_sections $1 $2;
+		shift 2;
+		;;
+	    --no-reset)
+		PARAM_NO_RESET=false;
+		shift 1;
+		;;
+	    -h | --help)
+		usage;
+		exit 0;
+		;;
+	    * | -* | --*)
+		echo "Unknown option: $1. Ignored.";
+		shift 1;
+		;;
+	esac
+    done
+}
 
-echo -n " > Profile image: $CMD_PROFILE.";
-set_attribute $IMAGE_PROFILE "$CMD_PROFILE";
-echo " Done.";
+set_attribute() {
+    KEY=$1;
+    VALUE=$2;
+    echo -n "Setting up '$KEY' to '$VALUE'...";
+    sed -i '0,/'"$KEY"'}{\(yes\|no\)/s//'"$KEY"'}{'"$VALUE"'/g' $MAKE_NAME_TEX;
+    echo " Done.";
+}
 
-echo -n " > Images: $CMD_IMAGES.";
-set_images "$CMD_IMAGES";
-echo " Done.";
+set_images() {
+    OPTION_IMAGE_PROFILE="displayImageProfile";
+    OPTION_IMAGE_EDUCATION="displayImageEducation";
+    OPTION_IMAGE_EXPERIENCES="displayImageExperiences";
+    OPTION_IMAGE_SECTION="$OPTION_IMAGE_EDUCATION $OPTION_IMAGE_EXPERIENCES";
+    OPTION_IMAGE_ALL="$OPTION_IMAGE_PROFILE $OPTION_IMAGE_SECTION";
 
-echo -n " > Header space: $CMD_SPACE_HEADER.";
-set_space $SPACE_CVHEADER "$CMD_SPACE_HEADER";
-echo " Done.";
+    KEYS_YES=$OPTION_IMAGE_SECTION;
+    KEYS_NO=$OPTION_IMAGE_PROFILE;
 
-echo -n " > Entry spaces: $CMD_SPACE_ENTRY.";
-set_space $SPACE_CVENTRY "$CMD_SPACE_ENTRY";
-echo " Done.";
+    if [ "$PARAM_WITH_IMAGES" = "all" ]; then
+	KEYS_YES=$OPTION_IMAGE_ALL;
+	KEYS_NO="";
+    elif [ "$PARAM_WITH_IMAGES" = "profile" ]; then
+	KEYS_YES=$OPTION_IMAGE_PROFILE;
+	KEYS_NO=$OPTION_IMAGE_SECTION;
+    elif [ "$PARAM_WITH_IMAGES" = "education" ]; then
+	KEYS_YES=$OPTION_IMAGE_EDUCATION;
+	KEYS_NO="$OPTION_IMAGE_PROFILE $OPTION_IMAGE_EXPERIENCES";
+    elif [ "$PARAM_WITH_IMAGES" = "experiences" ]; then
+	KEYS_YES=$OPTION_IMAGE_EXPERIENCES;
+	KEYS_NO="$OPTION_IMAGE_PROFILE $OPTION_IMAGE_EDUCATION";
+    elif [ "$PARAM_WITH_IMAGES" = "sections" ]; then
+	KEYS_YES=$OPTION_IMAGE_SECTION;
+	KEYS_NO=$OPTION_IMAGE_PROFILE;
+    elif [ "$PARAM_WITH_IMAGES" = "none" ]; then
+	KEYS_YES="";
+	KEYS_NO=$OPTION_IMAGE_ALL;
+    fi
 
-echo -n " > Section spaces: $CMD_SPACE_SECTION.";
-set_space $SPACE_SECTION "$CMD_SPACE_SECTION";
-echo " Done.";
+    for OPTION_IMAGE in $KEYS_YES; do
+	set_attribute $OPTION_IMAGE "yes";
+    done
+    for OPTION_IMAGE in $KEYS_NO; do
+	set_attribute $OPTION_IMAGE "no";
+    done
+}
 
-echo -n " > Column spaces: $CMD_SPACE_COLUMN.";
-set_space $SPACE_CVCOLUM "$CMD_SPACE_COLUMN";
-echo " Done.";
+set_sections() {
+    OPTION_SECTION_PERSONAL="displayPersonalInfos";
+    OPTION_SECTION_EDUCATION="displaySectionEducation";
+    OPTION_SECTION_EXPERIENCES="displaySectionExperiences";
+    OPTION_SECTION_SKILLS="displaySectionSkills";
+    OPTION_SECTION_LANGUAGES="displaySectionLanguages";
+    OPTION_SECTION_HOBBIES="displaySectionHobbies";
 
-echo -n " > Column end spaces: $CMD_SPACE_COLUMN_END.";
-set_space $SPACE_CVCOLUM_END "$CMD_SPACE_COLUMN_END";
-echo " Done.";
+    if [ "$PARAM_SECTION_PERSONAL" = "true" ]; then
+	set_attribute $OPTION_SECTION_PERSONAL "yes"
+    fi
+    if [ "$PARAM_SECTION_EDUCATION" = "true" ]; then
+	set_attribute $OPTION_SECTION_EDUCATION "yes"
+    fi
+    if [ "$PARAM_SECTION_EXPERIENCES" = "true" ]; then
+	set_attribute $OPTION_SECTION_EXPERIENCES "yes"
+    fi
+    if [ "$PARAM_SECTION_SKILLS" = "true" ]; then
+	set_attribute $OPTION_SECTION_SKILLS "yes"
+    fi
+    if [ "$PARAM_SECTION_LANGUAGES" = "true" ]; then
+	set_attribute $OPTION_SECTION_LANGUAGES "yes"
+    fi
+    if [ "$PARAM_SECTION_HOBBIES" = "true" ]; then
+	set_attribute $OPTION_SECTION_HOBBIES "yes"
+    fi
+}
 
-echo -n " > Experiences missions: $CMD_MISSIONS.";
-set_missions $CMD_MISSIONS;
-echo " Done.";
+set_all() {
+    set_images;
+}
 
-echo -n " > Projects section: $CMD_PROJECTS.";
-set_attribute $SECTION_PROJECTS "$CMD_PROJECTS";
-echo " Done.";
+reset_all() {
+    if [ "$PARAM_NO_RESET" = "true" ]; then
+	git checkout $MAKE_NAME_TEX;
+    fi
+}
 
-echo -n " > Generating $CMD_NAME...";
-make_cv "$CMD_NAME";
-echo " Done.";
+do_make() {
+    echo -n "Generating $PARAM_OUTPUT_NAME...";
+    make > $NULL 2>&1;
+    mv $MAKE_NAME_PDF $PARAM_OUTPUT_NAME > $NULL 2>&1;
+    echo " Done.";
+}
 
-echo -n " > Reset values.";
-reset_options;
-echo " Done.";
+run() {
+    configure $*;
+    set_all;
+    do_make;
+    reset_all;
+}
 
-echo "Finished.";
+run $*;
