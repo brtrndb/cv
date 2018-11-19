@@ -21,15 +21,15 @@ NULL="/dev/null";
 
 usage() {
     echo "Usage: ./$(basename $0)";
-    echo "-o, --output:  Output file name.";
-    echo "-i, --images:  Set images. Options: all, profile, education, experiences, sections.";
+    echo "-o, --output:  Output file name. Default: $PARAM_OUTPUT_NAME.";
+    echo "-i, --images:  Set images. Options: all, profile, education, experiences, sections. Default: $PARAM_WITH_IMAGES.";
     echo "--personal:    Use/Don't use the Personal Informations section. Default: $PARAM_SECTION_PERSONAL.";
     echo "--education:   Use/Don't use the Education section. Default: $PARAM_SECTION_EDUCATION.";
     echo "--experiences: Use/Don't use the Experiences section. Default: $PARAM_SECTION_EXPERIENCES.";
     echo "--skills:      Use/Don't use the Skills section. Default: $PARAM_SECTION_SKILLS.";
     echo "--languages:   Use/Don't use the Language section. Default: $PARAM_SECTION_LANGUAGES.";
     echo "--hobbies:     Use/Don't use the Hobbies section. Default: $PARAM_SECTION_HOBBIES.";
-    echo "--no-reset:    Use/Don't reset '$MAKE_NAME_TEX' to its previous state after generating PDF.";
+    echo "--no-reset:    After generating $PARAM_OUTPUT_NAME, don't reset '$MAKE_NAME_TEX' to its previous git state.";
     echo "-h, --help:    Display usage.";
 }
 
