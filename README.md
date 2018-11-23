@@ -26,25 +26,22 @@ Finally, make it.
 $ make
 ```
 
-## cv.sh
+Or, you can use the `cv.sh` script.
 
-This script allows to generates different versions of my CV.
-I admit it. It is not really useful to have a script.
-But now I don't have to alway modify all `.tex` files.
-And most important, it was fun ;)
-
-### Options
-
-* `-n` or `--name`: Set the name of the output pdf.
-* `-l` or `--language`: Set the language of the CV (French or English). English translation is not yet complete.
-* `-b` or `--bertrand`: Display header of the CV with name and contact infos.
-* `-i` or `--images`: Display images in the CV (school and company logos).
-* `-m` or `--missions`: Display missions section.
-* `-p` or `--projects`: Display projects section.
-
-### Infos
-
-When the script runs, it modifies the file `BertrandBoyer.tex`. When the script ends, the `.tex` is restorated to its default state.
+```sh
+$ ./cv.sh
+Usage: ./cv.sh
+-o, --output:  Output file name. Default: BertrandBoyer.pdf.
+-i, --images:  Set images. Options: all, profile, education, experiences, sections. Default: sections.
+--personal:    Use/Don't use the Personal Informations section. Default: true.
+--education:   Use/Don't use the Education section. Default: true.
+--experiences: Use/Don't use the Experiences section. Default: true.
+--skills:      Use/Don't use the Skills section. Default: true.
+--languages:   Use/Don't use the Language section. Default: true.
+--hobbies:     Use/Don't use the Hobbies section. Default: true.
+--no-reset:    After generating BertrandBoyer.pdf, don't reset 'BertrandBoyer.tex' to its previous git state.
+-h, --help:    Display usage.
+```
 
 ## Notes
 
