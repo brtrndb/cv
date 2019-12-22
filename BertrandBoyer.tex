@@ -64,9 +64,8 @@
 
 \begin{document}
 \ifthenelse{\equal{\displaySectionPersonalInfos}{yes}}{\makecvtitle\vspace{\cvHeaderSpace}}{}  %% Header.
+\ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}\newpage}{}  %% Experiences section.
 \ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}{}              %% Education section.
-\ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}}{}          %% Experiences section.
-\ifthenelse{\equal{\displaySectionEducation}{yes}}{\ifthenelse{\equal{\displaySectionExperiences}{yes}}{\newpage}{}}{}
 \ifthenelse{\equal{\displaySectionSkills}{yes}}{\input{./tex/Skills.tex}}{}                    %% Skills section.
 \ifthenelse{\equal{\displaySectionLanguages}{yes}}{\input{./tex/Languages.tex}}{}              %% Languages section.
 \ifthenelse{\equal{\displaySectionHobbies}{yes}}{\input{./tex/Hobbies.tex}}{}                  %% Hobbies section.
