@@ -5,7 +5,7 @@
 NAME	= BertrandBoyer
 TEX	= $(NAME).tex
 TEX_SECTIONS	= $(wildcard ./tex/*.tex)
-EPS	= $(wildcard ./img/*.eps)
+EPS	= $(wildcard ./img/*/*.eps)
 EPS_CONVERTED	= $(EPS:.eps=-eps-converted-to.pdf)
 PDF	= $(TEX:.tex=.pdf)
 
