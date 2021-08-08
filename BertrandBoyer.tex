@@ -9,6 +9,7 @@
 \usepackage{fontawesome}                        %% Using awesome font for icons.
 \usepackage{wrapfig}                            %% Using floating images.
 \usepackage{ifthen}                             %% Using conditions.
+\usepackage{xcolor}
 
 %% ModernCV document style.
 \moderncvstyle{classic}                         %% Styles: classic, casual, oldstyle, banking, fancy.
@@ -59,14 +60,14 @@
 \newcommand{\displaySectionLanguages}{yes}      % Display the Language section.
 \newcommand{\displaySectionHobbies}{yes}        % Display the Hobbies section.
 
-%% Personnal informations.
+%% Personnal information.
 \input{./tex/Personal.tex}
 
 \begin{document}
-\ifthenelse{\equal{\displaySectionPersonalInfos}{yes}}{\makecvtitle\vspace{\cvHeaderSpace}}{}  %% Header.
-\ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}\newpage}{}  %% Experiences section.
-\ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}{}              %% Education section.
-\ifthenelse{\equal{\displaySectionSkills}{yes}}{\input{./tex/Skills.tex}}{}                    %% Skills section.
-\ifthenelse{\equal{\displaySectionLanguages}{yes}}{\input{./tex/Languages.tex}}{}              %% Languages section.
-\ifthenelse{\equal{\displaySectionHobbies}{yes}}{\input{./tex/Hobbies.tex}}{}                  %% Hobbies section.
+    \ifthenelse{\equal{\displaySectionPersonalInfos}{yes}}{\makecvtitle\vspace{\cvHeaderSpace}}{}  %% Header.
+    \ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}\newpage}{}  %% Experiences section.
+    \ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}{}              %% Education section.
+    \ifthenelse{\equal{\displaySectionSkills}{yes}}{\input{./tex/Skills.tex}}{}                    %% Skills section.
+    \ifthenelse{\equal{\displaySectionLanguages}{yes}}{\input{./tex/Languages.tex}}{}              %% Languages section.
+    \ifthenelse{\equal{\displaySectionHobbies}{yes}}{\input{./tex/Hobbies.tex}}{}                  %% Hobbies section.
 \end{document}
