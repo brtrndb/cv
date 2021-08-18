@@ -1,10 +1,13 @@
 %% Experiences section.
 
+%% Lengths.
+\newlength{\cvExperienceSpace}              %% Vertical space between each experience entry.
+\setlength{\cvExperienceSpace}{+0.1 cm}
 %% Macros.
 \newcommand{\jobdate}[2]{#1 $\rightharpoonup$\\#2}
 \newcommand{\joblogo}[4]{%
     \ifthenelse{\equal{\displayImageExperiences}{yes}}{
-        \vspace{-0.2cm}
+        \vspace{-0.2 cm}
         \begin{wrapfigure}{R}{0.2\textwidth}%
             \vspace{#1}
             \centering%
@@ -13,75 +16,98 @@
         \end{wrapfigure}%
     }{}
 }
-\newcommand{\jobstack}[1]{Stack technique: #1.\newline}
-\newcommand{\jobdescription}[1]{#1}
-%% Word aliases.
-\newcommand{\RD}{R\&D}
-%% URL aliases.
-\newcommand{\metroscopeURL}{https://www.metroscope.tech}
-\newcommand{\wemanityURL}{https://www.wemanity.com}
-\newcommand{\dhatimURL}{https://www.dhatim.com}
-\newcommand{\visianURL}{https://www.visian.fr}
-\newcommand{\siiURL}{https://www.groupe-sii.com/fr}
-\newcommand{\thalesURL}{https://www.thalesgroup.fr}
-\newcommand{\novacomURL}{https://www.novacom-services.com}
+\newcommand{\jobplace}[1]{\textcolor{modernBlue}{#1}}
+\newcommand{\jobstack}[1]{Stack technique: #1.}
+\newcommand{\jobdescription}[1]{#1\newline}
+\newcommand{\jobitem}[1]{\textcolor{modernBlue}{\hspace{1em}\faAngleRight} #1}
 %%
 
 
 \cvsection{\faBriefcase}{Expériences professionnelles}
 
-\cventry{\jobdate{Août 2019}{Maintenant}}{\href{\metroscopeURL}{Metroscope}}{FullStack Java/React Developer}{Paris (17ème)}{}{%
-    \joblogo{-0.1cm}{+0.7cm}{\metroscopeURL}{./img/experiences/metroscope}%
-    \jobstack{React, TypeScript, Java, Gradle, Docker}%
-    \jobdescription{Développeur fullstack dans la team dev de \href{\metroscopeURL}{Metroscope} (2 back, 2 front, 2 fullstack), un logiciel d'aide à l'analyse et la détection de défaillances. Division du backend (Java \& SpringBoot) en microservices. Mutualisation des configurations Gradle via l'écriture de plugins (Groovy), nettoyage des dépendances. Réécriture \textit{*from scratch*} du client React en TypeScript.}%
+\cventry{\jobdate{Août 2019}{Maintenant}}{\jobplace{\Metroscope}}{Full Stack Developer}{Paris}{}{%
+    \joblogo{-0.6 cm}{+0 cm}{\metroscopeURL}{./img/experiences/metroscope}%
+    \jobdescription{%
+        Développeur front puis back dans l'équipe produit de \Metroscope, un logiciel d'aide à l'analyse et la détection de défaillances sur les systèmes de production d'énergie.\\%
+        \jobitem{Réécriture \textit{*from scratch*} de l'application web en \React{} et \TypeScript.}\\%
+        \jobitem{Division du backend en microservices et dévelopement des nouveaux services.}%
+    }%
+    \jobstack{\Java, \Kotlin, \SpringBoot, \Gradle, \Docker, \React, \TypeScript}%
 }
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Mars 2018}{Juillet 2019}}{\href{\wemanityURL}{Wemanity}}{Agile Consultant, Lead Developer \RD}{Paris (10ème)}{}{%
-    \joblogo{-0.5cm}{+0cm}{\wemanityURL}{./img/experiences/wemanity}
-    \jobstack{React, ES6, Loopback, Python, Docker, OpenShift}
-    \jobdescription{Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \href{https://www.societegenerale.fr/}{Société Générale}. Idéation, développement et maintenance d'applications avec des robots \href{https://www.softbankrobotics.com/emea/en/robots/pepper}{Pepper} de \href{https://www.softbankrobotics.com/emea/en}{Softbank Robotics} pour des cas d'usage internes (évènements, animations, B2B). Développement de prototypes d’applications de data visualisation mêlant modélisation en 3D/VR et graphes de données métier complexes. Étude et développement de services cognitifs (\href{https://fr.wikipedia.org/wiki/Reconnaissance_optique_de_caractères}{OCR}, \href{https://fr.wikipedia.org/wiki/Compréhension_du_langage_naturel}{NLU} et \href{https://fr.wikipedia.org/wiki/Reconnaissance_automatique_de_la_parole}{STT}) à l'aide de solutions open source.}%
+\cventry{\jobdate{Mars 2018}{Juillet 2019}}{\jobplace{\Wemanity}}{Full Stack Lead Developer}{Paris}{}{%
+    \joblogo{-0.6 cm}{+0 cm}{\wemanityURL}{./img/experiences/wemanity}%
+    \jobdescription{%
+        Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \SG.\\%
+        \jobitem{Idéation, maintenance et création d'applications autour des robots \Pepper.}\\%
+        \jobitem{Développement d'un MVP de dataviz de graphes de données complexes en 3D.}\\%
+        \jobitem{Étude et prototypage de services cognitifs (\OCR, \NLU, \STT{} et \Traduction).}%
+    }%
+    \jobstack{\React, \MaterialUI, \Loopback, \Python, \Docker, \OpenShift}%
 }
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Octobre 2016}{Février 2018}}{\href{\dhatimURL}{Dhatim}}{Développeur Java \RD}{Paris (12ème)}{}{%
-    \joblogo{-0.3cm}{+0cm}{\dhatimURL}{./img/experiences/dhatim}
-    \jobstack{Java 8 Core, Dropwizard, PostgreSQL, Docker, Git, Jenkins}
-    \jobdescription{Développeur backend rattaché à l'équipe de \href{https://pay.conciliator.ai/}{\textit{Conciliator For Pay}}, solution en SaaS de contrôle DSN (Déclaration Sociale Nominative) pour les entreprises. Équipe composée de 5 personnes (2 front, 2 back, 1 PO) organisée en méthode Scrum.}%
+\cventry{\jobdate{Octobre 2016}{Février 2018}}{\jobplace{\Dhatim}}{Java Developer}{Paris}{}{%
+    \joblogo{-0.3 cm}{+0 cm}{\dhatimURL}{./img/experiences/dhatim}%
+    \jobdescription{%
+        Développeur backend dans l'équipe de \textit{\Conciliator}, solution en SaaS de contrôle DSN (Déclaration Sociale Nominative) pour les entreprises.\\%
+        \jobitem{Compréhension des besoins, développement des fonctionnalités et Scrum Master.}\\%
+        \jobitem{Prototypage d'un chatbot pour du support client simple.}%
+    }%
+    \jobstack{\Java, \Dropwizard, \TestNG, \Postgres, \Docker, \Git, \Jenkins}%
 }
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Mars 2015}{Octobre 2016}}{\href{\visianURL}{Visian}}{Lead Developer \& Responsable Fablab}{Nanterre (92)}{}{%
-    \joblogo{-0.4cm}{+0cm}{\visianURL}{./img/experiences/visian}
-    \jobstack{C, Java 8 Core, Android, Swift, Python, Git, Microsoft Azure}
-    \jobdescription{Lead Dev \& Tech Lead chez \href{\visianURL}{Visian}, la Business Unit \RD{} Internet of Things (IoT) intégrée au groupe \href{https://www.neurones-it.com}{Neurones IT}. En charge de l'équipe des développeurs (hardware \& software). Réalisation et développement de PoC (Proof of Concept) mêlant IoT (beacons, smartwatch, Raspberry Pi, Arduino, NFC...) et cloud pour la remontée et le traitement des données.}%
+\cventry{\jobdate{Mars 2015}{Octobre 2016}}{\jobplace{\Visian}}{\IoT{} Lead Developer}{Nanterre}{}{%
+    \joblogo{-0 cm}{+0 cm}{\visianURL}{./img/experiences/visian}%
+    \jobdescription{%
+        Développeur \RD{} puis Lead Developer chez \Visian, la filiale \IoT{} de \NeuronesIT.\\%
+        \jobitem{En charge des équipes techniques hardware \& software.}\\%
+        \jobitem{Idéation et prototypage mêlant divers \IoT{}, cloud et data visualisation.}%
+    }%
+    \jobstack{\LanguageCCPlusPlus, \Java, \Android, \Swift, \Python, \Git, \MicrosoftAzure}%
 }
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Septembre 2014}{Mars 2015}}{\href{\siiURL}{Groupe SII}}{Assistant Responsable Innovation}{Paris (16ème)}{}{%
-    \joblogo{-0.5cm}{+0cm}{\siiURL}{./img/experiences/sii}
-    \jobstack{C, Java 8 ME for IoT, AMQP, XMPP}
-    \jobdescription{Étude et exploration des drones open source, prototypage d'un mini drone quadrirotor avec l'intégration d'une caméra et d'un radio-transmetteur vidéo (\href{https://www.bitcraze.se/}{Crazyflie Project}). Mise en place d’un prototype d'objet connecté à partir d’un \href{https://raspberrypicomputer.com/}{Raspberry Pi}, d'interrupteurs, diodes et capteurs (température, pression, GPS).}%
+\cventry{\jobdate{Septembre 2014}{Mars 2015}}{\jobplace{\SII}}{\IoT{} Developer}{Paris}{}{%
+    \joblogo{-1.1 cm}{+0 cm}{\siiURL}{./img/experiences/sii}%
+    \jobdescription{%
+        \jobitem{Étude et montage d'un \href{\bitcrazeURL}{drone quadrirotor de vidéo transmission}.}\\%
+        \jobitem{Prototypage \IoT{} incluant un \RaspberryPi, interrupteurs, diodes et capteurs.}%
+    }%
+    \jobstack{\LanguageC, \JavaME, \AMQP, \XMPP}%
 }
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Avril 2013}{Août 2013}}{\href{\thalesURL}{Thales Services}}{Stagiaire Administrateur Système}{Ramonville (31)}{}{%
-    \joblogo{-0.1cm}{+0cm}{\thalesURL}{./img/experiences/thales}
-    \jobstack{OpenStack, Mirantis, Debian, RHEL, Bash}
-    \jobdescription{Responsable de l'étude, de l'installation et du déploiement d'\href{https://www.openstack.org}{OpenStack} dans un environnement de tests. Rédaction du dossier d’architecture matérielle, réalisation des scripts de déploiement automatique, tests et validations.}%
-}
+%\cventry{\jobdate{Avril 2013}{Août 2013}}{\jobplace{\Thales}}{DevOps}{Ramonville)}{}{%
+%    \joblogo{-0.4 cm}{+0 cm}{\thalesURL}{./img/experiences/thales}%
+%    \jobdescription{Étude, installation et déploiement d'\OpenStack{} dans un environnement de tests.}%
+%    \jobstack{\OpenStack, \Mirantis, \Debian, \RHEL, \Bash}%
+%}
+%
+%\vspace{\cvExperienceSpace}
+%
+%\cventry{\jobdate{Octobre 2012}{Avril 2013}}{\jobplace{\Novacom}}{Java Developer}{Ramonville}{}{%
+%    \joblogo{-1.1 cm}{+0 cm}{\novacomURL}{./img/experiences/novacom}%
+%    \jobdescription{Développement d'un ensemble de tests fonctionnels et de son jeu de données.}%
+%    \jobstack{\JavaEight, \JUnit, \Jenkins, \Git}%
+%}
 
-\vspace{\cvExperienceSpace}
-
-\cventry{\jobdate{Octobre 2012}{Avril 2013}}{\href{\novacomURL}{Novacom Services}}{Stagiaire Développeur}{Ramonville (31)}{}{%
-    \joblogo{-0.8cm}{+0cm}{\novacomURL}{./img/experiences/novacom}
-    \jobstack{Java 8, JUnit, Jenkins, Git}
-    \jobdescription{Développement d'un jeu de données et d'un ensemble de tests unitaires et fonctionnels sur la couche service des applications.}%
-}
-
-\vspace{\cvSectionSpace}
+\begin{minipage}[t]{0.42\linewidth}
+    \cventry{\jobdate{Octobre 2012}{Août 2013}}{\jobplace{\Novacom}}{Java Developer}{Ramonville}{}{%
+        \jobdescription{Développement d'un jeu de données et d'un\\ensemble de tests unitaires et fonctionnels.}%
+        \jobstack{\JavaEight, \JUnit, \Jenkins, \Git}%
+    }
+\end{minipage}
+\begin{minipage}[t]{0.42\linewidth}
+    \cventry{}{\jobplace{\Thales}}{DevOps}{Ramonville}{}{%
+        \jobdescription{Étude, installation et déploiement d'\OpenStack\\dans un environnement de tests.}%
+        \jobstack{\OpenStack, \Debian, \Bash}%
+    }
+\end{minipage}
