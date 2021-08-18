@@ -1,27 +1,17 @@
 %% Hobbies section.
 
-\cvsection{\faUserPlus}{Autres activités}
+%% Macros.
+\newcommand{\hobbyitem}[1]{\textcolor{modernBlue}{\faAngleRight} #1}
+%%
 
+
+\cvsection{\faFilm}{Centres d'intérêts}
 \begin{cvcolumns}
-    \cvcolumn{\faGroup$\;$Associatif}{%
-        \begin{itemize}%
-            \renewcommand{\labelitemi}{\textcolor{modernBlue}{\circ}}
-            \item Scoutisme (en tant que scout et chef).
-            \item Membre du Lab Robotique à Epitech.
-            \item Photographe du BDE de l'EISTI.
-            \item Responsable \textit{Cinéma \& Séries} à \href{http://air-eisti.fr}{Air-EISTI}.
-        \end{itemize}}
-
-    \cvcolumn{\faFilm$\;$Loisirs \& centres d'intérêts}{%
-        \begin{itemize}%
-            \renewcommand{\labelitemi}{\textcolor{modernBlue}{\circ}}
-            \item Photographie, musique, cinéma.
-            \item Lecture (thrillers, SF, fantasy, comics).
-            \item Lego, robotique, gaming, open source.
-            \item Urban fitting.
-        \end{itemize}}
+    \hspace{-2 cm}
+    \cvcolumn{}{%
+        \hobbyitem{Photographie, musique, cinéma.}\\
+        \hobbyitem{Lecture (thrillers, SF, fantasy, comics).}\\
+        \hobbyitem{Lego, robotique, gaming, open source.}\\
+        \hobbyitem{Urban fitting.}
+    }
 \end{cvcolumns}
-
-\vspace{\cvColumnSpaceEnd}
-
-\vspace{\cvSectionSpace}
