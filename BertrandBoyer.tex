@@ -53,21 +53,15 @@
 \newcommand{\displayImageProfile}{no}           % Display the profile image.
 \newcommand{\displayImageEducation}{yes}        % Display the images in Education section.
 \newcommand{\displayImageExperiences}{yes}      % Display images in Experiences section.
-\newcommand{\displaySectionPersonalInfos}{yes}  % Display the header with personal infos.
-\newcommand{\displaySectionEducation}{yes}      % Display the Education section.
-\newcommand{\displaySectionExperiences}{yes}    % Display the Experiences section.
-\newcommand{\displaySectionSkills}{yes}         % Display the Skills section.
-\newcommand{\displaySectionLanguages}{yes}      % Display the Language section.
-\newcommand{\displaySectionHobbies}{yes}        % Display the Hobbies section.
 
 %% Personnal information.
 \input{./tex/Personal.tex}
 
 \begin{document}
-    \ifthenelse{\equal{\displaySectionPersonalInfos}{yes}}{\makecvtitle\vspace{\cvHeaderSpace}}{}  %% Header.
-    \ifthenelse{\equal{\displaySectionExperiences}{yes}}{\input{./tex/Experiences.tex}\newpage}{}  %% Experiences section.
-    \ifthenelse{\equal{\displaySectionEducation}{yes}}{\input{./tex/Education.tex}}{}              %% Education section.
-    \ifthenelse{\equal{\displaySectionSkills}{yes}}{\input{./tex/Skills.tex}}{}                    %% Skills section.
-    \ifthenelse{\equal{\displaySectionLanguages}{yes}}{\input{./tex/Languages.tex}}{}              %% Languages section.
-    \ifthenelse{\equal{\displaySectionHobbies}{yes}}{\input{./tex/Hobbies.tex}}{}                  %% Hobbies section.
+    \makecvtitle\vspace{\cvHeaderSpace}     %% Header.
+    \input{./tex/Experiences.tex}           %% Experiences section.
+    \input{./tex/Education.tex}             %% Education section.
+    \input{./tex/Skills.tex}                %% Skills section.
+    \input{./tex/Languages.tex}             %% Languages section.
+    \input{./tex/Hobbies.tex}               %% Hobbies section.
 \end{document}
