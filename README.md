@@ -1,6 +1,6 @@
 # moderncv
 
-My CV with LaTeX moderncv template.
+My CV with LaTeX [moderncv](https://github.com/moderncv/moderncv) template.
 
 ## Installation
 
