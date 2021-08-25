@@ -10,6 +10,7 @@
 \usepackage{wrapfig}                            %% Using floating images.
 \usepackage{ifthen}                             %% Using conditions.
 \usepackage{xcolor}
+\usepackage{textcomp}
 
 %% ModernCV document style.
 \moderncvstyle{classic}                         %% Styles: classic, casual, oldstyle, banking, fancy.
@@ -29,39 +30,41 @@
 \definecolor{modernRed}{rgb}{0.95,0.20,0.20}    % Red.
 
 %% Length.
-\setlength{\hintscolumnwidth}{+3cm}             %% Column width of cventry.
-\newlength{\cvHeaderSpace}                      %% Space between cv title and first section.
-\setlength{\cvHeaderSpace}{-0.0cm}              %% Default: -0.0cm.
+\setlength{\hintscolumnwidth}{+3.2 cm}          %% Column width of cventry.
 \newlength{\cvSectionSpace}                     %% Space between sections.
-\setlength{\cvSectionSpace}{-0.0cm}             %% Default: -0.0cm.
-\newlength{\cvColumnSpace}                      %% Space between cv columns.
-\setlength{\cvColumnSpace}{-0.0cm}              %% Default: -0.0cm.
-\newlength{\cvColumnSpaceEnd}                   %% Space at the end of columns.
-\setlength{\cvColumnSpaceEnd}{-0.0cm}           %% Default: -0.0cm.
+\setlength{\cvSectionSpace}{-0.1 cm}
 
 % Margin options.
-\geometry{top=1.5cm}                            %% Margin top.
-\geometry{bottom=1.5cm}                         %% Margin bottom.
-\geometry{left=1.5cm}                           %% Margin left.
-\geometry{right=1.5cm}                          %% Margin right.
+\geometry{top=0.7 cm}                           %% Margin top.
+\geometry{bottom=0.7 cm}                        %% Margin bottom.
+\geometry{left=1.5 cm}                          %% Margin left.
+\geometry{right=1.5 cm}                         %% Margin right.
 
 %% CV options.
 \newcommand{\displayImageProfile}{no}           % Display the profile image.
-\newcommand{\displayImageEducation}{yes}        % Display the images in Education section.
+\newcommand{\displayImageEducation}{no}         % Display the images in Education section.
 \newcommand{\displayImageExperiences}{yes}      % Display images in Experiences section.
 
 \newcommand{\cvsection}[2]{\section{#1$\;$\textbf{#2}}}
 
 \input{./tex/utils.tex}
 
-%% Personnal information.
-\input{./tex/Personal.tex}
+\input{./tex/Personal.tex}                      %% Personnal information.
 
 \begin{document}
-    \makecvtitle\vspace{\cvHeaderSpace}     %% Header.
-    \input{./tex/Experiences.tex}           %% Experiences section.
-    \input{./tex/Education.tex}             %% Education section.
-    \input{./tex/Skills.tex}                %% Skills section.
-    \input{./tex/Languages.tex}             %% Languages section.
-    \input{./tex/Hobbies.tex}               %% Hobbies section.
+    \makecvtitle                                %% Header.
+    \vspace{-1.5 cm}
+    \input{./tex/Skills.tex}                    %% Skills section.
+    \vspace{\cvSectionSpace}
+    \input{./tex/Experiences.tex}               %% Experiences section.
+    \vspace{\cvSectionSpace}
+    \input{./tex/Education.tex}                 %% Education section.
+    \vspace{\cvSectionSpace}
+    \begin{minipage}[t]{0.42\linewidth}
+        \input{./tex/Hobbies.tex}               %% Hobbies section.
+    \end{minipage}
+    \hspace{+2 cm}
+    \begin{minipage}[t]{0.42\linewidth}
+        \input{./tex/Community.tex}             %% Community section.
+    \end{minipage}
 \end{document}
