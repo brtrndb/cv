@@ -1,52 +1,27 @@
 %% Education section.
 
+%% Lengths.
+\newlength{\cvEducationSpace}               %% Vertical space between each education entries.
+\setlength{\cvEducationSpace}{+0.0 cm}
 %% Macros.
 \newcommand{\schooldate}[2]{#1 $\rightharpoonup$ #2}
-\newcommand{\schoollogo}[5]{%
-    \ifthenelse{\equal{\displayImageEducation}{yes}}{
-        \vspace{-0.2cm}
-        \begin{wrapfigure}{R}{0.2\textwidth}%
-            \vspace{#1}
-            \centering%
-            \href{#4}{\includegraphics[width=#3\textwidth]{#5}}%
-            \vspace{#2}
-        \end{wrapfigure}%
-    }{}
-}
+\newcommand{\schoolplace}[1]{\textcolor{modernBlue}{#1}}
 \newcommand{\schooldescription}[1]{#1}
-%% URL aliases.
-\newcommand{\epitechURL}{https://www.epitech.eu}
-\newcommand{\griffithURL}{https://www.gcd.ie}
-\newcommand{\eistiURL}{https://www.eisti.fr}
-\newcommand{\vauvenarguesURL}{https://www.lyc-vauvenargues.ac-aix-marseille.fr/spip-lyc-lp/}
 %%
 
 
-\cvsection{\faGraduationCap}{Parcours scolaire \& diplômes}
+\cvsection{\faGraduationCap}{Parcours scolaire}
 
-\cventry{\schooldate{2011}{2015}}{\href{\epitechURL}{Epitech}}{Cycle Bachelor/Master}{Toulouse (31)/Paris (75)}{}{%
-    \schoollogo{-1.3cm}{0cm}{0.18}{\epitechURL}{./img/education/epitech}
-    \schooldescription{Entrée directe Tek2ED. Diplôme d'Expert en Technologies de l'Information.}%
-}
+\cventry{\schooldate{2011}{2015}}{\schoolplace{\Epitech}}{\schooldescription{Titre d'Expert en Technologie de l'Information}}{Toulouse}{}{}
 
 \vspace{\cvEducationSpace}
 
-\cventry{\schooldate{2013}{2014}}{\href{\griffithURL}{Griffith College Dublin}}{Cycle Master}{Dublin (Irlande)}{}{%
-    \schoollogo{-1.3cm}{0cm}{0.18}{\griffithURL}{./img/education/griffith}
-    \schooldescription{Première année de Master en Computing option Business et Management.}%
-}
+\cventry{\schooldate{2013}{2014}}{\schoolplace{\Griffith}}{\schooldescription{Master en Computing option Business \& Management}}{Dublin}{}{}
 
 \vspace{\cvEducationSpace}
 
-\cventry{\schooldate{2008}{2011}}{\href{\eistiURL}{EISTI}}{Classes préparatoires Maths Sup/Maths Spé}{Pau (64)}{}{%
-    \schoollogo{-1.2cm}{0cm}{0.1}{\eistiURL}{./img/education/eisti}
-    \schooldescription{Obtention par équivalence d'une L1 Maths/Info.}%
-}
+\cventry{\schooldate{2008}{2011}}{\schoolplace{\EISTI}}{\schooldescription{Classes préparatoires Maths Sup/Spé}}{Pau}{}{}
 
 \vspace{\cvEducationSpace}
 
-\cventry{2008}{\href{\vauvenarguesURL}{Lycée Vauvenargues}}{Baccalauréat Scientifique}{Aix-en-Provence (13)}{}{%
-    \schooldescription{Obtention du Bac S options Mathématiques et Sciences de l'Ingénieur (SI).}%
-}
-
-\vspace{\cvSectionSpace}
+\cventry{2008}{\schoolplace{\Vauvenargues}}{\schooldescription{Bac S options Maths \& Sciences de l'Ingénieur}}{Aix-en-Provence}{}{}
