@@ -18,7 +18,7 @@ $(PDF):	$(TEX) $(TEX_SECTIONS) $(EPS)
 
 clean:
 	@echo -n "Deleting temporary files.";
-	@rm -rf $(NAME).aux $(NAME).log $(NAME).out $(NAME).bbl $(NAME).blg $(NAME).fls $(NAME).fdb_latexmk $(NAME).synctex.gz $(EPS_CONVERTED) *~;
+	@rm -rf $(NAME).aux $(NAME).log $(NAME).out $(NAME).bbl $(NAME).blg $(NAME).fls $(NAME).fdb_latexmk $(NAME).upa $(NAME).upb $(NAME).synctex.gz $(EPS_CONVERTED) *~;
 	@echo " Done.";
 
 fclean:	clean
