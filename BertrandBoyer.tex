@@ -42,29 +42,28 @@
 
 %% CV options.
 \newcommand{\displayImageProfile}{no}           % Display the profile image.
-\newcommand{\displayImageEducation}{no}         % Display the images in Education section.
 \newcommand{\displayImageExperiences}{yes}      % Display images in Experiences section.
 
 \newcommand{\cvsection}[2]{\section{#1$\;$\textbf{#2}}}
 
-\input{./tex/utils.tex}
+\input{./tex/utils}
 
-\input{./tex/Personal.tex}                      %% Personnal information.
+\input{./tex/Personal}                      %% Personnal information.
 
 \begin{document}
-    \makecvtitle                                %% Header.
+    \makecvtitle                            %% Header.
     \vspace{-1.5 cm}
-    \input{./tex/Skills.tex}                    %% Skills section.
+    \input{./tex/Skills}                    %% Skills section.
     \vspace{\cvSectionSpace}
-    \input{./tex/Experiences.tex}               %% Experiences section.
+    \input{./tex/Experiences}               %% Experiences section.
     \vspace{\cvSectionSpace}
-    \input{./tex/Education.tex}                 %% Education section.
+    \input{./tex/Education}                 %% Education section.
     \vspace{\cvSectionSpace}
     \begin{minipage}[t]{0.42\linewidth}
-        \input{./tex/Hobbies.tex}               %% Hobbies section.
+        \input{./tex/Hobbies}               %% Hobbies section.
     \end{minipage}
     \hspace{+2 cm}
     \begin{minipage}[t]{0.42\linewidth}
-        \input{./tex/Community.tex}             %% Community section.
+        \input{./tex/Community}             %% Community section.
     \end{minipage}
 \end{document}
