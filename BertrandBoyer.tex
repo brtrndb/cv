@@ -2,39 +2,36 @@
 % !TEX TS-program = LuaLaTeX
 
 %% ModernCV.
-\documentclass[10pt,a4paper]{moderncv}          %% Using moderncv class
-\usepackage{luatextra}                          %% Using lualatex instead of latex.
-\usepackage[french]{babel}                      %% French package.
-\usepackage{geometry}                           %% Margin geometry.
-\usepackage{fontawesome5}                       %% Using awesome font for icons.
-\usepackage{wrapfig}                            %% Using floating images.
-\usepackage{ifthen}                             %% Using conditions.
+\documentclass[10pt,a4paper]{moderncv}  %% Using moderncv class
+\usepackage{luatextra}                  %% Using lualatex instead of latex.
+\usepackage[french]{babel}              %% French package.
+\usepackage{geometry}                   %% Margin geometry.
+\usepackage{fontawesome5}               %% Using awesome font for icons.
+\usepackage{wrapfig}                    %% Using floating images.
+\usepackage{ifthen}                     %% Using conditions.
 \usepackage{xcolor}
 \usepackage{textcomp}
 \usepackage{eso-pic}
 
 % Margin options.
-\geometry{top=0.5 cm}                           %% Margin top.
-\geometry{bottom=0.5 cm}                        %% Margin bottom.
-\geometry{left=1.5 cm}                          %% Margin left.
-\geometry{right=1.5 cm}                         %% Margin right.
+\geometry{top=0.5 cm}                   %% Margin top.
+\geometry{bottom=0.5 cm}                %% Margin bottom.
+\geometry{left=1.5 cm}                  %% Margin left.
+\geometry{right=1.5 cm}                 %% Margin right.
 
-\input{./tex/moderncv}
-
-\input{./tex/pageborder}
-
-\input{./tex/aliases}
-
-\input{./tex/personal}                      %% Personnal information.
+\input{./tex/moderncv}                  %% Moderncv configuration.
+\input{./tex/pageborder}                %% Page border configuration.
+\input{./tex/aliases}                   %% Aliases used across sections.
+\input{./tex/personal}
 
 \begin{document}
-    \makecvtitle                            %% Header.
+    \makecvtitle                        %% Header.
     \vspace{-1.5 cm}
-    \input{./tex/skills}                    %% Skills section.
+    \input{./tex/skills}                %% Skills section.
     \vspace{\cvSectionSpace}
-    \input{./tex/experiences}               %% Experiences section.
+    \input{./tex/experiences}           %% Experiences section.
     \vspace{\cvSectionSpace}
-    \input{./tex/education}                 %% Education section.
+    \input{./tex/education}             %% Education section.
     \vspace{\cvSectionSpace}
-    \input{./tex/extra}                     %% Hobbies and Community section.
+    \input{./tex/extra}                 %% Hobbies and Community section.
 \end{document}
