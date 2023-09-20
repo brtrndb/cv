@@ -5,15 +5,15 @@
 %% Macros.
 \newcommand{\jobdate}[2]{#1 $\rightharpoonup$\\#2}
 \newcommand{\joblogo}[4]{%
-    \ifthenelse{\equal{\displayImageExperiences}{yes}}{
+    \displayYes{\displayImageExperiences}{%
         \vspace{-0.2 cm}
         \begin{wrapfigure}{R}{0.2\textwidth}%
-            \vspace{#1}
+            \vspace{#1}%
             \centering%
             \href{#3}{\includegraphics[width=0.18\textwidth]{#4}}%
-            \vspace{#2}
+            \vspace{#2}%
         \end{wrapfigure}%
-    }{}
+    }
 }
 \newcommand{\jobplace}[1]{\textcolor{modernBlue}{#1}}
 \newcommand{\jobdescription}[1]{#1}
