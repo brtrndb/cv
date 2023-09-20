@@ -1,0 +1,17 @@
+%% Page border configuration.
+
+%% Border width.
+\newlength{\pageborder}
+\setlength{\pageborder}{4 pt}
+
+%% Border color.
+\pagecolor{modernBlue}
+
+%% Border setup.
+\AddToShipoutPictureBG{%
+    \AtPageLowerLeft{%
+        \color{white}%
+        \hspace{\pageborder}%
+        \rule[\pageborder]{\paperwidth-2\pageborder}{\paperheight-2\pageborder}%
+    }%
+}
