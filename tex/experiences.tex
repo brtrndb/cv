@@ -4,6 +4,7 @@
 
 %% Macros.
 \newcommand{\jobdate}[2]{#1 $\rightharpoonup$\\#2}
+\newcommand{\jobtags}[1]{\hfill\textcolor{modernGrey}{\scriptsize{#1}}\hspace{0.18\textwidth}}
 \newcommand{\joblogo}[4]{%
     \displayYes{\displayImageExperiences}{%
         \vspace{-0.2 cm}
@@ -23,7 +24,7 @@
 %% Experiences section.
 \cvsection{\faBriefcase}{Expériences professionnelles}
 
-\cventry{\jobdate{Juin 2022}{Maintenant}}{\jobplace{\SetKeeper}}{Java Developer}{Paris}{}{%
+\cventry{\jobdate{Juin 2022}{Maintenant}}{\jobplace{\SetKeeper}}{Java Developer}{Paris\jobtags{\#Cinéma \#Paie \#US \faFilm}}{}{%
     \joblogo{-0.3 cm}{+0.0 cm}{\setkeeperURL}{./img/experiences/setkeeper}%
     \jobdescription{Développeur backend dans l'équipe produit de \SetKeeper, une plateforme de gestion, d'organisation et de planification pour les équipes de tournage (films, séries, TV).}\newline%
     \jobitem{Mise en place d'outils et méthodes pour améliorer la \textit{Developer Experience}~(\DX).}\newline%
@@ -33,7 +34,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Août 2019}{Juin 2022}}{\jobplace{\Metroscope}}{Full Stack Developer}{Paris}{}{%
+\cventry{\jobdate{Août 2019}{Juin 2022}}{\jobplace{\Metroscope}}{Full Stack Developer}{Paris\jobtags{\#Industrie \#Énergie \#Monitoring \faIndustry}}{}{%
     \joblogo{-0.4 cm}{+0.0 cm}{\metroscopeURL}{./img/experiences/metroscope}%
     \jobdescription{Développeur front puis back dans l'équipe produit de \Metroscope, un logiciel d'aide à l'analyse et la détection de défaillances sur les systèmes de production d'énergie.}\newline%
     \jobitem{Réécriture \textit{*from scratch*} de l'application web en \React{} et \TypeScript.}\newline%
@@ -43,7 +44,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Mars 2018}{Juillet 2019}}{\jobplace{\Wemanity}}{Full Stack Lead Developer}{Paris}{}{%
+\cventry{\jobdate{Mars 2018}{Juillet 2019}}{\jobplace{\Wemanity}}{Full Stack Lead Developer}{Paris\jobtags{\#Banque \#Innovation \#IA \faMoneyBill*}}{}{%
     \joblogo{-0.3 cm}{+0.0 cm}{\wemanityURL}{./img/experiences/wemanity}%
     \jobdescription{Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \SG.}\newline%
     \jobitem{Idéation, création et maintenance d'applications autour des robots \Pepper.}\newline%
@@ -54,7 +55,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Octobre 2016}{Février 2018}}{\jobplace{\Dhatim}}{Java Developer}{Paris}{}{%
+\cventry{\jobdate{Octobre 2016}{Février 2018}}{\jobplace{\Dhatim}}{Java Developer}{Paris\jobtags{\#Comptabilité \#Paie \#RH \faFileInvoiceDollar}}{}{%
     \joblogo{-0.0 cm}{+0.0 cm}{\dhatimURL}{./img/experiences/dhatim}%
     \jobdescription{Développeur backend dans l'équipe de \textit{\Conciliator}, une solution en SaaS de contrôle de \DSN{} pour les entreprises.}\newline%
     \jobitem{Développement des nouvelles features et Scrum Master.}\newline%
@@ -64,7 +65,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Mars 2015}{Octobre 2016}}{\jobplace{\Visian}}{\IoT{} Lead Developer}{Nanterre}{}{%
+\cventry{\jobdate{Mars 2015}{Octobre 2016}}{\jobplace{\Visian}}{\IoT{} Lead Developer}{Nanterre\jobtags{\#\RD{} \#\IoT{} \#Innovation \faMicrochip}}{}{%
     \joblogo{-0.0 cm}{+0.0 cm}{\visianURL}{./img/experiences/visian}%
     \jobdescription{Développeur \RD{} puis Lead Developer chez \Visian, la filiale \IoT{} de \NeuronesIT.}\newline%
     \jobitem{Idéation et prototypage mêlant \IoT{}, mobile, cloud et data-visualisation.}\newline%
@@ -74,7 +75,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Avril 2013}{Mars 2015}}{\jobplace{Stages \& alternances}}{}{}{}{%
+\cventry{\jobdate{Avril 2013}{Mars 2015}}{\jobplace{Stages \& alternances\normalfont{\jobtags{\#\IoT{} \#DevOps \#Tests \faUserGraduate}}}}{}{}{}{%
     \jobitem{\jobplace{\SII}: Prototypage \IoT{} combinant \href{\bitcrazeURL}{drone}, \RaspberryPi{} et divers capteurs.}\newline%
     \jobitem{\jobplace{\Thales}: Étude et déploiement d'\OpenStack{} dans un environnement de tests.}\newline%
     \jobitem{\jobplace{\Novacom}: Développement d'un ensemble de tests unitaires et fonctionnels.}%
