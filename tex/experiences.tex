@@ -1,17 +1,19 @@
 %% Lengths.
 \newlength{\cvExperienceSpace}              %% Vertical space between each experience entry.
 \setlength{\cvExperienceSpace}{+0.03 cm}
+\newlength{\logoColumnWidth}              %% Vertical space between each experience entry.
+\setlength{\logoColumnWidth}{0.18\textwidth}
 
 %% Macros.
 \newcommand{\jobdate}[2]{#1 $\rightharpoonup$\\#2}
-\newcommand{\jobtags}[1]{\hfill\textcolor{color2}{\scriptsize{#1}}\hspace{0.18\textwidth}}
+\newcommand{\jobtags}[1]{\hfill\textcolor{color2}{\scriptsize{#1}}\hspace{\logoColumnWidth}}
 \newcommand{\joblogo}[4]{%
     \displayYes{\displayImageExperiences}{%
         \vspace{-0.20 cm}
         \begin{wrapfigure}{R}{0.2\textwidth}%
             \vspace{#1}%
             \centering%
-            \href{#3}{\includegraphics[width=0.18\textwidth]{#4}}%
+            \href{#3}{\includegraphics[width=\logoColumnWidth]{#4}}%
             \vspace{#2}%
         \end{wrapfigure}%
     }
