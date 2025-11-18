@@ -6,7 +6,7 @@
 
 %% Macros.
 \newcommand{\jobdate}[2]{#1 $\rightharpoonup$\\#2}
-\newcommand{\jobtags}[1]{\hfill\textcolor{color2}{\scriptsize{#1}}\hspace{\logoColumnWidth}}
+\newcommand{\jobtags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\logoColumnWidth}}
 \newcommand{\joblogo}[4]{%
     \displayYes{\displayImageExperiences}{%
         \vspace{-0.20 cm}
@@ -33,7 +33,7 @@
 %% Experiences section.
 \cvsection{\faBriefcase}{Expériences professionnelles}
 
-\cventry{\jobdate{Février 2024}{Aujourd'hui}\\\joblocation{Paris}}{\jobplace{\Happn}}{\jobtitle{Java Software Engineer}\jobtags{\#Dating \#App \#Legacy \faHeart}}{}{}{%
+\cventry{\jobdate{Février 2024}{Aujourd'hui}\\\joblocation{Paris}}{\jobplace{\Happn}}{\jobtitle{Java Software Engineer}\hfill\jobtags{\#Dating \#App \#Legacy \faHeart}}{}{}{%
     \joblogo{-0.50 cm}{+0.00 cm}{\happnURL}{./img/experiences/happn}%
     \jobdescription{Développeur dans l'équipe backend d'\Happn, l'app de rencontre qui permet de retrouver les personnes croisées, que ce soit dans la rue, un café, ou les transports.}\newline%
     \jobitems{
@@ -46,7 +46,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Juin 2022}{Novembre 2023}\\\joblocation{Paris}}{\jobplace{\SetKeeper}}{\jobtitle{Java Software Engineer}\jobtags{\#Cinéma \#Paie \#US \faFilm}}{}{}{%
+\cventry{\jobdate{Juin 2022}{Novembre 2023}\\\joblocation{Paris}}{\jobplace{\SetKeeper}}{\jobtitle{Java Software Engineer}\hfill\jobtags{\#Cinéma \#Paie \#US \faFilm}}{}{}{%
     \joblogo{-0.30 cm}{+0.00 cm}{\setkeeperURL}{./img/experiences/setkeeper}%
     \jobdescription{Développeur backend dans l'équipe produit de \SetKeeper, une plateforme de gestion, d'organisation et de planification pour les équipes de tournage (films, séries, TV).}\newline%
     \jobitems{
@@ -59,7 +59,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Août 2019}{Juin 2022}\\\joblocation{Paris}}{\jobplace{\Metroscope}}{\jobtitle{Full Stack Developer}\jobtags{\#Industrie \#Monitoring \#\IoT{} \faIndustry}}{}{}{%
+\cventry{\jobdate{Août 2019}{Juin 2022}\\\joblocation{Paris}}{\jobplace{\Metroscope}}{\jobtitle{Full Stack Developer}\hfill\jobtags{\#Industrie \#Monitoring \#\IoT{} \faIndustry}}{}{}{%
     \joblogo{-0.40 cm}{+0.00 cm}{\metroscopeURL}{./img/experiences/metroscope}%
     \jobdescription{Développeur front puis back dans l'équipe produit de \Metroscope, un logiciel d'aide à l'analyse et la détection de défaillances sur les systèmes de production d'énergie.}\newline%
     \jobitems{
@@ -73,7 +73,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Mars 2018}{Juillet 2019}\\\joblocation{Paris}}{\jobplace{\Wemanity}}{\jobtitle{Full Stack Lead Developer}\jobtags{\#Banque \#Innovation \#IA \faMoneyBill*}}{}{}{%
+\cventry{\jobdate{Mars 2018}{Juillet 2019}\\\joblocation{Paris}}{\jobplace{\Wemanity}}{\jobtitle{Full Stack Lead Developer}\hfill\jobtags{\#Banque \#Innovation \#IA \faMoneyBill*}}{}{}{%
     \joblogo{-0.30 cm}{+0.00 cm}{\wemanityURL}{./img/experiences/wemanity}%
     \jobdescription{Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \SG.}\newline%
     \jobitems{
@@ -87,7 +87,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Octobre 2016}{Février 2018}\\\joblocation{Paris}}{\jobplace{\Dhatim}}{\jobtitle{Java Developer}\jobtags{\#Paie \#Comptabilité \#RH \faFileInvoiceDollar}}{}{}{%
+\cventry{\jobdate{Octobre 2016}{Février 2018}\\\joblocation{Paris}}{\jobplace{\Dhatim}}{\jobtitle{Java Developer}\hfill\jobtags{\#Paie \#Comptabilité \#RH \faFileInvoiceDollar}}{}{}{%
     \joblogo{-0.00 cm}{+0.00 cm}{\dhatimURL}{./img/experiences/dhatim}%
     \jobdescription{Développeur backend dans l'équipe de \textit{\Conciliator}, une solution en SaaS de contrôle de \DSN{} pour les entreprises.}\newline%
     \jobitems{
@@ -100,7 +100,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Mars 2015}{Octobre 2016}\\\joblocation{Nanterre}}{\jobplace{\Visian}}{\jobtitle{\IoT{} Lead Developer}\jobtags{\#\IoT{} \#\RD{} \#Innovation \faMicrochip}{}}{}{%
+\cventry{\jobdate{Mars 2015}{Octobre 2016}\\\joblocation{Nanterre}}{\jobplace{\Visian}}{\jobtitle{\IoT{} Lead Developer}\hfill\jobtags{\#\IoT{} \#\RD{} \#Innovation \faMicrochip}{}}{}{%
     \joblogo{-0.00 cm}{+0.00 cm}{\visianURL}{./img/experiences/visian}%
     \jobdescription{Développeur \RD{} puis Lead Developer chez \Visian, la filiale \IoT{} de \NeuronesIT.}\newline%
     \jobitems{
@@ -113,7 +113,7 @@
 
 \vspace{\cvExperienceSpace}
 
-\cventry{\jobdate{Avril 2013}{Mars 2015}}{\jobplace{Stages \& alternances\normalfont{\jobtags{\#\IoT{} \#DevOps \#Tests \faUserGraduate}}}}{}{}{}{%
+\cventry{\jobdate{Avril 2013}{Mars 2015}}{\jobplace{Stages \& alternances\hfill\jobtags{\#\IoT{} \#DevOps \#Tests \faUserGraduate}}}{}{}{}{%
     \jobitems{
             {\jobplace{\SII}: Prototypage \IoT{} combinant \href{\bitcrazeURL}{drone}, \RaspberryPi{} et divers capteurs.},
             {\jobplace{\Thales}: Étude et déploiement d'\OpenStack{} dans un environnement de tests.},
