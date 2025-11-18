@@ -19,6 +19,11 @@
 \newcommand{\jobplace}[1]{\textcolor{color1}{#1}}
 \newcommand{\jobdescription}[1]{#1}
 \newcommand{\jobitem}[1]{\textcolor{color1}{\hspace{+1.00 em}\faAngleRight} #1}
+\newcommand{\jobitems}[1]{
+    \foreach \x in {#1}{%
+        \jobitem{\x}\newline%
+    }%
+}
 \newcommand{\jobstack}[1]{Stack technique: #1.}
 
 %% Experiences section.
@@ -27,9 +32,11 @@
 \cventry{\jobdate{Février 2024}{Aujourd'hui}}{\jobplace{\Happn}}{Java Software Engineer}{Paris\jobtags{\#Dating \#App \#Legacy \faHeart}}{}{%
     \joblogo{-0.50 cm}{+0.00 cm}{\happnURL}{./img/experiences/happn}%
     \jobdescription{Développeur dans l'équipe backend d'\Happn, l'app de rencontre qui permet de retrouver les personnes croisées, que ce soit dans la rue, un café, ou les transports.}\newline%
-    \jobitem{Développement de nouvelles features (\textit{\SmartLOL}, \textit{\PerfectDates}).}\newline%
-    \jobitem{Migration des microservices existants en architecture hexagonale.}\newline%
-    \jobitem{Dette \& upgrades: \Java{} 11/17$\;$\rightarrow{} 21, \SpringBoot{} 2$\;$\rightarrow{} 3, \Maven{}$\;$\rightarrow{} \Gradle.}\newline%
+    \jobitems{
+            {Développement de nouvelles features (\textit{\SmartLOL}, \textit{\PerfectDates}).},
+            {Migration des microservices existants en architecture hexagonale.},
+            {Dette \& upgrades: \Java{} 11/17$\;$\rightarrow{} 21, \SpringBoot{} 2$\;$\rightarrow{} 3, \Maven{}$\;$\rightarrow{} \Gradle.}
+    }
     \jobstack{\JavaTwentyOne, \SpringBoot, \ElasticSearch, \Scylla, \PubSub, \GCP}%
 }
 
@@ -38,9 +45,11 @@
 \cventry{\jobdate{Juin 2022}{Novembre 2023}}{\jobplace{\SetKeeper}}{Java Software Engineer}{Paris\jobtags{\#Cinéma \#Paie \#US \faFilm}}{}{%
     \joblogo{-0.30 cm}{+0.00 cm}{\setkeeperURL}{./img/experiences/setkeeper}%
     \jobdescription{Développeur backend dans l'équipe produit de \SetKeeper, une plateforme de gestion, d'organisation et de planification pour les équipes de tournage (films, séries, TV).}\newline%
-    \jobitem{Migration d'une partie du code legacy sur une stack plus à jour.}\newline%
-    \jobitem{Mise en place d'outils et méthodes pour améliorer la \textit{Developer Experience}~(\DX).}\newline%
-    \jobitem{Intégration avec \Google{}, via \OAuthTwo{}, et de ses APIs (\GoogleDrive, \GoogleContacts).}\newline%
+    \jobitems{
+            {Migration d'une partie du code legacy sur une stack plus à jour.},
+            {Mise en place d'outils et méthodes pour améliorer la \textit{Developer Experience}~(\DX).},
+            {Intégration avec \Google{}, via \OAuthTwo{}, et de ses APIs (\GoogleDrive, \GoogleContacts).}
+    }
     \jobstack{\JavaSeventeen, \Vertx, \MongoDB, \Maven, \Docker, \OpenAPI}%
 }
 
@@ -49,10 +58,12 @@
 \cventry{\jobdate{Août 2019}{Juin 2022}}{\jobplace{\Metroscope}}{Full Stack Developer}{Paris\jobtags{\#Industrie \#Monitoring \#\IoT{} \faIndustry}}{}{%
     \joblogo{-0.40 cm}{+0.00 cm}{\metroscopeURL}{./img/experiences/metroscope}%
     \jobdescription{Développeur front puis back dans l'équipe produit de \Metroscope, un logiciel d'aide à l'analyse et la détection de défaillances sur les systèmes de production d'énergie.}\newline%
-    \jobitem{Réécriture \textit{*from scratch*} de l'application web en \React{} et \TypeScript.}\newline%
-    \jobitem{Division du backend en microservices et dévelopement des nouveaux services.}\newline%
-    \jobitem{Passage d'une communication synchrone à asynchrone entre les services.}\newline%
-    \jobitem{Veille et partage de connaissances via l'organisation de \textit{"Backend Chapters"}.}\newline%
+    \jobitems{
+            {Réécriture \textit{*from scratch*} de l'application web en \React{} et \TypeScript.},
+            {Division du backend en microservices et dévelopement des nouveaux services.},
+            {Passage d'une communication synchrone à asynchrone entre les services.},
+            {Veille et partage de connaissances via l'organisation de \textit{"Backend Chapters"}.}
+    }
     \jobstack{\JavaEleven, \Kotlin, \SpringBoot, \NATS, \Docker, \React, \TypeScript}%
 }
 
@@ -61,10 +72,12 @@
 \cventry{\jobdate{Mars 2018}{Juillet 2019}}{\jobplace{\Wemanity}}{Full Stack Lead Developer}{Paris\jobtags{\#Banque \#Innovation \#IA \faMoneyBill*}}{}{%
     \joblogo{-0.30 cm}{+0.00 cm}{\wemanityURL}{./img/experiences/wemanity}%
     \jobdescription{Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \SG.}\newline%
-    \jobitem{Idéation, création et maintenance d'applications autour des robots \Pepper.}\newline%
-    \jobitem{Développement d'un MVP de data-visualisation en 3D de graphes complexes.}\newline%
-    \jobitem{Étude et prototypage de services cognitifs (\OCR, \NLU, \STT{} et \Traduction).}\newline%
-    \jobitem{Formation et encadrement des developpeurs (stagiaires, alternants et juniors).}\newline%
+    \jobitems{
+            {Idéation, création et maintenance d'applications autour des robots \Pepper.},
+            {Développement d'un MVP de data-visualisation en 3D de graphes complexes.},
+            {Étude et prototypage de services cognitifs (\OCR, \NLU, \STT{} et \Traduction).},
+            {Formation et encadrement des developpeurs (stagiaires, alternants et juniors).}
+    }
     \jobstack{\React, \MaterialUI, \Loopback, \Python, \Docker, \GitLab}%
 }
 
@@ -73,9 +86,11 @@
 \cventry{\jobdate{Octobre 2016}{Février 2018}}{\jobplace{\Dhatim}}{Java Developer}{Paris\jobtags{\#Paie \#Comptabilité \#RH \faFileInvoiceDollar}}{}{%
     \joblogo{-0.00 cm}{+0.00 cm}{\dhatimURL}{./img/experiences/dhatim}%
     \jobdescription{Développeur backend dans l'équipe de \textit{\Conciliator}, une solution en SaaS de contrôle de \DSN{} pour les entreprises.}\newline%
-    \jobitem{Compréhension des besoins métiers et support utilisateur sur site.}\newline%
-    \jobitem{Développement des nouvelles fonctionalités, \Scrum{} Master.}\newline%
-    \jobitem{Prototypage d'un chatbot \Intercom{} pour du support client simple.}\newline%
+    \jobitems{
+            {Compréhension des besoins métiers et support utilisateur sur site.},
+            {Développement des nouvelles fonctionalités, \Scrum{} Master.},
+            {Prototypage d'un chatbot \Intercom{} pour du support client simple.}
+    }
     \jobstack{\JavaEight, \Dropwizard, \TestNG, \Postgres, \GitHub, \Jenkins}%
 }
 
@@ -84,16 +99,20 @@
 \cventry{\jobdate{Mars 2015}{Octobre 2016}}{\jobplace{\Visian}}{\IoT{} Lead Developer}{Nanterre\jobtags{\#\IoT{} \#\RD{} \#Innovation \faMicrochip}}{}{%
     \joblogo{-0.00 cm}{+0.00 cm}{\visianURL}{./img/experiences/visian}%
     \jobdescription{Développeur \RD{} puis Lead Developer chez \Visian, la filiale \IoT{} de \NeuronesIT.}\newline%
-    \jobitem{Animation d'ateliers d'idéation, compréhension des besoins, veille technique.}\newline%
-    \jobitem{Développement de prototypes mêlant \IoT{}, mobile, cloud et data-visualisation.}\newline%
-    \jobitem{Encadrement et mentorat des équipes techniques (hardware \& software).}\newline%
+    \jobitems{
+            {Animation d'ateliers d'idéation, compréhension des besoins, veille technique.},
+            {Développement de prototypes mêlant \IoT{}, mobile, cloud et data-visualisation.},
+            {Encadrement et mentorat des équipes techniques (hardware \& software).}
+    }
     \jobstack{\LanguageCCPlusPlus, \JavaEight, \Android, \Python, \GitHub, \MicrosoftAzure}%
 }
 
 \vspace{\cvExperienceSpace}
 
 \cventry{\jobdate{Avril 2013}{Mars 2015}}{\jobplace{Stages \& alternances\normalfont{\jobtags{\#\IoT{} \#DevOps \#Tests \faUserGraduate}}}}{}{}{}{%
-    \jobitem{\jobplace{\SII}: Prototypage \IoT{} combinant \href{\bitcrazeURL}{drone}, \RaspberryPi{} et divers capteurs.}\newline%
-    \jobitem{\jobplace{\Thales}: Étude et déploiement d'\OpenStack{} dans un environnement de tests.}\newline%
-    \jobitem{\jobplace{\Novacom}: Développement d'un ensemble de tests unitaires et fonctionnels.}%
+    \jobitems{
+            {\jobplace{\SII}: Prototypage \IoT{} combinant \href{\bitcrazeURL}{drone}, \RaspberryPi{} et divers capteurs.},
+            {\jobplace{\Thales}: Étude et déploiement d'\OpenStack{} dans un environnement de tests.},
+            {\jobplace{\Novacom}: Développement d'un ensemble de tests unitaires et fonctionnels.}
+    }
 }
