@@ -22,10 +22,9 @@
 \newcommand{\jobplace}[1]{\textcolor{color1}{#1}}
 \newcommand{\joblocation}[1]{\textcolor{color2}{#1\hspace{+0.50 em}\faMapMarker*}}
 \newcommand{\jobdescription}[1]{#1}
-\newcommand{\jobitem}[1]{\textcolor{color1}{\hspace{+1.00 em}\faAngleRight} #1}
 \newcommand{\jobitems}[1]{
     \foreach \x in {#1}{%
-        \jobitem{\x}\newline%
+        \textcolor{color1}{\hspace{+1.00 em}\faAngleRight} \x\newline%
     }%
 }
 \newcommand{\jobstack}[1]{Stack technique: #1.}
