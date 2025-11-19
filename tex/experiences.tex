@@ -5,7 +5,11 @@
 \setlength{\logoColumnWidth}{0.18\textwidth}
 
 %% Macros.
-\newcommand{\jobdate}[2]{#1 $\rightharpoonup$\\#2}
+\newcommand{\jobdate}[2]{
+    \ifthenelse{\equal{#2}{}}
+    {#1}
+    {#1 $\rightharpoonup$\\#2}
+}
 \newcommand{\jobtags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\logoColumnWidth}}
 \newcommand{\joblogo}[4]{%
     \displayYes{\displayImageExperiences}{%
