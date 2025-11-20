@@ -5,7 +5,7 @@
 \setlength{\jobLogoColumnWidth}{0.18\textwidth}
 
 %% Macros.
-\newcommand{\jobDates}[2]{
+\newcommandx{\jobDates}[2][2={}]{
     \IfBlankTF{#2}
     {#1\faCalendarDay}
     {#1\rightharpoonup\\#2\faCalendarDay}
@@ -18,7 +18,7 @@
 \newcommand{\jobTags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\jobLogoColumnWidth}}
 \newcommandx{\jobEntry}[8][]{
     \cventry[\jobEntrySpace]
-    {\jobDates{#4}{#5}\IfBlankF{#2}{\\\jobLocation{#2}[#3]}}
+    {\jobDates{#4}[#5]\IfBlankF{#2}{\\\jobLocation{#2}[#3]}}
     {\jobCompany{#1}\IfBlankT{#6}{\IfBlankF{#7}{\hfill\jobTags{#7}}}}
     {\IfBlankF{#6}{\jobTitle{#6}\IfBlankF{#7}{\hfill\jobTags{#7}}}}
     {}
