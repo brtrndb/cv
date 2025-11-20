@@ -7,12 +7,12 @@
 %% Macros.
 \newcommand{\jobDates}[2]{
     \IfBlankTF{#2}
-    {#1\hspace{+0.50 em}\faCalendarDay}
-    {#1\hspace{+0.50 em}\rightharpoonup\\#2\hspace{+0.50 em}\faCalendarDay}
+    {#1\faCalendarDay}
+    {#1\rightharpoonup\\#2\faCalendarDay}
 }
 \newcommand{\jobRemote}{\faHouseUser}
 \newcommand{\jobNoRemote}{\faMapMarker*}
-\newcommandx{\jobLocation}[2][2={\jobNoRemote},usedefault]{\textcolor{color2}{#1\hspace{+0.50 em}#2}}
+\newcommandx{\jobLocation}[2][2={\jobNoRemote},usedefault]{\textcolor{color2}{#1#2}}
 \newcommand{\jobCompany}[1]{\textcolor{color1}{#1}}
 \newcommand{\jobTitle}[1]{#1}
 \newcommand{\jobTags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\jobLogoColumnWidth}}
@@ -39,7 +39,7 @@
 }
 \newcommand{\jobItems}[1]{
     \foreach \x in {#1}{%
-        \textcolor{color1}{\hspace{+1.00 em}\faAngleRight} \x\newline%
+        \textcolor{color1}{\hspace{+0.20 em}\faAngleRight}\x\newline%
     }%
 }
 \newcommand{\jobSkills}[1]{\textcolor{color2}{Stack technique: #1.}}
