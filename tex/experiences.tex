@@ -10,18 +10,20 @@
     {#1\hspace{+0.50 em}\faCalendarDay}
     {#1\hspace{+0.50 em}\rightharpoonup\\#2\hspace{+0.50 em}\faCalendarDay}
 }
-\newcommand{\jobLocation}[1]{\textcolor{color2}{#1\hspace{+0.50 em}\faMapMarker*}}
+\newcommand{\jobRemote}{\faHouseUser}
+\newcommand{\jobNoRemote}{\faMapMarker*}
+\newcommandx{\jobLocation}[2][2={\jobNoRemote},usedefault]{\textcolor{color2}{#1\hspace{+0.50 em}#2}}
 \newcommand{\jobCompany}[1]{\textcolor{color1}{#1}}
 \newcommand{\jobTitle}[1]{#1}
 \newcommand{\jobTags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\jobLogoColumnWidth}}
-\newcommand{\jobEntry}[7]{
+\newcommandx{\jobEntry}[8][]{
     \cventry[\jobEntrySpace]
-    {\jobDates{#3}{#4}\IfBlankF{#2}{\\\jobLocation{#2}}}
-    {\jobCompany{#1}\IfBlankT{#5}{\IfBlankF{#6}{\hfill\jobTags{#6}}}}
-    {\IfBlankF{#5}{\jobTitle{#5}\IfBlankF{#6}{\hfill\jobTags{#6}}}}
+    {\jobDates{#4}{#5}\IfBlankF{#2}{\\\jobLocation{#2}[#3]}}
+    {\jobCompany{#1}\IfBlankT{#6}{\IfBlankF{#7}{\hfill\jobTags{#7}}}}
+    {\IfBlankF{#6}{\jobTitle{#6}\IfBlankF{#7}{\hfill\jobTags{#7}}}}
     {}
     {}
-    {#7}
+    {#8}
 }
 \newcommand{\jobDescription}[1]{#1}
 \newcommand{\jobLogo}[4]{%
@@ -46,7 +48,7 @@
 %% Experiences section.
 \cvsection{\faBriefcase}{Expériences professionnelles}
 
-\jobEntry{\Happn}{Paris}{Février 2024}{}{Java Software Engineer}{\#Dating \#App \#Legacy \faHeart}{%
+\jobEntry{\Happn}{Paris}{\jobRemote}{Février 2024}{}{Java Software Engineer}{\#Dating \#App \#Legacy \faHeart}{%
     \jobLogo{\happnURL}{./img/experiences/happn}{-0.50 cm}{}%
     \jobDescription{Développeur dans l'équipe backend d'\Happn, l'app de rencontre qui permet de retrouver les personnes croisées, que ce soit dans la rue, un café, ou les transports.}\newline%
     \jobItems{
@@ -57,7 +59,7 @@
     \jobSkills{\JavaTwentyOne, \SpringBoot, \ElasticSearch, \Scylla, \PubSub, \GCP}%
 }
 
-\jobEntry{\SetKeeper}{Paris}{Juin 2022}{Novembre 2023}{Java Software Engineer}{\#Cinéma \#Paie \#US \faFilm}{%
+\jobEntry{\SetKeeper}{Paris}{\jobRemote}{Juin 2022}{Novembre 2023}{Java Software Engineer}{\#Cinéma \#Paie \#US \faFilm}{%
     \jobLogo{\setkeeperURL}{./img/experiences/setkeeper}{-0.30 cm}{}%
     \jobDescription{Développeur backend dans l'équipe produit de \SetKeeper, une plateforme de gestion, d'organisation et de planification pour les équipes de tournage \href{\setkeeperClientsURL}{(films, séries, TV)}.}\newline%
     \jobItems{
@@ -68,7 +70,7 @@
     \jobSkills{\JavaSeventeen, \Vertx, \MongoDB, \Maven, \Docker, \OpenAPI}%
 }
 
-\jobEntry{\Metroscope}{Paris}{Août 2019}{Juin 2022}{Full Stack Developer}{\#Industrie \#Monitoring \#\IoT{} \faIndustry}{%
+\jobEntry{\Metroscope}{Paris}{\jobRemote}{Août 2019}{Juin 2022}{Full Stack Developer}{\#Industrie \#Monitoring \#\IoT{} \faIndustry}{%
     \jobLogo{\metroscopeURL}{./img/experiences/metroscope}{-0.40 cm}{}%
     \jobDescription{Développeur front puis back dans l'équipe produit de \Metroscope, un logiciel d'aide à l'analyse et la détection de défaillances sur les systèmes de production d'énergie.}\newline%
     \jobItems{
@@ -80,7 +82,7 @@
     \jobSkills{\JavaEleven, \Kotlin, \SpringBoot, \NATS, \Docker, \React, \TypeScript}%
 }
 
-\jobEntry{\Wemanity}{Paris}{Mars 2018}{Juillet 2019}{Full Stack Lead Developer}{\#Banque \#Innovation \#IA \faMoneyBill*}{%
+\jobEntry{\Wemanity}{Paris}{}{Mars 2018}{Juillet 2019}{Full Stack Lead Developer}{\#Banque \#Innovation \#IA \faMoneyBill*}{%
     \jobLogo{\wemanityURL}{./img/experiences/wemanity}{-0.30 cm}{}%
     \jobDescription{Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \SG.}\newline%
     \jobItems{
@@ -92,7 +94,7 @@
     \jobSkills{\React, \MaterialUI, \Loopback, \Python, \Docker, \GitLab}%
 }
 
-\jobEntry{\Dhatim}{Paris}{Octobre 2016}{Février 2018}{Java Developer}{\#Paie \#Comptabilité \#RH \faFileInvoiceDollar}{%
+\jobEntry{\Dhatim}{Paris}{}{Octobre 2016}{Février 2018}{Java Developer}{\#Paie \#Comptabilité \#RH \faFileInvoiceDollar}{%
     \jobLogo{\dhatimURL}{./img/experiences/dhatim}{}{}%
     \jobDescription{Développeur backend dans l'équipe de \textit{\Conciliator}, une solution en SaaS de contrôle de \DSN{} pour les entreprises.}\newline%
     \jobItems{
@@ -103,7 +105,7 @@
     \jobSkills{\JavaEight, \Dropwizard, \TestNG, \Postgres, \GitHub, \Jenkins}%
 }
 
-\jobEntry{\Visian}{Nanterre}{Mars 2015}{Octobre 2016}{\IoT{} Lead Developer}{\#\IoT{} \#\RD{} \#Innovation \faMicrochip}{%
+\jobEntry{\Visian}{Nanterre}{}{Mars 2015}{Octobre 2016}{\IoT{} Lead Developer}{\#\IoT{} \#\RD{} \#Innovation \faMicrochip}{%
     \jobLogo{\visianURL}{./img/experiences/visian}{}{}%
     \jobDescription{Développeur \RD{} puis Lead Developer chez \Visian, la filiale \IoT{} de \NeuronesIT.}\newline%
     \jobItems{
