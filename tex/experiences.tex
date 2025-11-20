@@ -6,9 +6,9 @@
 
 %% Macros.
 \newcommand{\jobdate}[2]{
-    \ifthenelse{\equal{#2}{}}
-    {#1}
-    {#1 $\rightharpoonup$\\#2}
+    \IfBlankTF{#2}
+    {#1\hspace{+0.50 em}\faCalendarDay}
+    {#1\hspace{+0.50 em}\rightharpoonup\\#2\hspace{+0.50 em}\faCalendarDay}
 }
 \newcommand{\jobtags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\logoColumnWidth}}
 \newcommand{\joblogo}[4]{%
