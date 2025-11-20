@@ -15,10 +15,10 @@
     \displayYes{\displayImageExperiences}{%
         \vspace{-0.20 cm}
         \begin{wrapfigure}{R}{0.2\textwidth}%
-        \ifthenelse{\equal{#3}{}}{}{\vspace{#3}}%
+        \IfBlankF{#3}{\vspace{#3}}%
         \centering%
         \href{#1}{\includegraphics[width=\logoColumnWidth]{#2}}%
-        \ifthenelse{\equal{#4}{}}{}{\vspace{#4}}%
+        \IfBlankF{#4}{\vspace{#4}}%
         \end{wrapfigure}%
     }
 }
