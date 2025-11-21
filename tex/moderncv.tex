@@ -29,3 +29,12 @@
 
 %% Macros.
 \newcommand{\cvsection}[2]{\section{\texorpdfstring{#1$\;$}\textbf{#2}}}
+
+\ExplSyntaxOn
+\NewDocumentCommand{\getNth}{mmm}
+{
+    % #1 string, #2 separator, #3 index
+    \seq_set_split:Nnx \l_tmpa_seq { #2 } { #1 }
+    \seq_item:Nn \l_tmpa_seq { #3 }
+}
+\ExplSyntaxOff
