@@ -2,11 +2,14 @@
 \newcommand{\schoolDate}[2]{#1 $\rightharpoonup$ #2}
 \newcommand{\schoolName}[1]{\textcolor{color1}{#1}}
 \newcommand{\schoolLocation}[1]{\textcolor{color2}{#1}}
+\newcommand{\educationEntry}[6]{%
+    \cventry{#4\hfill\IfBlankTF{#2}{#3}{\schoolDate{#2}{#3}}}{\schoolName{#1}}{#5}{\schoolLocation{#6}}{}{}%
+}
 
 %% Education section.
 \cvsection{\faGraduationCap}{Parcours scolaire}
 
-\cventry{\faUniversity\hfill\schoolDate{2011}{2015}}{\schoolName{\Epitech}}{Titre d'Expert en Technologie de l'Information}{\schoolLocation{Toulouse}}{}{}
-\cventry{\faBeer\hfill\schoolDate{2013}{2014}}{\schoolName{\Griffith}}{Master en Computing option Business \& Management}{\schoolLocation{Dublin}}{}{}
-\cventry{\faBrain\hfill\schoolDate{2008}{2011}}{\schoolName{\EISTI}}{Classes préparatoires Maths Sup/Spé (équivalence L2 Math/Info)}{\schoolLocation{Pau}}{}{}
-\cventry{\faSchool\hfill2008}{\schoolName{\Vauvenargues}}{Bac S options Maths \& Sciences de l'Ingénieur}{\schoolLocation{Aix-en-Provence}}{}{}
+\educationEntry{\Epitech}{2011}{2015}{\faUniversity}{Titre d'Expert en Technologie de l'Information}{Toulouse}
+\educationEntry{\Griffith}{2013}{2014}{\faBeer}{Master en Computing option Business \& Management}{Dublin}
+\educationEntry{\EISTI}{2018}{2011}{\faBrain}{Classes préparatoires Maths Sup/Spé (équivalence L2 Math/Info)}{Pau}
+\educationEntry{\Vauvenargues}{}{2008}{\faSchool}{Bac S options Maths \& Sciences de l'Ingénieur}{Aix-en-Provence}
