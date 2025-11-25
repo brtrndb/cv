@@ -58,17 +58,6 @@
     }
 }
 \newcommand{\jobDescription}[1]{#1}
-\newcommand{\jobLogo}[4]{%
-    \displayYes{\displayImageExperiences}{%
-        \vspace{-0.20 cm}
-        \begin{wrapfigure}{R}{0.2\textwidth}%
-        \IfBlankF{#3}{\vspace{#3}}%
-        \centering%
-        \href{#1}{\includegraphics[width=\jobLogoColumnWidth]{#2}}%
-        \IfBlankF{#4}{\vspace{#4}}%
-        \end{wrapfigure}%
-    }
-}
 \newcommand{\jobItems}[1]{
     \foreach \x in {#1}{%
         \textcolor{color1}{\hspace{+0.20 em}\faAngleRight}\x\newline%
