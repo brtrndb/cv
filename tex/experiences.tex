@@ -1,8 +1,8 @@
 %% Lengths.
 \newlength{\jobEntrySpace}       %% Vertical space between each experience entry.
-\newlength{\jobLogoColumnWidth}  %% Vertical space between each experience entry.
+\newlength{\jobLogoWidth}        %% Vertical space between each experience entry.
 \setlength{\jobEntrySpace}{+0.50 em}
-\setlength{\jobLogoColumnWidth}{0.18\textwidth}
+\setlength{\jobLogoWidth}{0.20\maincolumnwidth}
 
 %% Macros.
 \newcommand{\jobRemote}{\faHouseUser}
@@ -27,7 +27,7 @@
 }
 \newcommand{\jobCompany}[1]{\textcolor{color1}{#1}}
 \newcommand{\jobTitle}[1]{#1}
-\newcommand{\jobTags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{0.20\maincolumnwidth}}
+\newcommand{\jobTags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\jobLogoWidth}}
 \newcommandx{\jobEntry}[8][]{
     \cventry[\jobEntrySpace]
     {\jobInfo{#4}{#5}{#2}[#3]}
@@ -52,8 +52,8 @@
                 \IfBlankF{#4}{\jobItems{#4}}
                 \IfBlankF{#5}{\jobSkills{#5}}
             } &
-            \parbox{0.20\maincolumnwidth}{%
-                \href{#1}{\includegraphics[width=0.20\maincolumnwidth]{#2}}} \\
+            \parbox{\jobLogoWidth}{%
+                \href{#1}{\includegraphics[width=\jobLogoWidth]{#2}}} \\
         \end{tabular}%
     }
 }
