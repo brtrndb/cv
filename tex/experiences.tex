@@ -37,6 +37,27 @@
     {}
     {#8}
 }
+\newcommandx{\jobEntryContent}[5][]{%
+    \IfBlankTF{#2}{%
+        \parbox{0.80\maincolumnwidth}{%
+            \IfBlankF{#3}{\jobDescription{#3}\newline}
+            \IfBlankF{#4}{\jobItems{#4}\newline}
+            \IfBlankF{#5}{\jobSkills{#5}}
+        }
+    }
+    {%
+        \begin{tabular}{c@{\hspace{1.00 em}}c}
+            \parbox{0.80\maincolumnwidth}{%
+                \IfBlankF{#3}{\jobDescription{#3}\newline}
+                \IfBlankF{#4}{\jobItems{#4}}
+                \IfBlankF{#5}{\jobSkills{#5}}
+            } &
+            \parbox{0.20\maincolumnwidth}{%
+                \href{#1}{\includegraphics[width=0.20\maincolumnwidth]{#2}}} \\
+        \end{tabular}%
+
+    }
+}
 \newcommand{\jobDescription}[1]{#1}
 \newcommand{\jobLogo}[4]{%
     \displayYes{\displayImageExperiences}{%
@@ -61,77 +82,79 @@
 \cvsection{\faBriefcase}{Expériences professionnelles}
 
 \jobEntry{\Happn}{Paris}{\jobRemote}{Février 2024}{}{Java Software Engineer}{\#Dating \#App \#Legacy \faHeart}{%
-    \jobLogo{\happnURL}{./img/experiences/happn}{-0.50 cm}{}%
-    \jobDescription{Développeur dans l'équipe backend d'\Happn, l'app de rencontre qui permet de retrouver les personnes croisées, que ce soit dans la rue, un café, ou les transports.}\newline%
-    \jobItems{
+    \jobEntryContent{\happnURL}{./img/experiences/happn}
+    {Développeur dans l'équipe backend d'\Happn, l'app de rencontre qui permet de retrouver les personnes croisées, que ce soit dans la rue, un café, ou les transports.}
+    {
             {Développement de nouvelles features (\textit{\SmartLOL}, \textit{\PerfectDates}).},
             {Migration des microservices existants en architecture hexagonale.},
             {Dette \& upgrades: \Java{} 11/17$\;$\rightarrow{} 21, \SpringBoot{} 2$\;$\rightarrow{} 3, \Maven{}$\;$\rightarrow{} \Gradle.}
     }
-    \jobSkills{\JavaTwentyOne, \SpringBoot, \ElasticSearch, \Scylla, \PubSub, \GCP}%
+    {\JavaTwentyOne, \SpringBoot, \ElasticSearch, \Scylla, \PubSub, \GCP}
 }
 
 \jobEntry{\SetKeeper}{Paris}{\jobRemote}{Juin 2022}{Novembre 2023}{Java Software Engineer}{\#Cinéma \#Paie \#US \faFilm}{%
-    \jobLogo{\setkeeperURL}{./img/experiences/setkeeper}{-0.30 cm}{}%
-    \jobDescription{Développeur backend dans l'équipe produit de \SetKeeper, une plateforme de gestion, d'organisation et de planification pour les équipes de tournage \href{\setkeeperClientsURL}{(films, séries, TV)}.}\newline%
-    \jobItems{
+    \jobEntryContent{\setkeeperURL}{./img/experiences/setkeeper}
+    {Développeur backend dans l'équipe produit de \SetKeeper, une plateforme de gestion, d'organisation et de planification pour les équipes de tournage \href{\setkeeperClientsURL}{(films, séries, TV)}.}
+    {
             {Migration d'une partie du code legacy sur une stack plus à jour.},
             {Mise en place d'outils et méthodes pour améliorer la \textit{Developer Experience}~(\DX).},
             {Intégration avec \Google{}, via \OAuthTwo{}, et de ses APIs (\GoogleDrive, \GoogleContacts).}
     }
-    \jobSkills{\JavaSeventeen, \Vertx, \MongoDB, \Maven, \Docker, \OpenAPI}%
+    {\JavaSeventeen, \Vertx, \MongoDB, \Maven, \Docker, \OpenAPI}
 }
 
 \jobEntry{\Metroscope}{Paris}{\jobRemote}{Août 2019}{Juin 2022}{Full Stack Developer}{\#Industrie \#Monitoring \#\IoT{} \faIndustry}{%
-    \jobLogo{\metroscopeURL}{./img/experiences/metroscope}{-0.40 cm}{}%
-    \jobDescription{Développeur front puis back dans l'équipe produit de \Metroscope, un logiciel d'aide à l'analyse et la détection de défaillances sur les systèmes de production d'énergie.}\newline%
-    \jobItems{
+    \jobEntryContent{\metroscopeURL}{./img/experiences/metroscope}
+    {Développeur front puis back dans l'équipe produit de \Metroscope, un logiciel d'aide à l'analyse et la détection de défaillances sur les systèmes de production d'énergie.}
+    {
             {Réécriture \textit{*from scratch*} de l'application web en \React{} et \TypeScript.},
             {Division du backend en microservices et dévelopement des nouveaux services.},
             {Passage d'une communication synchrone à asynchrone entre les services.},
             {Veille et partage de connaissances via l'organisation de \textit{"Backend Chapters"}.}
     }
-    \jobSkills{\JavaEleven, \Kotlin, \SpringBoot, \NATS, \Docker, \React, \TypeScript}%
+    {\JavaEleven, \Kotlin, \SpringBoot, \NATS, \Docker, \React, \TypeScript}
 }
 
 \jobEntry{\Wemanity}{Paris}{}{Mars 2018}{Juillet 2019}{Full Stack Lead Developer}{\#Banque \#Innovation \#IA \faMoneyBill*}{%
-    \jobLogo{\wemanityURL}{./img/experiences/wemanity}{-0.30 cm}{}%
-    \jobDescription{Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \SG.}\newline%
-    \jobItems{
+    \jobEntryContent{\wemanityURL}{./img/experiences/wemanity}
+    {Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \SG.}
+    {
             {Idéation, création et maintenance d'applications autour des robots \Pepper.},
             {Développement d'un MVP de data-visualisation en 3D de graphes complexes.},
             {Étude et prototypage de services cognitifs (\OCR, \NLU, \STT{} et \Traduction).},
             {Formation et encadrement des developpeurs (stagiaires, alternants et juniors).}
     }
-    \jobSkills{\React, \MaterialUI, \Loopback, \Python, \Docker, \GitLab}%
+    {\React, \MaterialUI, \Loopback, \Python, \Docker, \GitLab}
 }
 
 \jobEntry{\Dhatim}{Paris}{}{Octobre 2016}{Février 2018}{Java Developer}{\#Paie \#Comptabilité \#RH \faFileInvoiceDollar}{%
-    \jobLogo{\dhatimURL}{./img/experiences/dhatim}{}{}%
-    \jobDescription{Développeur backend dans l'équipe de \textit{\Conciliator}, une solution en SaaS de contrôle de \DSN{} pour les entreprises.}\newline%
-    \jobItems{
+    \jobEntryContent{\dhatimURL}{./img/experiences/dhatim}
+    {Développeur backend dans l'équipe de \textit{\Conciliator}, une solution en SaaS de contrôle de \DSN{} pour les entreprises.}
+    {
             {Compréhension des besoins métiers et support utilisateur sur site.},
             {Développement des nouvelles fonctionalités, \Scrum{} Master.},
             {Prototypage d'un chatbot \Intercom{} pour du support client simple.}
     }
-    \jobSkills{\JavaEight, \Dropwizard, \TestNG, \Postgres, \GitHub, \Jenkins}%
+    {\JavaEight, \Dropwizard, \TestNG, \Postgres, \GitHub, \Jenkins}
 }
 
 \jobEntry{\Visian}{Nanterre}{}{Mars 2015}{Octobre 2016}{\IoT{} Lead Developer}{\#\IoT{} \#\RD{} \#Innovation \faMicrochip}{%
-    \jobLogo{\visianURL}{./img/experiences/visian}{}{}%
-    \jobDescription{Développeur \RD{} puis Lead Developer chez \Visian, la filiale \IoT{} de \NeuronesIT.}\newline%
-    \jobItems{
+    \jobEntryContent{\visianURL}{./img/experiences/visian}
+    {Développeur \RD{} puis Lead Developer chez \Visian, la filiale \IoT{} de \NeuronesIT.}
+    {
             {Animation d'ateliers d'idéation, compréhension des besoins, veille technique.},
             {Développement de prototypes mêlant \IoT{}, mobile, cloud et data-visualisation.},
             {Encadrement et mentorat des équipes techniques (hardware \& software).}
     }
-    \jobSkills{\LanguageCCPlusPlus, \JavaEight, \Android, \Python, \GitHub, \MicrosoftAzure}%
+    {\LanguageCCPlusPlus, \JavaEight, \Android, \Python, \GitHub, \MicrosoftAzure}
 }
 
 \jobEntry{Stages \& alternances}{Paris/Toulouse}{}{Avril 2013}{Mars 2015}{}{\#\IoT{} \#DevOps \#Tests \faUserGraduate}{%
-    \jobItems{
+    \jobEntryContent{}{}{}
+    {
             {\jobCompany{\SII}: Prototypage \IoT{} combinant \href{\bitcrazeURL}{drone}, \RaspberryPi{} et divers capteurs.},
             {\jobCompany{\Thales}: Étude et déploiement d'\OpenStack{} dans un environnement de tests.},
             {\jobCompany{\Novacom}: Développement d'un ensemble de tests unitaires et fonctionnels.}
     }
+    {}
 }
