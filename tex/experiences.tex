@@ -1,14 +1,14 @@
 %% Lengths.
-\newlength{\jobEntrySpace}       %% Vertical space between each experience entry.
-\newlength{\jobLogoWidth}        %% Vertical space between each experience entry.
-\setlength{\jobEntrySpace}{+0.50 em}
-\setlength{\jobLogoWidth}{0.20\maincolumnwidth}
+\newlength{\experienceEntrySpace}       %% Vertical space between each experience entry.
+\newlength{\companyLogoWidth}        %% Vertical space between each experience entry.
+\setlength{\experienceEntrySpace}{+0.50 em}
+\setlength{\companyLogoWidth}{0.20\maincolumnwidth}
 
 %% Macros.
-\newcommand{\jobRemote}{\faHouseUser}
-\newcommand{\jobNoRemote}{\faBuilding}
+\newcommand{\remoteIcon}{\faHouseUser}
+\newcommand{\noRemoteIcon}{\faBuilding}
 \newcommand{\yearMONTH}[1]{\scriptsize{\getNth{#1}{ }{1}}\hspace{+0.20 em}\small{\getNth{#1}{ }{2}}}
-\newcommandx{\jobInfo}[4][4={\jobNoRemote},usedefault]{%
+\newcommandx{\jobInfo}[4][4={\noRemoteIcon},usedefault]{%
     \setlength{\fboxsep}{0pt}
     \adjustbox{valign=t}{%
         \begin{tabular}{rc}
@@ -25,19 +25,19 @@
         \end{tabular}%
     }%
 }
-\newcommand{\jobCompany}[1]{\textcolor{color1}{#1}}
+\newcommand{\companyName}[1]{\textcolor{color1}{#1}}
 \newcommand{\jobTitle}[1]{#1}
-\newcommand{\jobTags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\jobLogoWidth}}
-\newcommandx{\jobEntry}[8][]{
-    \cventry[\jobEntrySpace]
+\newcommand{\jobTags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\companyLogoWidth}}
+\newcommandx{\experienceEntry}[8][]{
+    \cventry[\experienceEntrySpace]
     {\jobInfo{#4}{#5}{#2}[#3]}
-    {\jobCompany{#1}\IfBlankT{#6}{\IfBlankF{#7}{\hfill\jobTags{#7}}}}
+    {\companyName{#1}\IfBlankT{#6}{\IfBlankF{#7}{\hfill\jobTags{#7}}}}
     {\IfBlankF{#6}{\jobTitle{#6}\IfBlankF{#7}{\hfill\jobTags{#7}}}}
     {}
     {}
     {#8}
 }
-\newcommandx{\jobEntryContent}[5][]{%
+\newcommandx{\experienceEntryContent}[5][]{%
     \IfBlankTF{#2}{%
         \parbox{0.80\maincolumnwidth}{%
             \IfBlankF{#3}{\jobDescription{#3}\newline}
@@ -52,8 +52,8 @@
                 \IfBlankF{#4}{\jobItems{#4}}
                 \IfBlankF{#5}{\jobSkills{#5}}
             } &
-            \parbox{\jobLogoWidth}{%
-                \href{#1}{\includegraphics[width=\jobLogoWidth]{#2}}} \\
+            \parbox{\companyLogoWidth}{%
+                \href{#1}{\includegraphics[width=\companyLogoWidth]{#2}}} \\
         \end{tabular}%
     }
 }
@@ -69,8 +69,8 @@
 %% Experiences section.
 \cvsection{\faBriefcase}{Expériences professionnelles}
 
-\jobEntry{\Happn}{Paris}{\jobRemote}{Février 2024}{}{Java Software Engineer}{\#Dating \#App \#Legacy \faHeart}{%
-    \jobEntryContent{\happnURL}{./img/experiences/happn}
+\experienceEntry{\Happn}{Paris}{\remoteIcon}{Février 2024}{}{Java Software Engineer}{\#Dating \#App \#Legacy \faHeart}{%
+    \experienceEntryContent{\happnURL}{./img/experiences/happn}
     {Développeur dans l'équipe backend d'\Happn, l'app de rencontre qui permet de retrouver les personnes croisées, que ce soit dans la rue, un café, ou les transports.}
     {
             {Développement de nouvelles features (\textit{\SmartLOL}, \textit{\PerfectDates}).},
@@ -80,8 +80,8 @@
     {\JavaTwentyOne, \SpringBoot, \ElasticSearch, \Scylla, \PubSub, \GCP}
 }
 
-\jobEntry{\SetKeeper}{Paris}{\jobRemote}{Juin 2022}{Novembre 2023}{Java Software Engineer}{\#Cinéma \#Paie \#US \faFilm}{%
-    \jobEntryContent{\setkeeperURL}{./img/experiences/setkeeper}
+\experienceEntry{\SetKeeper}{Paris}{\remoteIcon}{Juin 2022}{Novembre 2023}{Java Software Engineer}{\#Cinéma \#Paie \#US \faFilm}{%
+    \experienceEntryContent{\setkeeperURL}{./img/experiences/setkeeper}
     {Développeur backend dans l'équipe produit de \SetKeeper, une plateforme de gestion, d'organisation et de planification pour les équipes de tournage \href{\setkeeperClientsURL}{(films, séries, TV)}.}
     {
             {Migration d'une partie du code legacy sur une stack plus à jour.},
@@ -91,8 +91,8 @@
     {\JavaSeventeen, \Vertx, \MongoDB, \Maven, \Docker, \OpenAPI}
 }
 
-\jobEntry{\Metroscope}{Paris}{\jobRemote}{Août 2019}{Juin 2022}{Full Stack Developer}{\#Industrie \#Monitoring \#\IoT{} \faIndustry}{%
-    \jobEntryContent{\metroscopeURL}{./img/experiences/metroscope}
+\experienceEntry{\Metroscope}{Paris}{\remoteIcon}{Août 2019}{Juin 2022}{Full Stack Developer}{\#Industrie \#Monitoring \#\IoT{} \faIndustry}{%
+    \experienceEntryContent{\metroscopeURL}{./img/experiences/metroscope}
     {Développeur front puis back dans l'équipe produit de \Metroscope, un logiciel d'aide à l'analyse et la détection de défaillances sur les systèmes de production d'énergie.}
     {
             {Réécriture \textit{*from scratch*} de l'application web en \React{} et \TypeScript.},
@@ -103,8 +103,8 @@
     {\JavaEleven, \Kotlin, \SpringBoot, \NATS, \Docker, \React, \TypeScript}
 }
 
-\jobEntry{\Wemanity}{Paris}{}{Mars 2018}{Juillet 2019}{Full Stack Lead Developer}{\#Banque \#Innovation \#IA \faMoneyBill*}{%
-    \jobEntryContent{\wemanityURL}{./img/experiences/wemanity}
+\experienceEntry{\Wemanity}{Paris}{}{Mars 2018}{Juillet 2019}{Full Stack Lead Developer}{\#Banque \#Innovation \#IA \faMoneyBill*}{%
+    \experienceEntryContent{\wemanityURL}{./img/experiences/wemanity}
     {Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \SG.}
     {
             {Idéation, création et maintenance d'applications autour des robots \Pepper.},
@@ -115,8 +115,8 @@
     {\React, \MaterialUI, \Loopback, \Python, \Docker, \GitLab}
 }
 
-\jobEntry{\Dhatim}{Paris}{}{Octobre 2016}{Février 2018}{Java Developer}{\#Paie \#Comptabilité \#RH \faFileInvoiceDollar}{%
-    \jobEntryContent{\dhatimURL}{./img/experiences/dhatim}
+\experienceEntry{\Dhatim}{Paris}{}{Octobre 2016}{Février 2018}{Java Developer}{\#Paie \#Comptabilité \#RH \faFileInvoiceDollar}{%
+    \experienceEntryContent{\dhatimURL}{./img/experiences/dhatim}
     {Développeur backend dans l'équipe de \textit{\Conciliator}, une solution en SaaS de contrôle de \DSN{} pour les entreprises.}
     {
             {Compréhension des besoins métiers et support utilisateur sur site.},
@@ -126,8 +126,8 @@
     {\JavaEight, \Dropwizard, \TestNG, \Postgres, \GitHub, \Jenkins}
 }
 
-\jobEntry{\Visian}{Nanterre}{}{Mars 2015}{Octobre 2016}{\IoT{} Lead Developer}{\#\IoT{} \#\RD{} \#Innovation \faMicrochip}{%
-    \jobEntryContent{\visianURL}{./img/experiences/visian}
+\experienceEntry{\Visian}{Nanterre}{}{Mars 2015}{Octobre 2016}{\IoT{} Lead Developer}{\#\IoT{} \#\RD{} \#Innovation \faMicrochip}{%
+    \experienceEntryContent{\visianURL}{./img/experiences/visian}
     {Développeur \RD{} puis Lead Developer chez \Visian, la filiale \IoT{} de \NeuronesIT.}
     {
             {Animation d'ateliers d'idéation, compréhension des besoins, veille technique.},
@@ -137,12 +137,12 @@
     {\LanguageCCPlusPlus, \JavaEight, \Android, \Python, \GitHub, \MicrosoftAzure}
 }
 
-\jobEntry{Stages \& alternances}{Paris/Toulouse}{}{Avril 2013}{Mars 2015}{}{\#\IoT{} \#DevOps \#Tests \faUserGraduate}{%
-    \jobEntryContent{}{}{}
+\experienceEntry{Stages \& alternances}{Paris/Toulouse}{}{Avril 2013}{Mars 2015}{}{\#\IoT{} \#DevOps \#Tests \faUserGraduate}{%
+    \experienceEntryContent{}{}{}
     {
-            {\jobCompany{\SII}: Prototypage \IoT{} combinant \href{\bitcrazeURL}{drone}, \RaspberryPi{} et divers capteurs.},
-            {\jobCompany{\Thales}: Étude et déploiement d'\OpenStack{} dans un environnement de tests.},
-            {\jobCompany{\Novacom}: Développement d'un ensemble de tests unitaires et fonctionnels.}
+            {\companyName{\SII}: Prototypage \IoT{} combinant \href{\bitcrazeURL}{drone}, \RaspberryPi{} et divers capteurs.},
+            {\companyName{\Thales}: Étude et déploiement d'\OpenStack{} dans un environnement de tests.},
+            {\companyName{\Novacom}: Développement d'un ensemble de tests unitaires et fonctionnels.}
     }
     {}
 }
