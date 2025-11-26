@@ -1,15 +1,3 @@
-%% Page border.
-\newlength{\pageborder}
-\setlength{\pageborder}{3 pt}
-\pagecolor{color1}
-\AddToShipoutPictureBG{%
-    \AtPageLowerLeft{%
-        \color{white}%
-        \hspace{\pageborder}%
-        \rule[\pageborder]{\paperwidth-2\pageborder}{\paperheight-2\pageborder}%
-    }%
-}
-
 %% Custom lengths.
 \newlength{\cvSectionSpace} %% Space between sections.
 \setlength{\cvSectionSpace}{+0.00 em}
