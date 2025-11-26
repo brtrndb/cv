@@ -1,14 +1,14 @@
 % !TEX encoding = UTF-8 Unicode
 % !TEX TS-program = LuaLaTeX
 
-%% ModernCV.
-\documentclass[10pt,a4paper]{moderncv}  %% Using moderncv class
-\usepackage{luatextra}                  %% Using lualatex instead of latex.
-\usepackage[french]{babel}              %% French package.
-\usepackage{geometry}                   %% Margin geometry.
-\usepackage[fixed]{fontawesome5}        %% Using awesome font for icons.
-\usepackage{wrapfig}                    %% Using floating images.
-\usepackage{ifthen}                     %% Using conditions.
+%% Packages.
+\documentclass[10pt,a4paper]{moderncv}
+\usepackage{luatextra}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage[fixed]{fontawesome5}
+\usepackage{wrapfig}
+\usepackage{ifthen}
 \usepackage{xcolor}
 \usepackage{textcomp}
 \usepackage{eso-pic}
@@ -18,21 +18,22 @@
 \usepackage{adjustbox}
 
 % Margin options.
-\geometry{top=1.50 cm}                  %% Margin top.
-\geometry{bottom=1.50 cm}               %% Margin bottom.
-\geometry{left=1.50 cm}                 %% Margin left.
-\geometry{right=1.50 cm}                %% Margin right.
+\geometry{top=1.50 cm}
+\geometry{bottom=1.50 cm}
+\geometry{left=1.50 cm}
+\geometry{right=1.50 cm}
 
-%% Styling moderncv document.
-\moderncvcolor{blue}                            %% Colors: blue, orange, green, red, purple, grey, black.
-\moderncvstyle{classic}                         %% Styles: classic, casual, oldstyle, banking, fancy.
-\moderncvicons{awesome}                         %% Icons: marvosym, awesome, letters (banking only).
-\renewcommand{\familydefault}{\sfdefault}
+%% moderncv configuration options.
+\moderncvcolor{blue}
+\moderncvstyle{classic}
+\moderncvicons{awesome}
 \nopagenumbers{}
-\setlength{\hintscolumnwidth}{+3.20 cm}         %% Column width of cventry.
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\hintscolumnwidth}{+3.20 cm} % Column width of cvitem.
 
-\input{./tex/moderncv}                  %% Moderncv configuration.
-\input{./tex/aliases}                   %% Aliases used across sections.
+%% Import files.
+\input{./tex/moderncv} % Import custom macros and
+\input{./tex/aliases}
 
 %% Personal information.
 \name{\textbf{Bertrand}}{\textbf{Boyer}}
@@ -54,10 +55,16 @@
 }%
 
 \begin{document}
-  \makecvtitle                        %% Header.
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Title & Personal information.
+
+  \makecvtitle
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   \vspace{-2.50 em}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %% Skills section.
   \cvsection{\faCode}{Compétences techniques}
 
@@ -67,8 +74,11 @@
   \cvitem{\skillGroup{\faProjectDiagram}{Méthodologies}}{\HexagonalArch, \CleanCode, \TDD, \Scrum, \Kanban, \DX.}
   \cvitem{\skillGroup{\faTools}{Outils}}{\IntelliJ, \GitHub, \GitHubActions, \Postman, \Lens, \Grafana, \Jira, \LinkLaTeX.}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
   \vspace{\cvSectionSpace}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %% Experiences section.
   \cvsection{\faBriefcase}{Expériences professionnelles}
 
@@ -150,8 +160,11 @@
     {}
   }
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
   \vspace{\cvSectionSpace}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %% Education section.
   \cvsection{\faGraduationCap}{Parcours scolaire}
 
@@ -160,10 +173,13 @@
   \educationEntry{\EISTI}{2018}{2011}{\faBrain}{Classes préparatoires Maths Sup/Spé (équivalence L2 Math/Info)}{Pau}
   \educationEntry{\Vauvenargues}{}{2008}{\faSchool}{Bac S options Maths \& Sciences de l'Ingénieur}{Aix-en-Provence}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
   \vspace{\cvSectionSpace}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Hobbies & Community sections.
   \begin{minipage}[t]{0.42\linewidth}
-    %% Community section.
     \cvsection{\faTheaterMasks}{Centres d'intérêts}
     \extraEntry{\faPhotoVideo}{Photographie, musique, cinéma.}%
     \extraEntry{\faBook}{Lecture (thrillers, SF, fantasy, comics).}%
@@ -174,12 +190,13 @@
   \hspace{+2.00 cm}%
 %
   \begin{minipage}[t]{0.42\linewidth}
-    %% Hobbies section.
     \cvsection{\faPeopleCarry}{Associatif}
     \extraEntry{\faCampground}{Scoutisme (en tant que scout et chef).}%
     \extraEntry{\faRobot}{Membre du Lab Robotique à \Epitech}%
     \extraEntry{\faCameraRetro}{Photographe du BDE de l'\EISTI.}%
     \extraEntry{\faVideo}{Responsable \textit{Cinéma \& Séries} à \AirEISTI.}%
   \end{minipage}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
