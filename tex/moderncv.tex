@@ -8,11 +8,10 @@
 
 %% Utils.
 \ExplSyntaxOn
-\NewDocumentCommand{\getNth}{mmm}
-{
-    % #1: string, #2: separator, #3: index.
-    \seq_set_split:Nnx \l_tmpa_seq { #2 } { #1 }
-    \seq_item:Nn \l_tmpa_seq { #3 }
+\NewDocumentCommand{\getNth}{mmm} {%
+% #1: string, #2: separator, #3: index.
+  \seq_set_split:Nnx \l_tmpa_seq { #2 } { #1 }
+  \seq_item:Nn \l_tmpa_seq { #3 }
 }
 \ExplSyntaxOff
 
@@ -23,71 +22,70 @@
 \newcommand{\noRemoteIcon}{\faBuilding}
 \newcommand{\yearMONTH}[1]{\scriptsize{\getNth{#1}{ }{1}}\hspace{+0.20 em}\small{\getNth{#1}{ }{2}}} % #1: string (month year).
 \newcommandx{\jobInfo}[4][4={\noRemoteIcon},usedefault]{%
-    % #1: start date, #2: end date, #3: location, #4: remote icon.
-    \setlength{\fboxsep}{0pt}
-    \adjustbox{valign=t}{%
-        \begin{tabular}{rc}
-            \IfBlankTF{#2}{
-                \yearMONTH{#1}                      & \small{\faCalendarDay}\\[-3pt]
-            }%
-            {%
-                \yearMONTH{#1}                      & \multirow{2}{*}{\small{\faCalendarDay}}\\[-3pt]
-                \yearMONTH{#2}                      & \\[-3pt]
-            }%
-            \IfBlankF{#3}{%
-                \scriptsize{\textcolor{color2}{#3}} & \scriptsize{\textcolor{color2}{#4}}\\[-3pt]
-            }%
-        \end{tabular}%
-    }%
+% #1: start date, #2: end date, #3: location, #4: remote icon.
+  \setlength{\fboxsep}{0pt}
+  \adjustbox{valign=t}{%
+    \begin{tabular}{rc}
+      \IfBlankTF{#2}{
+        \yearMONTH{#1}                      & \small{\faCalendarDay}\\[-3pt]
+      }%
+      {%
+        \yearMONTH{#1}                      & \multirow{2}{*}{\small{\faCalendarDay}}\\[-3pt]
+        \yearMONTH{#2}                      & \\[-3pt]
+      }%
+      \IfBlankF{#3}{%
+        \scriptsize{\textcolor{color2}{#3}} & \scriptsize{\textcolor{color2}{#4}}\\[-3pt]
+      }%
+    \end{tabular}%
+  }%
 }
 \newcommand{\companyName}[1]{\textcolor{color1}{#1}}
 \newcommand{\jobTitle}[1]{#1}
 \newcommand{\jobTags}[1]{\normalfont{\scriptsize{\textcolor{color2}{#1}}}\hspace{\companyLogoWidth}}
 \newcommandx{\experienceEntry}[8][]{%
-    % #1: company name, #2: location, #3: remote icon, #4: start date, #5: end date, #6: job title, #7: tags, #8: content.
-    \cventry[\experienceEntrySpace]
-    {\jobInfo{#4}{#5}{#2}[#3]}
-    {\companyName{#1}\IfBlankT{#6}{\IfBlankF{#7}{\hfill\jobTags{#7}}}}
-    {\IfBlankF{#6}{\jobTitle{#6}\IfBlankF{#7}{\hfill\jobTags{#7}}}}
-    {}
-    {}
-    {#8}
+% #1: company name, #2: location, #3: remote icon, #4: start date, #5: end date, #6: job title, #7: tags, #8: content.
+  \cventry[\experienceEntrySpace]
+  {\jobInfo{#4}{#5}{#2}[#3]}
+  {\companyName{#1}\IfBlankT{#6}{\IfBlankF{#7}{\hfill\jobTags{#7}}}}
+  {\IfBlankF{#6}{\jobTitle{#6}\IfBlankF{#7}{\hfill\jobTags{#7}}}}
+  {}
+  {}
+  {#8}
 }
 \newcommandx{\experienceEntryContent}[5][]{%
-    % #1: url, #2: logo, #3: job description, #4: job items, #5: skills.
-    \IfBlankTF{#2}{%
-        \parbox{0.80\maincolumnwidth}{%
-            \IfBlankF{#3}{\jobDescription{#3}\newline}
-            \IfBlankF{#4}{\jobItems{#4}\newline}
-            \IfBlankF{#5}{\jobSkills{#5}}
-        }
+% #1: url, #2: logo, #3: job description, #4: job items, #5: skills.
+  \IfBlankTF{#2}{%
+    \parbox{0.80\maincolumnwidth}{%
+      \IfBlankF{#3}{\jobDescription{#3}\newline}
+      \IfBlankF{#4}{\jobItems{#4}\newline}
+      \IfBlankF{#5}{\jobSkills{#5}}
     }
-    {%
-        \begin{tabular}{c@{\hspace{1.00 em}}c}
-            \parbox{0.80\maincolumnwidth}{%
-                \IfBlankF{#3}{\jobDescription{#3}\newline}
-                \IfBlankF{#4}{\jobItems{#4}}
-                \IfBlankF{#5}{\jobSkills{#5}}
-            } &
-            \parbox{\companyLogoWidth}{%
-                \href{#1}{\includegraphics[width=\companyLogoWidth]{#2}}} \\
-        \end{tabular}%
-    }
+  }
+  {%
+    \begin{tabular}{c@{\hspace{1.00 em}}c}
+      \parbox{0.80\maincolumnwidth}{%
+        \IfBlankF{#3}{\jobDescription{#3}\newline}
+        \IfBlankF{#4}{\jobItems{#4}}
+        \IfBlankF{#5}{\jobSkills{#5}}
+      } &
+      \parbox{\companyLogoWidth}{\href{#1}{\includegraphics[width=\companyLogoWidth]{#2}}} \\
+    \end{tabular}%
+  }
 }
 \newcommand{\jobDescription}[1]{#1}
 \newcommand{\jobItems}[1]{
-    \foreach \x in {#1}{%
-        \textcolor{color1}{\hspace{+0.20 em}\faAngleRight}\x\newline%
-    }%
+  \foreach \x in {#1}{%
+    \textcolor{color1}{\hspace{+0.20 em}\faAngleRight}\x\newline%
+  }%
 }
 \newcommand{\jobSkills}[1]{\textcolor{color2}{Stack technique: #1.}}
 \newcommand{\schoolDate}[2]{#1 $\rightharpoonup$ #2} % #1: start date, #2: end date.
 \newcommand{\schoolName}[1]{\textcolor{color1}{#1}}
 \newcommand{\schoolLocation}[1]{\textcolor{color2}{#1}}
 \newcommand{\educationEntry}[6]{%
-    % #1: school name, #2: start date, #3: end date, #4: icon, #5: description, #6: location.
-    \cventry{#4\hfill\IfBlankTF{#2}{#3}{\schoolDate{#2}{#3}}}{\schoolName{#1}}{#5}{\schoolLocation{#6}}{}{}%
+% #1: school name, #2: start date, #3: end date, #4: icon, #5: description, #6: location.
+  \cventry{#4\hfill\IfBlankTF{#2}{#3}{\schoolDate{#2}{#3}}}{\schoolName{#1}}{#5}{\schoolLocation{#6}}{}{}%
 }
 \newcommand{\extraEntry}[2]{% #1: icon, #2: description.
-    \hspace{-0.40\hintscolumnwidth}\cvitem{#1}{\hspace{-1.00 em}#2}%
+  \hspace{-0.40\hintscolumnwidth}\cvitem{#1}{\hspace{-1.00 em}#2}%
 }
