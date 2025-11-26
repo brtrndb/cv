@@ -1,13 +1,16 @@
 %% Macros.
 \newcommand{\extraitem}[1]{\textcolor{color1}{\faAngleRight} #1}
+\newcommand{\extraEntry}[2]{%
+    \hspace{-0.40\hintscolumnwidth}\cvitem{#1}{\hspace{-1.00 em}#2}%
+}
 
 \begin{minipage}[t]{0.42\linewidth}
     %% Community section.
     \cvsection{\faTheaterMasks}{Centres d'intérêts}
-    \hspace{-0.40\hintscolumnwidth}\cvitem{\faPhotoVideo}{\hspace{-1.00 em}Photographie, musique, cinéma.}%
-    \hspace{-0.40\hintscolumnwidth}\cvitem{\faBook}{\hspace{-1.00 em}Lecture (thrillers, SF, fantasy, comics).}%
-    \hspace{-0.40\hintscolumnwidth}\cvitem{\faGamepad}{\hspace{-1.00 em}Lego, robotique, gaming, open source.}%
-    \hspace{-0.40\hintscolumnwidth}\cvitem{\faRunning}{\hspace{-1.00 em}\href{https://youtu.be/dQw4w9WgXcQ}{Urban fitting}.}%
+    \extraEntry{\faPhotoVideo}{Photographie, musique, cinéma.}%
+    \extraEntry{\faBook}{Lecture (thrillers, SF, fantasy, comics).}%
+    \extraEntry{\faGamepad}{Lego, robotique, gaming, open source.}%
+    \extraEntry{\faRunning}{\href{https://youtu.be/dQw4w9WgXcQ}{Urban fitting}.}%
 \end{minipage}
 %
 \hspace{+2.00 cm}%
@@ -15,8 +18,8 @@
 \begin{minipage}[t]{0.42\linewidth}
     %% Hobbies section.
     \cvsection{\faPeopleCarry}{Associatif}
-    \hspace{-0.40\hintscolumnwidth}\cvitem{\faCampground}{\hspace{-1.00 em}Scoutisme (en tant que scout et chef).}%
-    \hspace{-0.40\hintscolumnwidth}\cvitem{\faRobot}{\hspace{-1.00 em}Membre du Lab Robotique à \Epitech}%
-    \hspace{-0.40\hintscolumnwidth}\cvitem{\faCameraRetro}{\hspace{-1.00 em}Photographe du BDE de l'\EISTI.}%
-    \hspace{-0.40\hintscolumnwidth}\cvitem{\faVideo}{\hspace{-1.00 em}Responsable \textit{Cinéma \& Séries} à \AirEISTI.}%
+    \extraEntry{\faCampground}{Scoutisme (en tant que scout et chef).}%
+    \extraEntry{\faRobot}{Membre du Lab Robotique à \Epitech}%
+    \extraEntry{\faCameraRetro}{Photographe du BDE de l'\EISTI.}%
+    \extraEntry{\faVideo}{Responsable \textit{Cinéma \& Séries} à \AirEISTI.}%
 \end{minipage}
