@@ -54,13 +54,132 @@
 }%
 
 \begin{document}
-    \makecvtitle                        %% Header.
-    \vspace{-2.50 em}
-    \input{./tex/skills}                %% Skills section.
-    \vspace{\cvSectionSpace}
-    \input{./tex/experiences}           %% Experiences section.
-    \vspace{\cvSectionSpace}
-    \input{./tex/education}             %% Education section.
-    \vspace{\cvSectionSpace}
-    \input{./tex/extra}                 %% Hobbies and Community section.
+  \makecvtitle                        %% Header.
+
+  \vspace{-2.50 em}
+
+  %% Skills section.
+  \cvsection{\faCode}{Compétences techniques}
+
+  \cvitem{\skillGroup{\faCoffee}{Écosystème \Java}}{\SpringBoot, \RxJava, \Hibernate, \QueryDSL, \Flyway, \Testcontainers, \Gradle.}
+  \cvitem{\skillGroup{\faDatabase}{BDD \& Système}}{\Postgres, \MongoDB, \ElasticSearch, \Scylla, \Bash, \Docker, \Linux.}
+  \cvitem{\skillGroup{\faGlobeAfrica}{Web \& Messaging}}{\REST, \OpenAPI, \JWT, \OAuthTwo, \NATS, \PubSub, \React, \TypeScript.}
+  \cvitem{\skillGroup{\faProjectDiagram}{Méthodologies}}{\HexagonalArch, \CleanCode, \TDD, \Scrum, \Kanban, \DX.}
+  \cvitem{\skillGroup{\faTools}{Outils}}{\IntelliJ, \GitHub, \GitHubActions, \Postman, \Lens, \Grafana, \Jira, \LinkLaTeX.}
+
+  \vspace{\cvSectionSpace}
+
+  %% Experiences section.
+  \cvsection{\faBriefcase}{Expériences professionnelles}
+
+  \experienceEntry{\Happn}{Paris}{\remoteIcon}{Février 2024}{}{Java Software Engineer}{\#Dating \#App \#Legacy \faHeart}{%
+    \experienceEntryContent{\happnURL}{./img/experiences/happn}
+    {Développeur dans l'équipe backend d'\Happn, l'app de rencontre qui permet de retrouver les personnes croisées, que ce soit dans la rue, un café, ou les transports.}
+    {
+        {Développement de nouvelles features (\textit{\SmartLOL}, \textit{\PerfectDates}).},
+        {Migration des microservices existants en architecture hexagonale.},
+        {Dette \& upgrades: \Java{} 11/17$\;$\rightarrow{} 21, \SpringBoot{} 2$\;$\rightarrow{} 3, \Maven{}$\;$\rightarrow{} \Gradle.}
+    }
+    {\JavaTwentyOne, \SpringBoot, \ElasticSearch, \Scylla, \PubSub, \GCP}
+  }
+
+  \experienceEntry{\SetKeeper}{Paris}{\remoteIcon}{Juin 2022}{Novembre 2023}{Java Software Engineer}{\#Cinéma \#Paie \#US \faFilm}{%
+    \experienceEntryContent{\setkeeperURL}{./img/experiences/setkeeper}
+    {Développeur backend dans l'équipe produit de \SetKeeper, une plateforme de gestion, d'organisation et de planification pour les équipes de tournage \href{\setkeeperClientsURL}{(films, séries, TV)}.}
+    {
+        {Migration d'une partie du code legacy sur une stack plus à jour.},
+        {Mise en place d'outils et méthodes pour améliorer la \textit{Developer Experience}~(\DX).},
+        {Intégration avec \Google{}, via \OAuthTwo{}, et de ses APIs (\GoogleDrive, \GoogleContacts).}
+    }
+    {\JavaSeventeen, \Vertx, \MongoDB, \Maven, \Docker, \OpenAPI}
+  }
+
+  \experienceEntry{\Metroscope}{Paris}{\remoteIcon}{Août 2019}{Juin 2022}{Full Stack Developer}{\#Industrie \#Monitoring \#\IoT{} \faIndustry}{%
+    \experienceEntryContent{\metroscopeURL}{./img/experiences/metroscope}
+    {Développeur front puis back dans l'équipe produit de \Metroscope, un logiciel d'aide à l'analyse et la détection de défaillances sur les systèmes de production d'énergie.}
+    {
+        {Réécriture \textit{*from scratch*} de l'application web en \React{} et \TypeScript.},
+        {Division du backend en microservices et dévelopement des nouveaux services.},
+        {Passage d'une communication synchrone à asynchrone entre les services.},
+        {Veille et partage de connaissances via l'organisation de \textit{"Backend Chapters"}.}
+    }
+    {\JavaEleven, \Kotlin, \SpringBoot, \NATS, \Docker, \React, \TypeScript}
+  }
+
+  \experienceEntry{\Wemanity}{Paris}{}{Mars 2018}{Juillet 2019}{Full Stack Lead Developer}{\#Banque \#Innovation \#IA \faMoneyBill*}{%
+    \experienceEntryContent{\wemanityURL}{./img/experiences/wemanity}
+    {Lead Developer \RD{} au sein du Lab Innovation \textit{Innov8} de la \SG.}
+    {
+        {Idéation, création et maintenance d'applications autour des robots \Pepper.},
+        {Développement d'un MVP de data-visualisation en 3D de graphes complexes.},
+        {Étude et prototypage de services cognitifs (\OCR, \NLU, \STT{} et \Traduction).},
+        {Formation et encadrement des developpeurs (stagiaires, alternants et juniors).}
+    }
+    {\React, \MaterialUI, \Loopback, \Python, \Docker, \GitLab}
+  }
+
+  \experienceEntry{\Dhatim}{Paris}{}{Octobre 2016}{Février 2018}{Java Developer}{\#Paie \#Comptabilité \#RH \faFileInvoiceDollar}{%
+    \experienceEntryContent{\dhatimURL}{./img/experiences/dhatim}
+    {Développeur backend dans l'équipe de \textit{\Conciliator}, une solution en SaaS de contrôle de \DSN{} pour les entreprises.}
+    {
+        {Compréhension des besoins métiers et support utilisateur sur site.},
+        {Développement des nouvelles fonctionalités, \Scrum{} Master.},
+        {Prototypage d'un chatbot \Intercom{} pour du support client simple.}
+    }
+    {\JavaEight, \Dropwizard, \TestNG, \Postgres, \GitHub, \Jenkins}
+  }
+
+  \experienceEntry{\Visian}{Nanterre}{}{Mars 2015}{Octobre 2016}{\IoT{} Lead Developer}{\#\IoT{} \#\RD{} \#Innovation \faMicrochip}{%
+    \experienceEntryContent{\visianURL}{./img/experiences/visian}
+    {Développeur \RD{} puis Lead Developer chez \Visian, la filiale \IoT{} de \NeuronesIT.}
+    {
+        {Animation d'ateliers d'idéation, compréhension des besoins, veille technique.},
+        {Développement de prototypes mêlant \IoT{}, mobile, cloud et data-visualisation.},
+        {Encadrement et mentorat des équipes techniques (hardware \& software).}
+    }
+    {\LanguageCCPlusPlus, \JavaEight, \Android, \Python, \GitHub, \MicrosoftAzure}
+  }
+
+  \experienceEntry{Stages \& alternances}{Paris/Toulouse}{}{Avril 2013}{Mars 2015}{}{\#\IoT{} \#DevOps \#Tests \faUserGraduate}{%
+    \experienceEntryContent{}{}{}
+    {
+        {\companyName{\SII}: Prototypage \IoT{} combinant \href{\bitcrazeURL}{drone}, \RaspberryPi{} et divers capteurs.},
+        {\companyName{\Thales}: Étude et déploiement d'\OpenStack{} dans un environnement de tests.},
+        {\companyName{\Novacom}: Développement d'un ensemble de tests unitaires et fonctionnels.}
+    }
+    {}
+  }
+
+  \vspace{\cvSectionSpace}
+
+  %% Education section.
+  \cvsection{\faGraduationCap}{Parcours scolaire}
+
+  \educationEntry{\Epitech}{2011}{2015}{\faUniversity}{Titre d'Expert en Technologie de l'Information}{Toulouse}
+  \educationEntry{\Griffith}{2013}{2014}{\faBeer}{Master en Computing option Business \& Management}{Dublin}
+  \educationEntry{\EISTI}{2018}{2011}{\faBrain}{Classes préparatoires Maths Sup/Spé (équivalence L2 Math/Info)}{Pau}
+  \educationEntry{\Vauvenargues}{}{2008}{\faSchool}{Bac S options Maths \& Sciences de l'Ingénieur}{Aix-en-Provence}
+
+  \vspace{\cvSectionSpace}
+
+  \begin{minipage}[t]{0.42\linewidth}
+    %% Community section.
+    \cvsection{\faTheaterMasks}{Centres d'intérêts}
+    \extraEntry{\faPhotoVideo}{Photographie, musique, cinéma.}%
+    \extraEntry{\faBook}{Lecture (thrillers, SF, fantasy, comics).}%
+    \extraEntry{\faGamepad}{Lego, robotique, gaming, open source.}%
+    \extraEntry{\faRunning}{\href{https://youtu.be/dQw4w9WgXcQ}{Urban fitting}.}%
+  \end{minipage}
+%
+  \hspace{+2.00 cm}%
+%
+  \begin{minipage}[t]{0.42\linewidth}
+    %% Hobbies section.
+    \cvsection{\faPeopleCarry}{Associatif}
+    \extraEntry{\faCampground}{Scoutisme (en tant que scout et chef).}%
+    \extraEntry{\faRobot}{Membre du Lab Robotique à \Epitech}%
+    \extraEntry{\faCameraRetro}{Photographe du BDE de l'\EISTI.}%
+    \extraEntry{\faVideo}{Responsable \textit{Cinéma \& Séries} à \AirEISTI.}%
+  \end{minipage}
+
 \end{document}
