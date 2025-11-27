@@ -18,6 +18,10 @@
 %% Macros.
 \newcommand{\cvsection}[2]{\section{\texorpdfstring{#1$\;$}\textbf{#2}}} % #1: icon, #2: section title.
 \newcommand{\skillGroup}[2]{#1\hfill#2} % #1: icon, #2: group name.
+\newcommand{\skillEntry}[3]{
+% #1: icon, #2: group name, #3: content.
+  \cvitem{\skillGroup{#1}{#2}}{#3}%
+}
 \newcommand{\remoteIcon}{\faHouseUser}
 \newcommand{\noRemoteIcon}{\faBuilding}
 \newcommand{\yearMONTH}[1]{\scriptsize{\getNth{#1}{ }{1}}\hspace{+0.20 em}\normalsize{\getNth{#1}{ }{2}}} % #1: string (month year).
