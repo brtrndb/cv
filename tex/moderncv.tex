@@ -60,16 +60,16 @@
 % #1: url, #2: logo, #3: job description, #4: job items, #5: skills.
   \IfBlankTF{#2}{%
     \parbox{0.80\maincolumnwidth}{%
-      \IfBlankF{#3}{\jobDescription{#3}\newline}
-      \IfBlankF{#4}{\jobItems{#4}\newline}
+      \IfBlankF{#3}{\jobDescription{#3}\IfBlankTF{#4}{\IfBlankF{#5}{\newline}}{\newline}}
+      \IfBlankF{#4}{\jobItems{#4}\IfBlankF{#5}{\newline}}
       \IfBlankF{#5}{\jobSkills{#5}}
     }
   }
   {%
     \begin{tabular}{c@{\hspace{1.00 em}}c}
       \parbox{0.80\maincolumnwidth}{%
-        \IfBlankF{#3}{\jobDescription{#3}\newline}
-        \IfBlankF{#4}{\jobItems{#4}}
+        \IfBlankF{#3}{\jobDescription{#3}\IfBlankTF{#4}{\IfBlankF{#5}{\newline}}{\newline}}
+        \IfBlankF{#4}{\jobItems{#4}\IfBlankF{#5}{\newline}}
         \IfBlankF{#5}{\jobSkills{#5}}
       } &
       \parbox{\companyLogoWidth}{\href{#1}{\includegraphics[width=\companyLogoWidth]{#2}}} \\
