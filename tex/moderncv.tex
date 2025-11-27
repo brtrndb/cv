@@ -1,8 +1,16 @@
 %% Custom lengths.
 \newlength{\cvSectionSpace} %% Space between sections.
 \setlength{\cvSectionSpace}{+0.00 em}
+\newlength{\defaultEntrySpace} %% Default vertical space between each cv entry.
+\setlength{\defaultEntrySpace}{+0.25 em}
+\newlength{\skillEntrySpace} %% Vertical space between each skill entry.
+\setlength{\skillEntrySpace}{\defaultEntrySpace}
 \newlength{\experienceEntrySpace} %% Vertical space between each experience entry.
-\setlength{\experienceEntrySpace}{+0.50 em}
+\setlength{\experienceEntrySpace}{\defaultEntrySpace}
+\newlength{\educationEntrySpace} %% Vertical space between each education entry.
+\setlength{\educationEntrySpace}{\defaultEntrySpace}
+\newlength{\extraEntrySpace} %% Vertical space between each extra entry.
+\setlength{\extraEntrySpace}{\defaultEntrySpace}
 \newlength{\companyLogoWidth}
 \setlength{\companyLogoWidth}{0.20\maincolumnwidth}
 
@@ -20,7 +28,7 @@
 \newcommand{\skillGroup}[2]{#1\hfill#2} % #1: icon, #2: group name.
 \newcommand{\skillEntry}[3]{
 % #1: icon, #2: group name, #3: content.
-  \cvitem{\skillGroup{#1}{#2}}{#3}%
+  \cvitem[\skillEntrySpace]{\skillGroup{#1}{#2}}{#3}%
 }
 \newcommand{\remoteIcon}{\faHouseUser}
 \newcommand{\noRemoteIcon}{\faBuilding}
@@ -94,9 +102,9 @@
 \newcommand{\schoolLocation}[1]{\textcolor{color2}{#1}}
 \newcommand{\educationEntry}[6]{%
 % #1: school name, #2: start date, #3: end date, #4: icon, #5: description, #6: location.
-  \cventry{#4\hfill\IfBlankTF{#2}{#3}{\schoolDate{#2}{#3}}}{\schoolName{#1}}{#5}{\schoolLocation{#6}}{}{}%
+  \cventry[\educationEntrySpace]{#4\hfill\IfBlankTF{#2}{#3}{\schoolDate{#2}{#3}}}{\schoolName{#1}}{#5\hfill\schoolLocation{#6}\hspace{\companyLogoWidth}}{}{}{}%
 }
 \newcommand{\extraEntry}[2]{%
 % #1: icon, #2: description.
-  \hspace{-0.40\hintscolumnwidth}\cvitem{#1}{\hspace{-1.00 em}#2}%
+  \hspace{-0.40\hintscolumnwidth}\cvitem[\extraEntrySpace]{#1}{\hspace{-1.00 em}#2}%
 }
