@@ -86,6 +86,7 @@
 % #1: school name, #2: start date, #3: end date, #4: icon, #5: description, #6: location.
   \cventry{#4\hfill\IfBlankTF{#2}{#3}{\schoolDate{#2}{#3}}}{\schoolName{#1}}{#5}{\schoolLocation{#6}}{}{}%
 }
-\newcommand{\extraEntry}[2]{% #1: icon, #2: description.
+\newcommand{\extraEntry}[2]{%
+% #1: icon, #2: description.
   \hspace{-0.40\hintscolumnwidth}\cvitem{#1}{\hspace{-1.00 em}#2}%
 }
