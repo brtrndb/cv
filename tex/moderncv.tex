@@ -77,9 +77,15 @@
   }
 }
 \newcommand{\jobDescription}[1]{#1}
+\newcounter{TotalNumberOfListMembers}%
+\newcounter{CurrentListMemberCount}%
 \newcommand{\jobItems}[1]{
+  \setcounter{TotalNumberOfListMembers}{0}%
+  \foreach \x in {#1} {\stepcounter{TotalNumberOfListMembers}}%
+  \setcounter{CurrentListMemberCount}{0}%
   \foreach \x in {#1}{%
-    \textcolor{color1}{\hspace{+0.20 em}\faAngleRight}\x\newline%
+    \stepcounter{CurrentListMemberCount}%
+    \hspace{+0.20 em}\textcolor{color1}{\faAngleRight}\x\ifthenelse{\NOT\equal{\value{CurrentListMemberCount}}{\value{TotalNumberOfListMembers}}}{\newline}{}%
   }%
 }
 \newcommand{\jobSkills}[1]{\textcolor{color2}{Stack technique: #1.}}
