@@ -93,7 +93,7 @@
   \setcounter{CurrentListMemberCount}{0}%
   \foreach \x in {#1}{%
     \stepcounter{CurrentListMemberCount}%
-    \hspace{+0.20 em}\textcolor{color1}{\faAngleRight}\x\ifthenelse{\NOT\equal{\value{CurrentListMemberCount}}{\value{TotalNumberOfListMembers}}}{\newline}{}%
+    \textcolor{color1}{\hspace{+0.20 em}\faAngleRight}\x\ifthenelse{\NOT\equal{\value{CurrentListMemberCount}}{\value{TotalNumberOfListMembers}}}{\newline}{}%
   }%
 }
 \newcommand{\jobSkills}[1]{\textcolor{color2}{Stack technique: #1.}}
