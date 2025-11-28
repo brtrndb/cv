@@ -117,6 +117,12 @@ Here are some tips that helps for LaTeX:
     - `.tex` with `.aux`, `.log`, `.out`, `.pdf`, `.synctex.gz` to hide output files.
     - `.xcf` with `.jpeg`, `.jpg`, `.png`, `.svg`, to hide Gimp exports.
 
+## Resources
+
+- `moderncv` documentation: https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/moderncv/manual/moderncv_userguide.pdf
+- `fontawesome 5` documentation: https://mirrors.ircam.fr/pub/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf
+- `xargs` documentation: https://ctan.mines-albi.fr/macros/latex/contrib/xargs/xargs-fr.pdf
+
 ## Notes
 
 Tested with Ubuntu.
