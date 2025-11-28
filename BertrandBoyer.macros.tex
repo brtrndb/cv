@@ -100,9 +100,15 @@
 \newcommand{\schoolDate}[2]{#1 $\rightharpoonup$ #2} % #1: start date, #2: end date.
 \newcommand{\schoolName}[1]{\textcolor{color1}{#1}}
 \newcommand{\schoolLocation}[1]{\textcolor{color2}{#1}}
-\newcommand{\educationEntry}[6]{%
-% #1: school name, #2: start date, #3: end date, #4: icon, #5: description, #6: location.
-  \cventry[\educationEntrySpace]{#4\hfill\IfBlankTF{#2}{#3}{\schoolDate{#2}{#3}}}{\schoolName{#1}}{#5\hfill\schoolLocation{#6}\hspace{\companyLogoWidth}}{}{}{}%
+\newcommand{\educationEntry}[7]{%
+% #1: school name, #2: start date, #3: end date, #4: icon, #5: description, #6: location, #7: content.
+  \cventry[\educationEntrySpace]
+  {#4\hfill\IfBlankTF{#2}{#3}{\schoolDate{#2}{#3}}}
+  {\schoolName{#1}}
+  {#5}
+  {\schoolLocation{#6}}
+  {}
+  {#7}
 }
 \newcommand{\extraEntry}[2]{%
 % #1: icon, #2: description.
