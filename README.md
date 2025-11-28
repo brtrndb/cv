@@ -114,7 +114,7 @@ Here are some tips that helps for LaTeX:
 
 - Using [TeXiFy IDEA](https://plugins.jetbrains.com/plugin/9473-texify-idea) plugin.
 - [File nesting](https://www.jetbrains.com/help/idea/file-nesting-dialog.html) association in project view.
-    - `.tex` with `.aux`, `.log`, `.out`, `.pdf`, `synctex.gz` to hide output files.
+    - `.tex` with `.aux`, `.log`, `.out`, `.pdf`, `.synctex.gz` to hide output files.
     - `.xcf` with `.jpeg`, `.jpg`, `.png`, `.svg`, to hide Gimp exports.
 
 ## Notes
