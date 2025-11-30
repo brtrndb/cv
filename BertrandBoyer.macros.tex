@@ -57,7 +57,7 @@
 \newcommandx{\experienceEntry}[8][]{%
 % #1: company name, #2: location, #3: remote icon, #4: start date, #5: end date, #6: job title, #7: tags, #8: content.
   \cventry[\experienceEntrySpace]
-  {\jobInfo{#4}{#5}{#2}[#3]}
+  {\hfill\raisebox{\baseletterheight}{\color{color1}\rule{0.33\hintscolumnwidth}{0.25 ex}}\newline\jobInfo{#4}{#5}{#2}[#3]}
   {\companyName{#1}\IfBlankT{#6}{\IfBlankF{#7}{\hfill\jobTags{#7}}}}
   {\IfBlankF{#6}{\jobTitle{#6}\IfBlankF{#7}{\hfill\jobTags{#7}}}}
   {}
